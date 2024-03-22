@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Deliever Product</title>
+</head>
+<body>
+ 
+    <section class="md:hidden">
+    <div class="w-full h-64" style="background-image: url('./images2/mobile icons/big illustration.png'); background-size: cover; padding: 20px;">
+            <div class="flex">
+            <div class="mt-1">
+                <a href="index.html" class="flex items-center text-white">
+                    <img src="./images2/desktop icons/logo.png" alt="Your Logo" class="mt-5 w-10">
+                </a>
+            </div>
+
+
+            <div class="ml-auto mt-5 md:mt-5 pr-3 sm:pr-2">
+                <img src="./images2/mobile icons/BACK OPTION.png" alt="" class="w-10 ">
+            </div>
+        </div>   
+        <div class="mt-5">
+            <h1 class="text-3xl font-gotham-black font-bold mr-28" style="color: black;">Enter Your Delivery Address & Parcel Details</h1>
+        </div>
+     </div>
+
+
+        
+     <div class="ml-[-170px] h-72" style="background-image: url('./images2/mobile icons/small illustrtion.png'); background-size: cover; background-position: left;">
+        <div class="flex">
+            <div class="ml-3 mt-28">
+            <img src="./images2/mobile icons/green bar mobile.png" alt="" class="w-[13px] h-[150px] ml-44 float-left">
+        </div>
+        <div class="flex-col">
+            
+
+            <div class="p-8">
+                <h1 class="text-[17px] font-extrabold mb-3">Pickup Details</h1>
+                <div class="relative">
+                    <div class="input-with-icon">
+                        <div class="absolute left-0 p-2 pointer-events-none font-extrabold text-black ml-1 text-[17px]">Location</div>
+                        <img src="./images2/mobile icons/earth.png" alt="" class="absolute top-10 left-3 w-4 h-4">
+                    <a href="pickup_details.html">
+                        <input type="text" id="Location" name="Location" class="border w-full pt-9 p-1 py-5 border-dotted border-[#848484] text-black rounded-xl px-20 pl-10 focus:outline-none" placeholder="Pickup item from..." onfocus="askForLocation()" onblur="collapseLabel('LocationLabel')">
+                    </a>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="p-8">
+                <h1 class="text-[17px] font-extrabold mb-3">Shipment Details</h1>
+                <div class="relative">
+                    <div class="input-with-icon">
+                        <div class="absolute left-0 p-2 pointer-events-none font-extrabold text-black ml-1 text-[17px]">Location</div>
+                        <img src="./images2/mobile icons/earth.png" alt="" class="absolute top-10 left-3 w-4 h-4">
+                        <a href="shipment.html">
+                        <input type="text" id="Location" name="Location" class="border w-full pt-9 p-1 py-5 border-dotted border-[#848484] text-black rounded-xl px-20 pl-10 focus:outline-none" placeholder="Drop item to..." onfocus="askForLocation()" onblur="collapseLabel('LocationLabel')">
+                    </a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        </div>      
+</div>
+    
+
+
+    <div class="mt-24 mb-20">
+        <h1 class="text-[17px] font-extrabold ml-10">Parcel Details</h1>
+        
+        <div class="flex flex-wrap ml-11 mt-6 gap-5 pr-1">
+            <div class="border border-dotted border-[#848484] rounded-xl p-4 py-2 cursor-pointer transition-colors duration-300 hover:bg-black" onclick="selectBox(event)">
+                <p class="font-extrabold text-[#545454]">Small</p>
+                <p>Wt: 0 - 500gm</p>
+            </div>
+        
+            <div class="border border-dotted border-[#848484] rounded-xl p-4 py-2 cursor-pointer transition-colors duration-300 hover:bg-black" onclick="selectBox(event)">
+                <p class="font-extrabold text-[#545454]">Medium</p>
+                <p>Wt: 0 - 500gm</p>
+            </div>
+        
+            <div class="border border-dotted border-[#848484] rounded-xl p-4 py-2 cursor-pointer transition-colors duration-300 hover:bg-black" onclick="selectBox(event)">
+                <p class="font-extrabold text-[#545454]">Large</p>
+                <p>Wt: 0 - 500gm</p>
+            </div>
+        
+            <div class="border border-dotted border-[#848484] rounded-xl p-4 py-2 cursor-pointer transition-colors duration-300 hover:bg-black" onclick="selectBox(event)">
+                <p class="font-extrabold text-[#545454]">Extra Large</p>
+                <p>Wt: 0 - 500gm</p>
+            </div>
+        </div>
+
+        <div class="mt-20 m-10">
+            <textarea id="" name="" class="border text-xl w-full p-1 py-10 border-dotted border-[#848484] text-black rounded-xl px-20 pl-10 focus:outline-none resize-none" placeholder="Custom Message"></textarea>
+        </div>
+        
+        <div class="fixed bottom-4 left-0 right-0 flex justify-center items-center">
+            <div class="flex bg-[#2D332F] rounded-full text-xl p-4 w-72 md:hidden text-white justify-center items-center">
+                Next Process
+            </div>
+        </div>
+        
+
+    </div>
+    </section>
+
+
+    <script>
+        function selectBox(event) {
+            const selectedBox = event.target.closest('.border');
+            if (!selectedBox) return;
+    
+            document.querySelectorAll('.border').forEach(box => {
+                box.classList.remove('bg-black', 'text-white');
+            });
+    
+            selectedBox.classList.add('bg-black', 'text-white');
+        }
+    </script>
+</body>
+</html>

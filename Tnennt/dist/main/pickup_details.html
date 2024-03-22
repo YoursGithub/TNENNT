@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Enter the Pickup Details</title>
+</head>
+<body>
+    <nav>
+        <div class="flex p-5">
+            <div class="mt-1">
+                <a href="index.html" class="flex items-center text-white">
+                    <img src="./images2/desktop icons/logo.png" alt="Your Logo" class="mt-5 w-10">
+                </a>
+            </div>
+
+
+            <div class="ml-auto mt-5 md:mt-5 pr-3 sm:pr-2">
+                <img src="./images2/mobile icons/BACK OPTION.png" alt="" class="w-10 ">
+            </div>
+        </div>
+    </nav>
+
+    <section class="md:hidden">
+        <div class="mt-2 pl-6">
+            <h1 class="text-[35px] font-gotham-black font-extrabold mr-28" style="color: black;">Enter Pickup Details</h1>
+        </div>
+
+        <div class="ml-5 space-y-6 pr-5 mt-5 mb-28">
+
+        <div class="relative gap-10">
+                    <div class="input-with-icon">
+                        <div class="absolute left-0 p-2 pointer-events-none font-semibold text-black ml-1 text-[17px]">Name</div>
+                        <img src="./images2/mobile icons/user.png" alt="" class="absolute top-10 left-3 w-4 h-4">
+                        <input type="text" id="Name" name="Name" class="border w-full pt-9 p-1 py-5 border-dotted border-[#848484] text-black rounded-xl px-20 pl-10 focus:outline-none" placeholder="Enter your name" onfocus="askForLocation()" onblur="collapseLabel('LocationLabel')">
+                    </div>
+                </div>
+                
+                <div class="relative">
+                    <div class="input-with-icon">
+                        <div class="absolute left-0 p-2 pointer-events-none font-semibold text-black ml-1 text-[17px]">Mobile Number</div>
+                        <img src="./images2/mobile icons/call.png" alt="" class="absolute top-10 left-3 w-4 h-4">
+                        <input type="text" id="Mobile" name="mobile" class="border w-full pt-9 p-1 py-5 border-dotted border-[#848484] text-black rounded-xl px-20 pl-10 focus:outline-none" placeholder="Enter your mobile number" onfocus="askForLocation()" onblur="collapseLabel('LocationLabel')" oninput="this.value = this.value.replace(/[^0-9]/g, '').slice(0, 10)">
+                    </div>
+                </div>
+                
+                
+                
+        <div class="relative">
+                    <div class="input-with-icon">
+                        <div class="absolute left-0 p-2 pointer-events-none font-semibold text-black ml-1 text-[17px]">Flat/ Housing No./ Building/ Apartment</div>
+                        <img src="./images2/mobile icons/earth.png" alt="" class="absolute top-10 left-3 w-4 h-4">
+                        <input type="text" id="Location" name="Location" class="border w-full pt-9 p-1 py-5 border-dotted border-[#848484] text-black rounded-xl px-20 pl-10 focus:outline-none" placeholder="Enter the details" onfocus="askForLocation()" onblur="collapseLabel('LocationLabel')">
+                    </div>
+                </div>
+
+        <div class="relative">
+                    <div class="input-with-icon">
+                        <div class="absolute left-0 p-2 pointer-events-none font-semibold text-black ml-1 text-[17px]">Area/ Street/ Sector</div>
+                        <img src="./images2/mobile icons/location.png" alt="" class="absolute top-10 left-3 w-4 h-4">
+                        <input type="text" id="area" name="area" class="border w-full pt-9 p-1 py-5 border-dotted border-[#848484] text-black rounded-xl px-20 pl-10 focus:outline-none" placeholder="Enter the details" onfocus="askForLocation()" onblur="collapseLabel('LocationLabel')">
+                    </div>
+                </div>
+
+                <div class="relative">
+                    <div class="input-with-icon">
+                        <div class="absolute left-0 p-2 pointer-events-none font-semibold text-black ml-1 text-[17px]">Pincode</div>
+                        <input type="text" id="Pincode" name="Pincode" class="border w-full pt-9 p-1 py-5 border-dotted border-[#848484] text-black rounded-xl px-20 pl-3 focus:outline-none text-left" placeholder="Enter your pincode" onfocus="askForLocation()" onblur="collapseLabel('LocationLabel')" oninput="this.value = this.value.replace(/[^0-9]/g, '').slice(0, 6)">
+                    </div>
+                </div>
+                
+
+
+                <div class="flex gap-5">
+                    <div class="relative">
+                        <div class="input-with-icon">
+                            <div class="absolute left-0 p-2 pointer-events-none font-semibold text-black ml-1 text-[17px]">City</div>
+                            
+                            <input type="text" id="City" name="City" class="border w-full pt-9 p-1 py-5 border-dotted border-[#848484] text-black rounded-xl px-20 pl-3 focus:outline-none" placeholder="" onfocus="askForLocation()" onblur="collapseLabel('LocationLabel')">
+                        </div>
+                    </div>
+
+                    <div class="relative">
+                        <div class="input-with-icon">
+                            <div class="absolute left-0 p-2 pointer-events-none font-semibold text-black ml-1 text-[17px]">State</div>
+                            
+                            <input type="text" id="State" name="State" class="border w-full pt-9 p-1 py-5 border-dotted border-[#848484] text-black rounded-xl px-20 pl-3 focus:outline-none" placeholder="" onfocus="askForLocation()" onblur="collapseLabel('LocationLabel')">
+                        </div>
+                    </div>
+                </div>
+                <div class="fixed bottom-4 left-0 right-0 flex justify-center items-center">
+                    <a href="deliever_product.html" class="flex bg-[#2D332F] rounded-full text-xl p-4 w-72 md:hidden text-white justify-center items-center">
+                       Proceed
+                    </a>
+                </div>
+    </div>
+    </section>
+
+
+    <script>
+        function limitTo10Numbers(event) {
+            const input = event.target;
+            if (input.value.length > 10) {
+                input.value = input.value.slice(0, 10);
+            }
+        }
+    </script>
+</body>
+</html>

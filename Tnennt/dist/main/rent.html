@@ -1,0 +1,2284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <title>First Page</title>
+</head>
+<style>
+  html,
+  body {
+    position: relative;
+    height: 100%;
+    overflow-x: hidden;
+  }
+
+  body {
+    font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+    font-size: 14px;
+    color: #000;
+    margin: 0;
+    padding: 0;
+  }
+
+::-webkit-scrollbar {
+        width: 5px; 
+    }
+
+    ::-webkit-scrollbar-track {
+        background: #f1f1f1;
+    }
+
+    ::-webkit-scrollbar-thumb {
+        background: #000000;
+        border-radius: 10px; 
+    }
+
+    
+    ::-webkit-scrollbar-thumb:hover {
+        background: #555; 
+    }
+
+  .swiper {
+    width: 100%;
+    height: 115%;
+    padding-right: 30px;
+  }
+
+  .swiper-slide {
+    text-align: center;
+    font-size: 18px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .swiper-slide img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+ 
+
+  .swiper-pagination {
+      position: absolute;
+      top: 50%;
+      right: 10px;
+      transform: translateY(-50%);
+      display: flex;
+      flex-direction: column;
+      overflow-x: hidden;
+    }
+    .swiper-pagination-bullet {
+      margin: 5px 0;
+    }
+
+  .containers{
+    max-width: 1300px;
+    margin-inline: auto;
+  }
+  .containers1{
+    max-width: 1500px;
+    margin-inline: auto;
+  }
+
+  .heart-container {
+  --heart-color: rgb(255, 91, 137);
+  position: relative;
+  width: 20px;
+  height: 20px;
+  transition: .3s;
+}
+
+.heart-container .checkbox {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  z-index: 20;
+  cursor: pointer;
+}
+
+.heart-container .svg-container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.heart-container .svg-outline,
+        .heart-container .svg-filled {
+  fill: var(--heart-color);
+  position: absolute;
+}
+
+.heart-container .svg-filled {
+  animation: keyframes-svg-filled 1s;
+  display: none;
+}
+
+.heart-container .svg-celebrate {
+  position: absolute;
+  animation: keyframes-svg-celebrate .5s;
+  animation-fill-mode: forwards;
+  display: none;
+  stroke: var(--heart-color);
+  fill: var(--heart-color);
+  stroke-width: 2px;
+}
+
+.heart-container .checkbox:checked~.svg-container .svg-filled {
+  display: block
+}
+
+
+.heart-container .checkbox:checked~.svg-container .svg-celebrate {
+  display: block
+}
+
+@keyframes keyframes-svg-filled {
+  0% {
+    transform: scale(0);
+  }
+
+  25% {
+    transform: scale(1.2);
+  }
+
+  50% {
+    transform: scale(1);
+    filter: brightness(1.5);
+  }
+}
+
+@keyframes keyframes-svg-celebrate {
+  0% {
+    transform: scale(0);
+  }
+
+  50% {
+    opacity: 1;
+    filter: brightness(1.5);
+  }
+
+  100% {
+    transform: scale(1.4);
+    opacity: 0;
+    display: none;
+  }
+}
+a:focus,
+a:visited,
+a:active{
+    outline: none;
+}
+</style>
+<body>
+
+    <div style="overflow-y: scroll;"></div>
+
+    <section class="lg:hidden">
+
+        <div class="mt-7 ml-4 flex">
+            <div class="">
+                <h2 id="greeting" class="text-[#727272] text-[15px] font-gotham-black font-bold"></h2>
+                <h2 class="text-2xl font-extrabold font-gotham-black">Kunal Deb</h2>
+            </div>
+            <div class="flex ml-auto pr-4 gap-3">
+              <img src="./images2/mobile icons/notfication00.png" alt="" class="w-6 h-6 mt-2">
+              <div class="w-12 h-12 bg-[#616363] rounded-full">
+              </div>
+            </div>
+        </div>
+
+        
+
+        <div class="mt-7 p-3 relative">
+          <input type="text" class="input-field px-6 py-7 pl-16 bg-[#ECEBEB] rounded-full w-full text-lg focus:outline-none" placeholder="">
+          <div class="w-12 h-12 bg-[#DDDDDD] rounded-full absolute top-0 left-0 mt-7 ml-6 flex items-center justify-center">
+            <img src="./images2/mobile icons/search.png" alt="" class="w-6">
+          </div>
+          <label id="placeholder-label" class="placeholder-label absolute left-16 top-1/2 transform -translate-y-1/2 ml-3">
+            <span class="text-gray-500 font-gotham-black font-extrabold text-[17px]">Search Products &amp; Providers</span>
+            <br>
+            <span class="text-gray-700 text-sm pr-2">Housing, Vehicles, Accessories &amp; other services</span>
+          </label>
+        </div>
+
+
+      
+
+        <div class="swiper mySwiper">
+          <div class="swiper-wrapper ml-5 mt-5">
+            <div class="swiper-slide">
+               <a href="vehicles.html" class="focus:ring-0 focus:outline-none" style="-webkit-tap-highlight-color: rgba(0,0,0,0);"><img src="./images2/mobile_mainpage/vehiclecard.png" alt="" class="w-64 h-44"></a>
+            </div>
+            <div class="swiper-slide">
+             <a href="housing.html" class="focus:ring-0 focus:outline-none" style="-webkit-tap-highlight-color: rgba(0,0,0,0);"><img src="./images2/mobile_mainpage/_housingcard.png" alt="" class="w-64 h-44"></a>
+            </div>
+            <div class="swiper-slide">
+              <a href="electronics.html" class="focus:ring-0 focus:outline-none" style="-webkit-tap-highlight-color: rgba(0,0,0,0);"><img src="./images2/mobile_mainpage/electronicscard.png" alt="" class="w-64 h-44"></a>
+            </div>
+            <div class="swiper-slide">
+             <a href="others.html" class="focus:ring-0 focus:outline-none" style="-webkit-tap-highlight-color: rgba(0,0,0,0);"><img src="./images2/mobile_mainpage/otherscard.png" alt="" class="w-64 h-44"></a>
+            </div>
+          </div>
+        </div>
+
+
+
+      <div>
+        <div class="mt-6 ml-7 flex gap-3 flex-wrap">
+            <button class="focus:outline-none visited:outline-none active:outline-none category-button border border-black bg-[#343434] text-white px-4 py-2 rounded-3xl transition-colors duration-300 inline-flex items-center" style="-webkit-tap-highlight-color: rgba(0,0,0,0);" data-category="vehicles">
+                Vehicles
+            </button>
+            <button class="focus:outline-none visited:outline-none active:outline-none category-button border border-black bg-white text-[#737373] px-4 py-2 rounded-3xl transition-colors duration-300 inline-flex items-center" style="-webkit-tap-highlight-color: rgba(0,0,0,0);" data-category="housing">
+                Housing
+            </button>
+            <button class="focus:outline-none visited:outline-none active:outline-none category-button border border-black bg-white text-[#737373] px-4 py-2 rounded-3xl transition-colors duration-300 inline-flex items-center" style="-webkit-tap-highlight-color: rgba(0,0,0,0);" data-category="electronics">
+                Electronics
+            </button>
+            <button class="focus:outline-none visited:outline-none active:outline-none category-button border border-black bg-white text-[#737373] px-4 py-2 rounded-3xl transition-colors duration-300 inline-flex items-center" style="-webkit-tap-highlight-color: rgba(0,0,0,0);" data-category="others">
+                Others
+            </button>
+            <button class="focus:outline-none visited:outline-none active:outline-none category-button border border-black bg-white text-[#737373] px-4 py-2 rounded-3xl transition-colors duration-300 inline-flex items-center" style="-webkit-tap-highlight-color: rgba(0,0,0,0);" data-category="our_services">
+                Our services
+            </button>
+        </div>
+        
+        <div class="mt-[-40px]">
+          <img src="./images2/mobile icons/design.png" alt="" class="w-8 ml-auto mr-3">
+      </div>
+      
+
+          <div id="categorySection" class="">
+  
+          </div>
+          
+        </div>
+        <div class="fixed bottom-4 left-0 right-0 flex mx-auto mb-1 bg-[#2D332F] rounded-full text-xl p-2 m-10 w-[350px] lg:hidden text-white justify-around items-center">
+            <a href="store.html" class="icon p-4 " style="-webkit-tap-highlight-color: rgba(0,0,0,0);">
+                <div class="">
+                    <img src="./images2/mobile icons/home.png" alt="" class="w-5 h-5">
+                </div>
+            </a>
+            
+            <a href="catalog.html" class="icon flex items-center justify-center bg-[#2D332F] rounded-full p-4 w-14 h-14 " style="-webkit-tap-highlight-color: rgba(0,0,0,0);">
+                <img src="./images2/mobile icons/catalog.png" alt="" class="w-8">
+            </a>
+            <a href="rent.html" class="icon p-4 bg-white rounded-full w-14 h-14 flex items-center justify-center" style="-webkit-tap-highlight-color: rgba(0,0,0,0);">
+                <img src="./images2/mobile icons/store.png" alt="" class="w-8">
+            </a>
+            <a href="gallery.html" class="icon flex items-center justify-center bg-[#2D332F] rounded-full p-4 w-14 h-14 " style="-webkit-tap-highlight-color: rgba(0,0,0,0);">
+                <img src="./images2/mobile icons/gallery.png" alt="" class="w-5">
+            </a>
+            <a href="#" class="icon flex items-center justify-center bg-[#2D332F] rounded-full p-4 w-14 h-14 " style="-webkit-tap-highlight-color: rgba(0,0,0,0);">
+                <img src="./images2/mobile icons/community.png" alt="" class="w-5">
+            </a>
+        </div>
+
+    </section>
+    
+    <!-- -----------------------------DESKTOP MODE ---------------------- -->
+
+
+    <section class="hidden lg:block">
+        <nav class="flex containers sm:p-5">
+            <div class="flex gap-6 2xl:ml-[-100px]">
+                <div class="mt-4 2xl:mt-5 relative cursor-pointer">
+                    <img src="./images2/desktop icons/menu icon.png" alt="" class="w-32">
+                    <p class="absolute top-2 left-6 text-white ">Menu</p>
+                </div>
+                
+                <a href="">
+                <div class="border mt-4 2xl:mt-5 border-[#D9D9D9] p-3 rounded-3xl flex items-center justify-center h-10 w-24 cursor-pointer transition duration-300 ease-in-out hover:bg-black hover:text-white">
+                    Store
+                </div>
+                </a>
+
+                <a href="">
+                    <div class="border mt-4 2xl:mt-5 border-[#D9D9D9] p-3 rounded-3xl flex items-center justify-center h-10 w-24 cursor-pointer transition duration-300 ease-in-out hover:bg-black hover:text-white">
+                        Rent
+                    </div>
+                 </a>
+
+            </div>
+            
+            <div class="flex mt-3 gap-3 ml-auto justify-end 2xl:mr-[-100px]">
+                <img src="./images2/mobile icons/notfication00.png" alt="" class="w-6 h-6 mt-2">
+                <div class="w-12 h-12 bg-[#616363] rounded-full"></div>
+            </div>
+        </nav>
+       
+        
+
+        <section class="mt-8 2xl:mt-14 containers">
+            <div class="flex 2xl:ml-[-100px] sm:p-5">
+                <div class="leading-tight">
+                    <h1 class="text-[40px] font-gotham black font-black">
+                        RENT VEHICLES<br> INSTANTLY AND ENJOY<br> YOUR JOURNEY
+                    </h1>
+                    <p class="text-lg mt-4 text-[#444444]">
+                        Scooters, Cars, Bikes, Cycles & other Transports
+                    </p>
+                    <div class="flex mt-20 gap-20">
+                        <div>
+                            <div class="mt-4 2xl:mt-5 relative">
+                                <img src="./images2/desktop_mainpage/store card.png" alt="" class="w-[420px]">
+                                <p class="absolute top-5 left-16 text-[15px] font-extrabold">Buy From Your Local Store<br> At A Discounted Price</p>
+                                <p class="absolute bottom-14 right-6 text-[17px]">Tnennt <span class="text-red-500">&bull;</span><br>Store</p>      
+                            </div>
+                        </div>
+                        <div class="mt-4 2xl:mt-5 relative">
+                            <img src="./images2/desktop_mainpage/main section card.png" alt="" class="w-[190px]">
+                            <p class="absolute top-20 text-[#727272] left-2 text-[12px] font-extrabold">Active Middlemen</p>   
+                            <p class="absolute bottom-9 left-3 text-[22px] font-black">9877+</p>   
+                            <p class="absolute bottom-4 left-3 text-[12px] font-extrabold text-green-500">Active Middlemen</p>
+                        </div>
+                    </div>
+                </div>
+                <div class=" 2xl:mt-5 relative ml-auto 2xl:mr-[-100px]">
+                    <img src="./images2/desktop_mainpage/desktop main card.png" alt="" class="w-[520px]">
+                    <p class="absolute top-80 text-white left-40 text-[13px] font-extrabold">RENT VEHICLES<br> INSTANTLY AND ENJOY<br> YOUR JOURNEY</p>   
+                    <p class="absolute top-72 left-[340px] text-[13px] leading-tight">Total <span class="text-red-500">&bull;</span><br>Providers</p>
+                    <p class="absolute top-[325px] text-white left-[340px] text-[23px] font-extrabold">980,000 +</p>
+                    <p class="absolute top-[360px] left-[340px] text-[13px] font-extrabold">Providers</p>
+                </div>
+            </div>
+        </section>
+
+
+
+        <section class="mt-20">
+            <h2 class="text-center leading-relaxed text-[#949494] text-3xl font-medium">
+                “Your Everyday Nearby Store At Your <br><span class="px-1 rounded-md py-1 bg-[#b9da72] font-medium text-black">Fingertips.</span>”
+            </h2>
+            <div class="flex containers gap-10 mt-10 justify-center items-center">
+                <div class="gap-10">
+                    <img src="./images2/desktop_mainpage/Rectangle 2488.png" alt="" class="w-56">
+                    <img src="./images2/desktop_mainpage/Rectangle 2486.png" alt="" class="w-60 mt-2">
+                </div>
+                <div>
+                    <img src="./images2/desktop_mainpage/Rectangle 2484.png" alt="" class="w-[400px]">
+                </div>
+                <div>
+                    <img src="./images2/desktop_mainpage/Rectangle 2485.png" alt="" class="w-[370px]">
+                    <img src="./images2/desktop_mainpage/Rectangle 2487.png" alt="" class="w-[360px]  h-16  mt-2">
+                </div>
+            </div>
+        </section>
+
+
+        <section class="mt-20">
+            <div class="flex containers">
+                <div class="mt-6 ml-20 flex gap-3 flex-wrap">
+                    <button class="focus:outline-none visited:outline-none active:outline-none category-button border border-black bg-[#343434] text-white px-4 py-2 rounded-3xl transition-colors duration-300 inline-flex items-center" style="-webkit-tap-highlight-color: rgba(0,0,0,0);">
+                        Vehicles
+                    </button>
+                    <button class="focus:outline-none visited:outline-none active:outline-none category-button border border-black bg-white text-[#737373] px-4 py-2 rounded-3xl transition-colors duration-300 inline-flex items-center" style="-webkit-tap-highlight-color: rgba(0,0,0,0);">
+                        Housing
+                    </button>
+                    <button class="focus:outline-none visited:outline-none active:outline-none category-button border border-black bg-white text-[#737373] px-4 py-2 rounded-3xl transition-colors duration-300 inline-flex items-center" style="-webkit-tap-highlight-color: rgba(0,0,0,0);">
+                        Electronics
+                    </button>
+                    <button class="focus:outline-none visited:outline-none active:outline-none category-button border border-black bg-white text-[#737373] px-4 py-2 rounded-3xl transition-colors duration-300 inline-flex items-center" style="-webkit-tap-highlight-color: rgba(0,0,0,0);">
+                        Others
+                    </button>
+                    <button class="focus:outline-none visited:outline-none active:outline-none category-button border border-black bg-white text-[#737373] px-4 py-2 rounded-3xl transition-colors duration-300 inline-flex items-center" style="-webkit-tap-highlight-color: rgba(0,0,0,0);">
+                        Our services
+                    </button>
+                </div>
+                <div class="ml-auto mt-8 mr-10">
+                    <h3 class="">SEE OUR NEWEST ARRIVAL </h3>
+                </div>
+            </div>
+
+
+        </section>
+       
+
+        <section class="mt-20">
+            <div class="containers flex gap-28 sm:p-5">
+                <div class="relative 2xl:ml-[-100px]">
+                <img src="./images2/desktop_mainpage/desktop delivery card.png" alt="" class="w-[570px] 2xl:w-[650px]">
+                <p class="absolute top-7 left-8 text-[30px] leading-tight text-white font-black font-gotham-black">Deliever<br>Anything<br>Anywhere Easily</p>
+                <p class="absolute top-48 2xl:top-52 left-10 text-[15px] leading-tight text-white">Middleman <span class="text-red-500">&bull;</span><br>Strength</p>
+                <p class="absolute top-60 2xl:top-64 left-10 text-[30px] leading-tight text-white font-black font-gotham-black">9877 +</p>
+                <p class="absolute top-[280px] 2xl:top-[296px] left-10 text-[13px] leading-tight text-white">Active Middlemen</p>
+                <p class="absolute top-[285px] 2xl:top-[315px] left-[418px] 2xl:left-[465px] text-[16px] leading-tight text-white">Deliever Product</p>
+                </div>
+
+                <div class="2xl:ml-[100px]">
+                    <p class="text-lg ml-6">Check all your recent & ongoing delivery details just<br> in one click</p>
+                    <div class="flex">
+                        <div>
+                            <a href="delivery_to_me.html">
+                                <div class="p-10 ml-5 mt-7 rounded-2xl  py-6 bg-[#EFEFEF]" style="width: 230px; overflow: hidden;">
+                                    <h2 class="font-black text-2xl font-gotham-black mr-5 ml-[-25px]">
+                                        Delivery <br> to me<span class="text-red-500"> &bull;</span>
+                                    </h2>
+                                    
+                                    <p class="text-[#6B6B6B] mt-4 ml-[-25px]">See all the deliveries you have received </p>
+                                </div>
+                            </a>
+                               
+                        </div>
+
+                        <div>
+                            <a href="delivery_from_me.html">
+                                <div class="p-10 ml-10 mt-7 rounded-2xl mb-28 py-6 bg-[#FFDFDF]" style="width: 230px; overflow: hidden;">
+                                    <h2 class="font-black text-2xl font-gotham-black mr-5 ml-[-25px]">
+                                        Delivery <br> from me <span class="text-green-500"> &bull;</span>
+                                    </h2>
+                                    <p class="text-[#6B6B6B] mt-4 ml-[-25px]">See all the deliveries you have send </p>
+                                </div>
+                               </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <section class="mt-20">
+            <div class="justify-center items-center text-center containers">
+            <h1 class="text-3xl font-medium font-gotham-black text-[#949494]">"Elevate Your Lifestyle with Shared Rentals: A <br> Professional Community for       <span class="px-1 rounded-md py-1 bg-[#b9da72] font-medium text-black">Seamless Connections</span> and <br> Smart Solutions."</h1>
+            <div class="flex justify-center items-center gap-4 mt-6">
+                <img src="./images2/desktop icons/instagram.png" alt="" class="w-7">
+                <img src="./images2/desktop icons/linkedin.png" alt="" class="w-7">
+                <img src="./images2/desktop icons/twitter.png" alt="" class="w-7">
+            </div>
+            </div>
+        <section>
+
+        <section class="mt-10">
+            <div class="swiper mySwiper containers1 mx-44">
+                <div class="swiper-wrapper ml-5 mt-5">
+                    <div class="swiper-slide">
+                        <a href="vehicles.html" class="focus:ring-0 focus:outline-none" style="-webkit-tap-highlight-color: rgba(0,0,0,0);">
+                            <img src="./images2/desktop_mainpage/desktop_vehiclecard.png" alt="" class="w-44 h-44">
+                        </a>
+                    </div>
+                    <div class="swiper-slide">
+                        <a href="housing.html" class="focus:ring-0 focus:outline-none" style="-webkit-tap-highlight-color: rgba(0,0,0,0);">
+                            <img src="./images2/desktop_mainpage/desktop_housingcard.png" alt="" class="w-44 h-44">
+                        </a>
+                    </div>
+                    <div class="swiper-slide">
+                        <a href="electronics.html" class="focus:ring-0 focus:outline-none" style="-webkit-tap-highlight-color: rgba(0,0,0,0);">
+                            <img src="./images2/desktop_mainpage/desktop_electronicscard.png" alt="" class="w-44 h-44">
+                        </a>
+                    </div>
+                    <div class="swiper-slide">
+                        <a href="others.html" class="focus:ring-0 focus:outline-none" style="-webkit-tap-highlight-color: rgba(0,0,0,0);">
+                            <img src="./images2/desktop_mainpage/desktop_otherscard.png" alt="" class="w-44 h-44">
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+
+        <section class="mt-10">
+            <div class="flex containers gap-8 sm:p-5 ">
+                <div class="mt-[-7px] 2xl:ml-[-50px]">
+                    <img src="./images2/desktop icons/question.png" alt="" class="w-7 mt-1">
+                </div>
+                <div class="mt-[-7px]">
+                    <img src="./images2/desktop icons/ios_share.png" alt="" class="w-6 h-8">
+                </div>
+                <div class="mx-auto text-sm">
+                    SEAMLESS RENTALS FOR EVERY LIFESTYLE
+                </div>
+                <div class="border mt-[-12px] 2xl:mr-[-50px] border-[#343434] p-3 rounded-3xl flex items-center justify-center h-10 w-36 cursor-pointer transition duration-300 ease-in-out hover:bg-black hover:text-white">
+                    Housing
+                </div>
+            </div>
+
+            <div class="swiper helloSwiper containers1 ">
+                <div class="swiper-wrapper ml-5 mt-5">
+                    <div class="swiper-slide">
+                        <a href="vehicles.html" class="focus:ring-0 focus:outline-none" style="-webkit-tap-highlight-color: rgba(0,0,0,0);">
+                            <img src="./images2/desktop_mainpage/Rectangle 2175.png" alt="" class="" style="max-height: 400px;">
+                        </a>
+                    </div>
+                    <div class="swiper-slide">
+                        <a href="housing.html" class="focus:ring-0 focus:outline-none" style="-webkit-tap-highlight-color: rgba(0,0,0,0);">
+                            <img src="./images2/desktop_mainpage/Rectangle 2431.png" alt="" class="" style="max-height: 400px;">
+                        </a>
+                    </div>
+                    <div class="swiper-slide">
+                        <a href="electronics.html" class="focus:ring-0 focus:outline-none" style="-webkit-tap-highlight-color: rgba(0,0,0,0);">
+                            <img src="./images2/desktop_mainpage/Rectangle 2434.png" alt="" class="" style="max-height: 400px;">
+                        </a>
+                    </div>
+                    <div class="swiper-slide">
+                        <a href="others.html" class="focus:ring-0 focus:outline-none" style="-webkit-tap-highlight-color: rgba(0,0,0,0);">
+                            <img src="./images2/desktop_mainpage/Rectangle 2434 (1).png" alt="" class="" style="max-height: 400px;">
+                        </a>
+                    </div>
+
+                    <div class="swiper-slide">
+                        <a href="vehicles.html" class="focus:ring-0 focus:outline-none" style="-webkit-tap-highlight-color: rgba(0,0,0,0);">
+                            <img src="./images2/desktop_mainpage/Rectangle 2175.png" alt="" class="" style="max-height: 400px;">
+                        </a>
+                    </div>
+                    <div class="swiper-slide">
+                        <a href="housing.html" class="focus:ring-0 focus:outline-none" style="-webkit-tap-highlight-color: rgba(0,0,0,0);">
+                            <img src="./images2/desktop_mainpage/Rectangle 2431.png" alt="" class="" style="max-height: 400px;">
+                        </a>
+                    </div>
+                    <div class="swiper-slide">
+                        <a href="electronics.html" class="focus:ring-0 focus:outline-none" style="-webkit-tap-highlight-color: rgba(0,0,0,0);">
+                            <img src="./images2/desktop_mainpage/Rectangle 2434.png" alt="" class="" style="max-height: 400px;">
+                        </a>
+                    </div>
+                    <div class="swiper-slide">
+                        <a href="others.html" class="focus:ring-0 focus:outline-none" style="-webkit-tap-highlight-color: rgba(0,0,0,0);">
+                            <img src="./images2/desktop_mainpage/Rectangle 2434 (1).png" alt="" class="" style="max-height: 400px;">
+                        </a>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="flex justify-center mt-10">
+                <div class="flex gap-5 containers">
+                    <div class="border mt-[-12px] border-[#343434] p-3 rounded-xl flex items-center justify-center h-10 w-36 cursor-pointer transition duration-300 ease-in-out bg-[#2D332F] text-white">
+                        Take Rental
+                    </div>
+                    <div class="border mt-[-12px] border-[#2D332F] p-3 rounded-xl flex items-center justify-center h-10 w-36 cursor-pointer transition duration-300 ease-in-out hover:bg-[#2D332F] hover:text-white">
+                        Rent House
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <section class="mt-10">
+            <div class="containers flex gap-14 sm:p-5">
+                <div class="2xl:ml-[-90px]">
+                    <img src="./images2/desktop_mainpage/community card.png" alt="" class="w-[620px] 2xl:w-[720px]">
+                </div>
+                
+                <div class="border border-[#2D332F] p-3 rounded-3xl items-center justify-center h-[315px] 2xl:h-[270px] w-72 2xl:w-96 2xl:ml-[50px]">
+                    <h3 class="text-center mt-10 text-3xl font-extrabold font-gotham-black 2xl:ml-[-25px]">COMMUNITY<span class="text-red-500"> &bull;</span></h3>
+                    <p class="mt-5 text-[#9C9C9C] ml-7">Connect, share, rent: empowering communities with collaborative possibilities.</p>
+                    <div class="flex gap-3 justify-end mt-16 2xl:mt-10">
+                        <div class="h-10 w-10 rounded-full bg-[#717171] flex items-center justify-center">
+                            <img src="./images2/desktop icons/toparrow.png" alt="" class="w-4">
+                        </div>
+                        <div class="h-10 w-10 rounded-full bg-[#717171] flex items-center justify-center">
+                            <img src="./images2/desktop icons/block icon.png" alt="" class="w-4">
+                        </div>
+                    </div>                    
+                </div>
+
+                <div class="relative 2xl:ml-[80px]">
+                    <img src="./images2/desktop_mainpage/desktop_community graph.png" alt="" class="w-full 2xl:w-[350px] h-[320px] 2xl:h-[270px]">
+                    <p class="absolute top-7 left-5 text-white font-extrabold">Community <span class="text-[#DEFF98]"> &bull;</span><br>Members</p>
+                    <p class="absolute top-[88px] 2xl:top-[72px] left-36 2xl:left-[145px] text-white font-extrabold">9800+</p>
+                </div>
+            </div>
+
+            <div class="text-center mt-[-85px] 2xl:mt-[-100px]">
+                <p class="ml-[30px] 2xl:ml-[-230px] text-2xl font-extrabold">SHARING MADE SIMPLE & FAST:<br><span class="ml-48 text-[#949494]">YOUR COMMUNITY, YOUR RENTALS, YOUR WAY!</span></p>
+            </div>
+            
+        </section>
+
+
+        <section class="mt-10">
+            <div class="flex containers gap-8 sm:p-5 ">
+                <div class="mt-[-7px] 2xl:ml-[-50px]">
+                    <img src="./images2/desktop icons/question.png" alt="" class="w-7 mt-1">
+                </div>
+                <div class="mt-[-7px]">
+                    <img src="./images2/desktop icons/ios_share.png" alt="" class="w-6 h-8">
+                </div>
+                <div class="mx-auto text-sm">
+                    RENT VEHICLES INSTANTLY AND ENJOY YOUR JOURNEY
+                </div>
+                <div class="border mt-[-12px] 2xl:mr-[-50px] border-[#343434] p-3 rounded-3xl flex items-center justify-center h-10 w-36 cursor-pointer transition duration-300 ease-in-out hover:bg-black hover:text-white">
+                    Vehicles
+                </div>
+            </div>
+
+            <div class="swiper hiSwiper containers1 ">
+                <div class="swiper-wrapper ml-5 mt-5">
+                    <div class="swiper-slide bg-[#F5F5F5] rounded-2xl">
+                        <div class="w-96 m-5 mb-10">
+                            <img src="./images2/mobile_mainpage/Rectangle 2235.png" alt="" class="w-full">
+                    
+                            <div class="flex justify-evenly mt-3 ml-10">
+                                <div>
+                                <h2 class="font-extrabold ml-[-60px]">BMW M5 COMPETITION</h2>
+                                <p class="ml-[-180px] text-sm font-extrabold">Type - <span class="text-[#9C9C9C]">Sedan</span></p>
+                                <div class="flex mt-5 gap-2 ml-[-60px]">
+                                <div class="w-6 h-6 rounded-full bg-gray-400">
+                                    
+                                </div>
+                                <p class="font-extrabold text-sm text-[#9C9C9C] mt-1">Subhajit Bhattacharjee</p>
+                                </div>
+
+                                </div>
+                                <div>
+                                <p class="mr-[-50px] font-extrabold text-xl">₹4000</p>
+                                <p class="font-extrabold text-sm text-[#9C9C9C] mt-[-3px] ml-16">Hour</p>
+                                </div>
+                                
+                            </div>
+                        </div>
+                    </div>
+                    
+
+                    <div class="swiper-slide bg-[#F5F5F5] rounded-2xl">
+                        <div class="w-96 m-5 mb-10">
+                            <img src="./images2/mobile_mainpage/Rectangle 2235.png" alt="" class="w-full">
+                    
+                            <div class="flex justify-evenly mt-3 ml-10">
+                                <div>
+                                <h2 class="font-extrabold ml-[-60px]">BMW M5 COMPETITION</h2>
+                                <p class="ml-[-180px] text-sm font-extrabold">Type - <span class="text-[#9C9C9C]">Sedan</span></p>
+                                <div class="flex mt-5 gap-2 ml-[-60px]">
+                                <div class="w-6 h-6 rounded-full bg-gray-400">
+                                    
+                                </div>
+                                <p class="font-extrabold text-sm text-[#9C9C9C] mt-1">Barnik Deb</p>
+                                </div>
+
+                                </div>
+                                <div>
+                                <p class="mr-[-50px] font-extrabold text-xl">₹4000</p>
+                                <p class="font-extrabold text-sm text-[#9C9C9C] mt-[-3px] ml-16">Hour</p>
+                                </div>
+                                
+                            </div>
+                        </div>
+                    </div>
+
+                     <div class="swiper-slide bg-[#F5F5F5] rounded-2xl">
+                        <div class="w-96 m-5 mb-10">
+                            <img src="./images2/mobile_mainpage/Rectangle 2235.png" alt="" class="w-full">
+                    
+                            <div class="flex justify-evenly mt-3 ml-10">
+                                <div>
+                                <h2 class="font-extrabold ml-[-60px]">BMW M5 COMPETITION</h2>
+                                <p class="ml-[-180px] text-sm font-extrabold">Type - <span class="text-[#9C9C9C]">Sedan</span></p>
+                                <div class="flex mt-5 gap-2 ml-[-60px]">
+                                <div class="w-6 h-6 rounded-full bg-gray-400">
+                                    
+                                </div>
+                                <p class="font-extrabold text-sm text-[#9C9C9C] mt-1">Kunal Deb</p>
+                                </div>
+
+                                </div>
+                                <div>
+                                <p class="mr-[-50px] font-extrabold text-xl">₹4000</p>
+                                <p class="font-extrabold text-sm text-[#9C9C9C] mt-[-3px] ml-16">Hour</p>
+                                </div>
+                                
+                            </div>
+                        </div>
+                    </div>
+
+                     <div class="swiper-slide bg-[#F5F5F5] rounded-2xl">
+                        <div class="w-96 m-5 mb-10">
+                            <img src="./images2/mobile_mainpage/Rectangle 2235.png" alt="" class="w-full">
+                    
+                            <div class="flex justify-evenly mt-3 ml-10">
+                                <div>
+                                <h2 class="font-extrabold ml-[-60px]">BMW M5 COMPETITION</h2>
+                                <p class="ml-[-180px] text-sm font-extrabold">Type - <span class="text-[#9C9C9C]">Sedan</span></p>
+                                <div class="flex mt-5 gap-2 ml-[-60px]">
+                                <div class="w-6 h-6 rounded-full bg-gray-400">
+                                    
+                                </div>
+                                <p class="font-extrabold text-sm text-[#9C9C9C] mt-1">Tanmoy chakraborty</p>
+                                </div>
+
+                                </div>
+                                <div>
+                                <p class="mr-[-50px] font-extrabold text-xl">₹4000</p>
+                                <p class="font-extrabold text-sm text-[#9C9C9C] mt-[-3px] ml-16">Hour</p>
+                                </div>
+                                
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="swiper-slide bg-[#F5F5F5] rounded-2xl">
+                        <div class="w-96 m-5 mb-10">
+                            <img src="./images2/mobile_mainpage/Rectangle 2235.png" alt="" class="w-full">
+                    
+                            <div class="flex justify-evenly mt-3 ml-10">
+                                <div>
+                                <h2 class="font-extrabold ml-[-60px]">BMW M5 COMPETITION</h2>
+                                <p class="ml-[-180px] text-sm font-extrabold">Type - <span class="text-[#9C9C9C]">Sedan</span></p>
+                                <div class="flex mt-5 gap-2 ml-[-60px]">
+                                <div class="w-6 h-6 rounded-full bg-gray-400">
+                                    
+                                </div>
+                                <p class="font-extrabold text-sm text-[#9C9C9C] mt-1">Saurojit Karmakar</p>
+                                </div>
+
+                                </div>
+                                <div>
+                                <p class="mr-[-50px] font-extrabold text-xl">₹4000</p>
+                                <p class="font-extrabold text-sm text-[#9C9C9C] mt-[-3px] ml-16">Hour</p>
+                                </div>
+                                
+                            </div>
+                        </div>
+                    </div>
+
+                     <div class="swiper-slide bg-[#F5F5F5] rounded-2xl">
+                        <div class="w-96 m-5 mb-10">
+                            <img src="./images2/mobile_mainpage/Rectangle 2235.png" alt="" class="w-full">
+                    
+                            <div class="flex justify-evenly mt-3 ml-10">
+                                <div>
+                                <h2 class="font-extrabold ml-[-60px]">BMW M5 COMPETITION</h2>
+                                <p class="ml-[-180px] text-sm font-extrabold">Type - <span class="text-[#9C9C9C]">Sedan</span></p>
+                                <div class="flex mt-5 gap-2 ml-[-60px]">
+                                <div class="w-6 h-6 rounded-full bg-gray-400">
+                                    
+                                </div>
+                                <p class="font-extrabold text-sm text-[#9C9C9C] mt-1">Soumyadeep Ghose</p>
+                                </div>
+
+                                </div>
+                                <div>
+                                <p class="mr-[-50px] font-extrabold text-xl">₹4000</p>
+                                <p class="font-extrabold text-sm text-[#9C9C9C] mt-[-3px] ml-16">Hour</p>
+                                </div>
+                                
+                            </div>
+                        </div>
+                    </div>
+
+                     <div class="swiper-slide bg-[#F5F5F5] rounded-2xl">
+                        <div class="w-96 m-5 mb-10">
+                            <img src="./images2/mobile_mainpage/Rectangle 2235.png" alt="" class="w-full">
+                    
+                            <div class="flex justify-evenly mt-3 ml-10">
+                                <div>
+                                <h2 class="font-extrabold ml-[-60px]">BMW M5 COMPETITION</h2>
+                                <p class="ml-[-180px] text-sm font-extrabold">Type - <span class="text-[#9C9C9C]">Sedan</span></p>
+                                <div class="flex mt-5 gap-2 ml-[-60px]">
+                                <div class="w-6 h-6 rounded-full bg-gray-400">
+                                    
+                                </div>
+                                <p class="font-extrabold text-sm text-[#9C9C9C] mt-1">Subhajit Bhattacharjee</p>
+                                </div>
+
+                                </div>
+                                <div>
+                                <p class="mr-[-50px] font-extrabold text-xl">₹4000</p>
+                                <p class="font-extrabold text-sm text-[#9C9C9C] mt-[-3px] ml-16">Hour</p>
+                                </div>
+                                
+                            </div>
+                        </div>
+                    </div>
+
+                     <div class="swiper-slide bg-[#F5F5F5] rounded-2xl">
+                        <div class="w-96 m-5 mb-10">
+                            <img src="./images2/mobile_mainpage/Rectangle 2235.png" alt="" class="w-full">
+                    
+                            <div class="flex justify-evenly mt-3 ml-10">
+                                <div>
+                                <h2 class="font-extrabold ml-[-60px]">BMW M5 COMPETITION</h2>
+                                <p class="ml-[-180px] text-sm font-extrabold">Type - <span class="text-[#9C9C9C]">Sedan</span></p>
+                                <div class="flex mt-5 gap-2 ml-[-60px]">
+                                <div class="w-6 h-6 rounded-full bg-gray-400">
+                                    
+                                </div>
+                                <p class="font-extrabold text-sm text-[#9C9C9C] mt-1">Subhajit Bhattacharjee</p>
+                                </div>
+
+                                </div>
+                                <div>
+                                <p class="mr-[-50px] font-extrabold text-xl">₹4000</p>
+                                <p class="font-extrabold text-sm text-[#9C9C9C] mt-[-3px] ml-16">Hour</p>
+                                </div>
+                                
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+        
+        <section class="mt-20">
+            <div class="flex containers gap-8 sm:p-5 ">
+                <div class="mt-[-7px] 2xl:ml-[-50px]">
+                    <img src="./images2/desktop icons/question.png" alt="" class="w-7 mt-1">
+                </div>
+                <div class="mt-[-7px]">
+                    <img src="./images2/desktop icons/ios_share.png" alt="" class="w-6 h-8">
+                </div>
+                <div class="mx-auto text-sm">
+                    EXPLORE ENDLESS POSSIBILITIES IN ELECTRONIC RENTALS
+                </div>
+                <div class="border mt-[-12px] 2xl:mr-[-50px] border-[#343434] p-3 rounded-3xl flex items-center justify-center h-10 w-36 cursor-pointer transition duration-300 ease-in-out hover:bg-black hover:text-white">
+                    Electronics
+                </div>
+            </div>
+
+            <div class="swiper yourSwiper containers1 ">
+                <div class="swiper-wrapper ml-5 mt-5">
+                    <div class="swiper-slide">
+                        <div class="relative bg-[#F5F5F5]  rounded-xl w-64  min-h-full">
+                            <div class="absolute top-0 right-0 mt-2 mr-2 bg-white rounded-full w-10 h-10 justify-center items-center flex">
+                                <div class="heart-container" title="Like">
+                                    <input type="checkbox" class="checkbox" id="Give-It-An-Id">
+                                    <div class="svg-container">
+                                        <svg viewBox="0 0 24 24" class="svg-outline" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M17.5,1.917a6.4,6.4,0,0,0-5.5,3.3,6.4,6.4,0,0,0-5.5-3.3A6.8,6.8,0,0,0,0,8.967c0,4.547,4.786,9.513,8.8,12.88a4.974,4.974,0,0,0,6.4,0C19.214,18.48,24,13.514,24,8.967A6.8,6.8,0,0,0,17.5,1.917Zm-3.585,18.4a2.973,2.973,0,0,1-3.83,0C4.947,16.006,2,11.87,2,8.967a4.8,4.8,0,0,1,4.5-5.05A4.8,4.8,0,0,1,11,8.967a1,1,0,0,0,2,0,4.8,4.8,0,0,1,4.5-5.05A4.8,4.8,0,0,1,22,8.967C22,11.87,19.053,16.006,13.915,20.313Z">
+                                            </path>
+                                        </svg>
+                                        <svg viewBox="0 0 24 24" class="svg-filled" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M17.5,1.917a6.4,6.4,0,0,0-5.5,3.3,6.4,6.4,0,0,0-5.5-3.3A6.8,6.8,0,0,0,0,8.967c0,4.547,4.786,9.513,8.8,12.88a4.974,4.974,0,0,0,6.4,0C19.214,18.48,24,13.514,24,8.967A6.8,6.8,0,0,0,17.5,1.917Z">
+                                            </path>
+                                        </svg>
+                                        <svg class="svg-celebrate" width="100" height="100" xmlns="http://www.w3.org/2000/svg">
+                                            <polygon points="10,10 20,20"></polygon>
+                                            <polygon points="10,50 20,50"></polygon>
+                                            <polygon points="20,80 30,70"></polygon>
+                                            <polygon points="90,10 80,20"></polygon>
+                                            <polygon points="90,50 80,50"></polygon>
+                                            <polygon points="80,80 70,70"></polygon>
+                                        </svg>
+                                    </div>
+                                </div>
+                            </div>
+                            <img src="./images2/mobile_mainpage/Rectangle 2267.png" alt="" class="p-3">
+                            <div class="m-1 text-center mb-2">
+                                <h1 class="font-extrabold text-[15px] ml-[-85px]">Canon xyz Camera</h1>
+                                <p class="text-left font-extrabold text-[15px] ml-3">&#8377; 200<span class="text-[#A9A9A9]"> /Hour</span></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="relative bg-[#F5F5F5]  rounded-xl w-64  min-h-full">
+                <div class="absolute top-0 right-0 mt-2 mr-2 bg-white rounded-full w-10 h-10 justify-center items-center flex">
+                    <div class="heart-container" title="Like">
+                        <input type="checkbox" class="checkbox" id="Give-It-An-Id">
+                        <div class="svg-container">
+                            <svg viewBox="0 0 24 24" class="svg-outline" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M17.5,1.917a6.4,6.4,0,0,0-5.5,3.3,6.4,6.4,0,0,0-5.5-3.3A6.8,6.8,0,0,0,0,8.967c0,4.547,4.786,9.513,8.8,12.88a4.974,4.974,0,0,0,6.4,0C19.214,18.48,24,13.514,24,8.967A6.8,6.8,0,0,0,17.5,1.917Zm-3.585,18.4a2.973,2.973,0,0,1-3.83,0C4.947,16.006,2,11.87,2,8.967a4.8,4.8,0,0,1,4.5-5.05A4.8,4.8,0,0,1,11,8.967a1,1,0,0,0,2,0,4.8,4.8,0,0,1,4.5-5.05A4.8,4.8,0,0,1,22,8.967C22,11.87,19.053,16.006,13.915,20.313Z">
+                                </path>
+                            </svg>
+                            <svg viewBox="0 0 24 24" class="svg-filled" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M17.5,1.917a6.4,6.4,0,0,0-5.5,3.3,6.4,6.4,0,0,0-5.5-3.3A6.8,6.8,0,0,0,0,8.967c0,4.547,4.786,9.513,8.8,12.88a4.974,4.974,0,0,0,6.4,0C19.214,18.48,24,13.514,24,8.967A6.8,6.8,0,0,0,17.5,1.917Z">
+                                </path>
+                            </svg>
+                            <svg class="svg-celebrate" width="100" height="100" xmlns="http://www.w3.org/2000/svg">
+                                <polygon points="10,10 20,20"></polygon>
+                                <polygon points="10,50 20,50"></polygon>
+                                <polygon points="20,80 30,70"></polygon>
+                                <polygon points="90,10 80,20"></polygon>
+                                <polygon points="90,50 80,50"></polygon>
+                                <polygon points="80,80 70,70"></polygon>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+                <img src="./images2/mobile_mainpage/Rectangle 2267.png" alt="" class="p-3">
+                <div class="m-1 text-center mb-2">
+                    <h1 class="font-extrabold text-[15px] ml-[-85px]">Canon xyz Camera</h1>
+                    <p class="text-left font-extrabold text-[15px] ml-3">&#8377; 200<span class="text-[#A9A9A9]"> /Hour</span></p>
+                </div>
+            </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="relative bg-[#F5F5F5]  rounded-xl w-64  min-h-full">
+                <div class="absolute top-0 right-0 mt-2 mr-2 bg-white rounded-full w-10 h-10 justify-center items-center flex">
+                    <div class="heart-container" title="Like">
+                        <input type="checkbox" class="checkbox" id="Give-It-An-Id">
+                        <div class="svg-container">
+                            <svg viewBox="0 0 24 24" class="svg-outline" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M17.5,1.917a6.4,6.4,0,0,0-5.5,3.3,6.4,6.4,0,0,0-5.5-3.3A6.8,6.8,0,0,0,0,8.967c0,4.547,4.786,9.513,8.8,12.88a4.974,4.974,0,0,0,6.4,0C19.214,18.48,24,13.514,24,8.967A6.8,6.8,0,0,0,17.5,1.917Zm-3.585,18.4a2.973,2.973,0,0,1-3.83,0C4.947,16.006,2,11.87,2,8.967a4.8,4.8,0,0,1,4.5-5.05A4.8,4.8,0,0,1,11,8.967a1,1,0,0,0,2,0,4.8,4.8,0,0,1,4.5-5.05A4.8,4.8,0,0,1,22,8.967C22,11.87,19.053,16.006,13.915,20.313Z">
+                                </path>
+                            </svg>
+                            <svg viewBox="0 0 24 24" class="svg-filled" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M17.5,1.917a6.4,6.4,0,0,0-5.5,3.3,6.4,6.4,0,0,0-5.5-3.3A6.8,6.8,0,0,0,0,8.967c0,4.547,4.786,9.513,8.8,12.88a4.974,4.974,0,0,0,6.4,0C19.214,18.48,24,13.514,24,8.967A6.8,6.8,0,0,0,17.5,1.917Z">
+                                </path>
+                            </svg>
+                            <svg class="svg-celebrate" width="100" height="100" xmlns="http://www.w3.org/2000/svg">
+                                <polygon points="10,10 20,20"></polygon>
+                                <polygon points="10,50 20,50"></polygon>
+                                <polygon points="20,80 30,70"></polygon>
+                                <polygon points="90,10 80,20"></polygon>
+                                <polygon points="90,50 80,50"></polygon>
+                                <polygon points="80,80 70,70"></polygon>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+                <img src="./images2/mobile_mainpage/Rectangle 2267.png" alt="" class="p-3">
+                <div class="m-1 text-center mb-2">
+                    <h1 class="font-extrabold text-[15px] ml-[-85px]">Canon xyz Camera</h1>
+                    <p class="text-left font-extrabold text-[15px] ml-3">&#8377; 200<span class="text-[#A9A9A9]"> /Hour</span></p>
+                </div>
+            </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="relative bg-[#F5F5F5]  rounded-xl w-64  min-h-full">
+                <div class="absolute top-0 right-0 mt-2 mr-2 bg-white rounded-full w-10 h-10 justify-center items-center flex">
+                    <div class="heart-container" title="Like">
+                        <input type="checkbox" class="checkbox" id="Give-It-An-Id">
+                        <div class="svg-container">
+                            <svg viewBox="0 0 24 24" class="svg-outline" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M17.5,1.917a6.4,6.4,0,0,0-5.5,3.3,6.4,6.4,0,0,0-5.5-3.3A6.8,6.8,0,0,0,0,8.967c0,4.547,4.786,9.513,8.8,12.88a4.974,4.974,0,0,0,6.4,0C19.214,18.48,24,13.514,24,8.967A6.8,6.8,0,0,0,17.5,1.917Zm-3.585,18.4a2.973,2.973,0,0,1-3.83,0C4.947,16.006,2,11.87,2,8.967a4.8,4.8,0,0,1,4.5-5.05A4.8,4.8,0,0,1,11,8.967a1,1,0,0,0,2,0,4.8,4.8,0,0,1,4.5-5.05A4.8,4.8,0,0,1,22,8.967C22,11.87,19.053,16.006,13.915,20.313Z">
+                                </path>
+                            </svg>
+                            <svg viewBox="0 0 24 24" class="svg-filled" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M17.5,1.917a6.4,6.4,0,0,0-5.5,3.3,6.4,6.4,0,0,0-5.5-3.3A6.8,6.8,0,0,0,0,8.967c0,4.547,4.786,9.513,8.8,12.88a4.974,4.974,0,0,0,6.4,0C19.214,18.48,24,13.514,24,8.967A6.8,6.8,0,0,0,17.5,1.917Z">
+                                </path>
+                            </svg>
+                            <svg class="svg-celebrate" width="100" height="100" xmlns="http://www.w3.org/2000/svg">
+                                <polygon points="10,10 20,20"></polygon>
+                                <polygon points="10,50 20,50"></polygon>
+                                <polygon points="20,80 30,70"></polygon>
+                                <polygon points="90,10 80,20"></polygon>
+                                <polygon points="90,50 80,50"></polygon>
+                                <polygon points="80,80 70,70"></polygon>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+                <img src="./images2/mobile_mainpage/Rectangle 2267.png" alt="" class="p-3">
+                <div class="m-1 text-center mb-2">
+                    <h1 class="font-extrabold text-[15px] ml-[-85px]">Canon xyz Camera</h1>
+                    <p class="text-left font-extrabold text-[15px] ml-3">&#8377; 200<span class="text-[#A9A9A9]"> /Hour</span></p>
+                </div>
+            </div>
+         </div>
+
+                    <div class="swiper-slide">
+                       <div class="relative bg-[#F5F5F5]  rounded-xl w-64  min-h-full">
+                <div class="absolute top-0 right-0 mt-2 mr-2 bg-white rounded-full w-10 h-10 justify-center items-center flex">
+                    <div class="heart-container" title="Like">
+                        <input type="checkbox" class="checkbox" id="Give-It-An-Id">
+                        <div class="svg-container">
+                            <svg viewBox="0 0 24 24" class="svg-outline" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M17.5,1.917a6.4,6.4,0,0,0-5.5,3.3,6.4,6.4,0,0,0-5.5-3.3A6.8,6.8,0,0,0,0,8.967c0,4.547,4.786,9.513,8.8,12.88a4.974,4.974,0,0,0,6.4,0C19.214,18.48,24,13.514,24,8.967A6.8,6.8,0,0,0,17.5,1.917Zm-3.585,18.4a2.973,2.973,0,0,1-3.83,0C4.947,16.006,2,11.87,2,8.967a4.8,4.8,0,0,1,4.5-5.05A4.8,4.8,0,0,1,11,8.967a1,1,0,0,0,2,0,4.8,4.8,0,0,1,4.5-5.05A4.8,4.8,0,0,1,22,8.967C22,11.87,19.053,16.006,13.915,20.313Z">
+                                </path>
+                            </svg>
+                            <svg viewBox="0 0 24 24" class="svg-filled" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M17.5,1.917a6.4,6.4,0,0,0-5.5,3.3,6.4,6.4,0,0,0-5.5-3.3A6.8,6.8,0,0,0,0,8.967c0,4.547,4.786,9.513,8.8,12.88a4.974,4.974,0,0,0,6.4,0C19.214,18.48,24,13.514,24,8.967A6.8,6.8,0,0,0,17.5,1.917Z">
+                                </path>
+                            </svg>
+                            <svg class="svg-celebrate" width="100" height="100" xmlns="http://www.w3.org/2000/svg">
+                                <polygon points="10,10 20,20"></polygon>
+                                <polygon points="10,50 20,50"></polygon>
+                                <polygon points="20,80 30,70"></polygon>
+                                <polygon points="90,10 80,20"></polygon>
+                                <polygon points="90,50 80,50"></polygon>
+                                <polygon points="80,80 70,70"></polygon>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+                <img src="./images2/mobile_mainpage/Rectangle 2267.png" alt="" class="p-3">
+                <div class="m-1 text-center mb-2">
+                    <h1 class="font-extrabold text-[15px] ml-[-85px]">Canon xyz Camera</h1>
+                    <p class="text-left font-extrabold text-[15px] ml-3">&#8377; 200<span class="text-[#A9A9A9]"> /Hour</span></p>
+                </div>
+            </div>
+                    </div>
+                    <div class="swiper-slide">
+                       <div class="relative bg-[#F5F5F5]  rounded-xl w-64  min-h-full">
+                <div class="absolute top-0 right-0 mt-2 mr-2 bg-white rounded-full w-10 h-10 justify-center items-center flex">
+                    <div class="heart-container" title="Like">
+                        <input type="checkbox" class="checkbox" id="Give-It-An-Id">
+                        <div class="svg-container">
+                            <svg viewBox="0 0 24 24" class="svg-outline" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M17.5,1.917a6.4,6.4,0,0,0-5.5,3.3,6.4,6.4,0,0,0-5.5-3.3A6.8,6.8,0,0,0,0,8.967c0,4.547,4.786,9.513,8.8,12.88a4.974,4.974,0,0,0,6.4,0C19.214,18.48,24,13.514,24,8.967A6.8,6.8,0,0,0,17.5,1.917Zm-3.585,18.4a2.973,2.973,0,0,1-3.83,0C4.947,16.006,2,11.87,2,8.967a4.8,4.8,0,0,1,4.5-5.05A4.8,4.8,0,0,1,11,8.967a1,1,0,0,0,2,0,4.8,4.8,0,0,1,4.5-5.05A4.8,4.8,0,0,1,22,8.967C22,11.87,19.053,16.006,13.915,20.313Z">
+                                </path>
+                            </svg>
+                            <svg viewBox="0 0 24 24" class="svg-filled" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M17.5,1.917a6.4,6.4,0,0,0-5.5,3.3,6.4,6.4,0,0,0-5.5-3.3A6.8,6.8,0,0,0,0,8.967c0,4.547,4.786,9.513,8.8,12.88a4.974,4.974,0,0,0,6.4,0C19.214,18.48,24,13.514,24,8.967A6.8,6.8,0,0,0,17.5,1.917Z">
+                                </path>
+                            </svg>
+                            <svg class="svg-celebrate" width="100" height="100" xmlns="http://www.w3.org/2000/svg">
+                                <polygon points="10,10 20,20"></polygon>
+                                <polygon points="10,50 20,50"></polygon>
+                                <polygon points="20,80 30,70"></polygon>
+                                <polygon points="90,10 80,20"></polygon>
+                                <polygon points="90,50 80,50"></polygon>
+                                <polygon points="80,80 70,70"></polygon>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+                <img src="./images2/mobile_mainpage/Rectangle 2267.png" alt="" class="p-3">
+                <div class="m-1 text-center mb-2">
+                    <h1 class="font-extrabold text-[15px] ml-[-85px]">Canon xyz Camera</h1>
+                    <p class="text-left font-extrabold text-[15px] ml-3">&#8377; 200<span class="text-[#A9A9A9]"> /Hour</span></p>
+                </div>
+            </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="relative bg-[#F5F5F5]  rounded-xl w-64  min-h-full">
+                <div class="absolute top-0 right-0 mt-2 mr-2 bg-white rounded-full w-10 h-10 justify-center items-center flex">
+                    <div class="heart-container" title="Like">
+                        <input type="checkbox" class="checkbox" id="Give-It-An-Id">
+                        <div class="svg-container">
+                            <svg viewBox="0 0 24 24" class="svg-outline" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M17.5,1.917a6.4,6.4,0,0,0-5.5,3.3,6.4,6.4,0,0,0-5.5-3.3A6.8,6.8,0,0,0,0,8.967c0,4.547,4.786,9.513,8.8,12.88a4.974,4.974,0,0,0,6.4,0C19.214,18.48,24,13.514,24,8.967A6.8,6.8,0,0,0,17.5,1.917Zm-3.585,18.4a2.973,2.973,0,0,1-3.83,0C4.947,16.006,2,11.87,2,8.967a4.8,4.8,0,0,1,4.5-5.05A4.8,4.8,0,0,1,11,8.967a1,1,0,0,0,2,0,4.8,4.8,0,0,1,4.5-5.05A4.8,4.8,0,0,1,22,8.967C22,11.87,19.053,16.006,13.915,20.313Z">
+                                </path>
+                            </svg>
+                            <svg viewBox="0 0 24 24" class="svg-filled" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M17.5,1.917a6.4,6.4,0,0,0-5.5,3.3,6.4,6.4,0,0,0-5.5-3.3A6.8,6.8,0,0,0,0,8.967c0,4.547,4.786,9.513,8.8,12.88a4.974,4.974,0,0,0,6.4,0C19.214,18.48,24,13.514,24,8.967A6.8,6.8,0,0,0,17.5,1.917Z">
+                                </path>
+                            </svg>
+                            <svg class="svg-celebrate" width="100" height="100" xmlns="http://www.w3.org/2000/svg">
+                                <polygon points="10,10 20,20"></polygon>
+                                <polygon points="10,50 20,50"></polygon>
+                                <polygon points="20,80 30,70"></polygon>
+                                <polygon points="90,10 80,20"></polygon>
+                                <polygon points="90,50 80,50"></polygon>
+                                <polygon points="80,80 70,70"></polygon>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+                <img src="./images2/mobile_mainpage/Rectangle 2267.png" alt="" class="p-3">
+                <div class="m-1 text-center mb-2">
+                    <h1 class="font-extrabold text-[15px] ml-[-85px]">Canon xyz Camera</h1>
+                    <p class="text-left font-extrabold text-[15px] ml-3">&#8377; 200<span class="text-[#A9A9A9]"> /Hour</span></p>
+                </div>
+            </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="relative bg-[#F5F5F5]  rounded-xl w-64  min-h-full">
+                <div class="absolute top-0 right-0 mt-2 mr-2 bg-white rounded-full w-10 h-10 justify-center items-center flex">
+                    <div class="heart-container" title="Like">
+                        <input type="checkbox" class="checkbox" id="Give-It-An-Id">
+                        <div class="svg-container">
+                            <svg viewBox="0 0 24 24" class="svg-outline" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M17.5,1.917a6.4,6.4,0,0,0-5.5,3.3,6.4,6.4,0,0,0-5.5-3.3A6.8,6.8,0,0,0,0,8.967c0,4.547,4.786,9.513,8.8,12.88a4.974,4.974,0,0,0,6.4,0C19.214,18.48,24,13.514,24,8.967A6.8,6.8,0,0,0,17.5,1.917Zm-3.585,18.4a2.973,2.973,0,0,1-3.83,0C4.947,16.006,2,11.87,2,8.967a4.8,4.8,0,0,1,4.5-5.05A4.8,4.8,0,0,1,11,8.967a1,1,0,0,0,2,0,4.8,4.8,0,0,1,4.5-5.05A4.8,4.8,0,0,1,22,8.967C22,11.87,19.053,16.006,13.915,20.313Z">
+                                </path>
+                            </svg>
+                            <svg viewBox="0 0 24 24" class="svg-filled" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M17.5,1.917a6.4,6.4,0,0,0-5.5,3.3,6.4,6.4,0,0,0-5.5-3.3A6.8,6.8,0,0,0,0,8.967c0,4.547,4.786,9.513,8.8,12.88a4.974,4.974,0,0,0,6.4,0C19.214,18.48,24,13.514,24,8.967A6.8,6.8,0,0,0,17.5,1.917Z">
+                                </path>
+                            </svg>
+                            <svg class="svg-celebrate" width="100" height="100" xmlns="http://www.w3.org/2000/svg">
+                                <polygon points="10,10 20,20"></polygon>
+                                <polygon points="10,50 20,50"></polygon>
+                                <polygon points="20,80 30,70"></polygon>
+                                <polygon points="90,10 80,20"></polygon>
+                                <polygon points="90,50 80,50"></polygon>
+                                <polygon points="80,80 70,70"></polygon>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+                <img src="./images2/mobile_mainpage/Rectangle 2267.png" alt="" class="p-3">
+                <div class="m-1 text-center mb-2">
+                    <h1 class="font-extrabold text-[15px] ml-[-85px]">Canon xyz Camera</h1>
+                    <p class="text-left font-extrabold text-[15px] ml-3">&#8377; 200<span class="text-[#A9A9A9]"> /Hour</span></p>
+                </div>
+            </div>
+                    </div>
+
+                </div>
+            </div>
+            
+        </section>
+
+
+        <section class="mt-20">
+            <div class="flex containers">
+                <div class="ml-12">
+                    <h2 class="text-3xl font-gotham-black font-black">THE MIDDLEMEN GROUP!</h2>
+                    <h3 class="text-3xl mt-5 text-[#949494] font-extrabold leading-snug">GET A CHANCE TO WORK AS A CERTIFIED<br><span class="px-5 rounded-md py-1 bg-[#094446] font-extrabold text-white">MIDDLEMEN</span>
+                        AND LET'S GROW TOGETHER!</h3>
+                        <div class="flex mt-10 gap-36">
+                            <p>Register through our website and we will notify your<br> immediately</p>
+                            <div class="border mt-[-12px] 2xl:mr-[-50px] border-[#094446] p-3 text-[#094446] font-extrabold rounded-3xl flex items-center justify-center h-10 w-32 cursor-pointer transition duration-300 ease-in-out hover:bg-[#094446] hover:text-white">
+                                Register Now
+                            </div>
+                        </div>
+                </div>
+                <div class="containers">
+                    <img src="./images2/desktop_mainpage/middleman card.png" alt="" class="w-[420px]">
+                </div>
+            </div>
+        </section>
+
+        <section class="mt-10">
+            <div class="flex containers gap-8 sm:p-5 ">
+                <div class="mt-[-7px] 2xl:ml-[-50px]">
+                    <img src="./images2/desktop icons/question.png" alt="" class="w-7 mt-1">
+                </div>
+                <div class="mt-[-7px]">
+                    <img src="./images2/desktop icons/ios_share.png" alt="" class="w-6 h-8">
+                </div>
+                <div class="mx-auto text-sm">
+                    RENT ANYTHING AT YOUR FINGERTIPS
+                </div>
+                <div class="border mt-[-12px] 2xl:mr-[-50px] border-[#343434] p-3 rounded-3xl flex items-center justify-center h-10 w-36 cursor-pointer transition duration-300 ease-in-out hover:bg-black hover:text-white">
+                    others
+                </div>
+            </div>
+
+            <div class="swiper othersSwiper containers1 ">
+                <div class="swiper-wrapper ml-5 mt-5">
+                    <div class="swiper-slide">
+                        <div class="relative bg-[#F5F5F5] rounded-xl w-64 mr-3 min-h-full">
+                            <div class="absolute top-0 right-0 mt-2 mr-2 bg-white rounded-full w-10 h-10 justify-center items-center flex">
+                                <div class="heart-container" title="Like">
+                                    <input type="checkbox" class="checkbox" id="Give-It-An-Id">
+                                    <div class="svg-container">
+                                        <svg viewBox="0 0 24 24" class="svg-outline" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M17.5,1.917a6.4,6.4,0,0,0-5.5,3.3,6.4,6.4,0,0,0-5.5-3.3A6.8,6.8,0,0,0,0,8.967c0,4.547,4.786,9.513,8.8,12.88a4.974,4.974,0,0,0,6.4,0C19.214,18.48,24,13.514,24,8.967A6.8,6.8,0,0,0,17.5,1.917Zm-3.585,18.4a2.973,2.973,0,0,1-3.83,0C4.947,16.006,2,11.87,2,8.967a4.8,4.8,0,0,1,4.5-5.05A4.8,4.8,0,0,1,11,8.967a1,1,0,0,0,2,0,4.8,4.8,0,0,1,4.5-5.05A4.8,4.8,0,0,1,22,8.967C22,11.87,19.053,16.006,13.915,20.313Z">
+                                            </path>
+                                        </svg>
+                                        <svg viewBox="0 0 24 24" class="svg-filled" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M17.5,1.917a6.4,6.4,0,0,0-5.5,3.3,6.4,6.4,0,0,0-5.5-3.3A6.8,6.8,0,0,0,0,8.967c0,4.547,4.786,9.513,8.8,12.88a4.974,4.974,0,0,0,6.4,0C19.214,18.48,24,13.514,24,8.967A6.8,6.8,0,0,0,17.5,1.917Z">
+                                            </path>
+                                        </svg>
+                                        <svg class="svg-celebrate" width="100" height="100" xmlns="http://www.w3.org/2000/svg">
+                                            <polygon points="10,10 20,20"></polygon>
+                                            <polygon points="10,50 20,50"></polygon>
+                                            <polygon points="20,80 30,70"></polygon>
+                                            <polygon points="90,10 80,20"></polygon>
+                                            <polygon points="90,50 80,50"></polygon>
+                                            <polygon points="80,80 70,70"></polygon>
+                                        </svg>
+                                    </div>
+                                </div>
+                            </div>
+                            <img src="./images2/mobile_mainpage/Rectangle 2267 (1).png" alt="" class="p-3">
+                            <div class="m-1 ml-3 mb-2">
+                                <h1 class="font-extrabold text-[15px] ml-[-150px]">Guitar</h1>
+                                <p class="text-left font-extrabold text-[15px] ml-2">&#8377; 900<span class="text-[#A9A9A9]"> /Hour</span></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="relative bg-[#F5F5F5] rounded-xl w-64 mr-3 min-h-full">
+                            <div class="absolute top-0 right-0 mt-2 mr-2 bg-white rounded-full w-10 h-10 justify-center items-center flex">
+                                <div class="heart-container" title="Like">
+                                    <input type="checkbox" class="checkbox" id="Give-It-An-Id">
+                                    <div class="svg-container">
+                                        <svg viewBox="0 0 24 24" class="svg-outline" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M17.5,1.917a6.4,6.4,0,0,0-5.5,3.3,6.4,6.4,0,0,0-5.5-3.3A6.8,6.8,0,0,0,0,8.967c0,4.547,4.786,9.513,8.8,12.88a4.974,4.974,0,0,0,6.4,0C19.214,18.48,24,13.514,24,8.967A6.8,6.8,0,0,0,17.5,1.917Zm-3.585,18.4a2.973,2.973,0,0,1-3.83,0C4.947,16.006,2,11.87,2,8.967a4.8,4.8,0,0,1,4.5-5.05A4.8,4.8,0,0,1,11,8.967a1,1,0,0,0,2,0,4.8,4.8,0,0,1,4.5-5.05A4.8,4.8,0,0,1,22,8.967C22,11.87,19.053,16.006,13.915,20.313Z">
+                                            </path>
+                                        </svg>
+                                        <svg viewBox="0 0 24 24" class="svg-filled" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M17.5,1.917a6.4,6.4,0,0,0-5.5,3.3,6.4,6.4,0,0,0-5.5-3.3A6.8,6.8,0,0,0,0,8.967c0,4.547,4.786,9.513,8.8,12.88a4.974,4.974,0,0,0,6.4,0C19.214,18.48,24,13.514,24,8.967A6.8,6.8,0,0,0,17.5,1.917Z">
+                                            </path>
+                                        </svg>
+                                        <svg class="svg-celebrate" width="100" height="100" xmlns="http://www.w3.org/2000/svg">
+                                            <polygon points="10,10 20,20"></polygon>
+                                            <polygon points="10,50 20,50"></polygon>
+                                            <polygon points="20,80 30,70"></polygon>
+                                            <polygon points="90,10 80,20"></polygon>
+                                            <polygon points="90,50 80,50"></polygon>
+                                            <polygon points="80,80 70,70"></polygon>
+                                        </svg>
+                                    </div>
+                                </div>
+                            </div>
+                            <img src="./images2/mobile_mainpage/Rectangle 2267 (1).png" alt="" class="p-3">
+                            <div class="m-1 ml-3 mb-2">
+                                <h1 class="font-extrabold text-[15px] ml-[-150px]">Guitar</h1>
+                                <p class="text-left font-extrabold text-[15px] ml-2">&#8377; 900<span class="text-[#A9A9A9]"> /Hour</span></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="relative bg-[#F5F5F5] rounded-xl w-64 mr-3 min-h-full">
+                            <div class="absolute top-0 right-0 mt-2 mr-2 bg-white rounded-full w-10 h-10 justify-center items-center flex">
+                                <div class="heart-container" title="Like">
+                                    <input type="checkbox" class="checkbox" id="Give-It-An-Id">
+                                    <div class="svg-container">
+                                        <svg viewBox="0 0 24 24" class="svg-outline" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M17.5,1.917a6.4,6.4,0,0,0-5.5,3.3,6.4,6.4,0,0,0-5.5-3.3A6.8,6.8,0,0,0,0,8.967c0,4.547,4.786,9.513,8.8,12.88a4.974,4.974,0,0,0,6.4,0C19.214,18.48,24,13.514,24,8.967A6.8,6.8,0,0,0,17.5,1.917Zm-3.585,18.4a2.973,2.973,0,0,1-3.83,0C4.947,16.006,2,11.87,2,8.967a4.8,4.8,0,0,1,4.5-5.05A4.8,4.8,0,0,1,11,8.967a1,1,0,0,0,2,0,4.8,4.8,0,0,1,4.5-5.05A4.8,4.8,0,0,1,22,8.967C22,11.87,19.053,16.006,13.915,20.313Z">
+                                            </path>
+                                        </svg>
+                                        <svg viewBox="0 0 24 24" class="svg-filled" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M17.5,1.917a6.4,6.4,0,0,0-5.5,3.3,6.4,6.4,0,0,0-5.5-3.3A6.8,6.8,0,0,0,0,8.967c0,4.547,4.786,9.513,8.8,12.88a4.974,4.974,0,0,0,6.4,0C19.214,18.48,24,13.514,24,8.967A6.8,6.8,0,0,0,17.5,1.917Z">
+                                            </path>
+                                        </svg>
+                                        <svg class="svg-celebrate" width="100" height="100" xmlns="http://www.w3.org/2000/svg">
+                                            <polygon points="10,10 20,20"></polygon>
+                                            <polygon points="10,50 20,50"></polygon>
+                                            <polygon points="20,80 30,70"></polygon>
+                                            <polygon points="90,10 80,20"></polygon>
+                                            <polygon points="90,50 80,50"></polygon>
+                                            <polygon points="80,80 70,70"></polygon>
+                                        </svg>
+                                    </div>
+                                </div>
+                            </div>
+                            <img src="./images2/mobile_mainpage/Rectangle 2267 (1).png" alt="" class="p-3">
+                            <div class="m-1 ml-3 mb-2">
+                                <h1 class="font-extrabold text-[15px] ml-[-150px]">Guitar</h1>
+                                <p class="text-left font-extrabold text-[15px] ml-2">&#8377; 900<span class="text-[#A9A9A9]"> /Hour</span></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="relative bg-[#F5F5F5] rounded-xl w-64 mr-3 min-h-full">
+                            <div class="absolute top-0 right-0 mt-2 mr-2 bg-white rounded-full w-10 h-10 justify-center items-center flex">
+                                <div class="heart-container" title="Like">
+                                    <input type="checkbox" class="checkbox" id="Give-It-An-Id">
+                                    <div class="svg-container">
+                                        <svg viewBox="0 0 24 24" class="svg-outline" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M17.5,1.917a6.4,6.4,0,0,0-5.5,3.3,6.4,6.4,0,0,0-5.5-3.3A6.8,6.8,0,0,0,0,8.967c0,4.547,4.786,9.513,8.8,12.88a4.974,4.974,0,0,0,6.4,0C19.214,18.48,24,13.514,24,8.967A6.8,6.8,0,0,0,17.5,1.917Zm-3.585,18.4a2.973,2.973,0,0,1-3.83,0C4.947,16.006,2,11.87,2,8.967a4.8,4.8,0,0,1,4.5-5.05A4.8,4.8,0,0,1,11,8.967a1,1,0,0,0,2,0,4.8,4.8,0,0,1,4.5-5.05A4.8,4.8,0,0,1,22,8.967C22,11.87,19.053,16.006,13.915,20.313Z">
+                                            </path>
+                                        </svg>
+                                        <svg viewBox="0 0 24 24" class="svg-filled" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M17.5,1.917a6.4,6.4,0,0,0-5.5,3.3,6.4,6.4,0,0,0-5.5-3.3A6.8,6.8,0,0,0,0,8.967c0,4.547,4.786,9.513,8.8,12.88a4.974,4.974,0,0,0,6.4,0C19.214,18.48,24,13.514,24,8.967A6.8,6.8,0,0,0,17.5,1.917Z">
+                                            </path>
+                                        </svg>
+                                        <svg class="svg-celebrate" width="100" height="100" xmlns="http://www.w3.org/2000/svg">
+                                            <polygon points="10,10 20,20"></polygon>
+                                            <polygon points="10,50 20,50"></polygon>
+                                            <polygon points="20,80 30,70"></polygon>
+                                            <polygon points="90,10 80,20"></polygon>
+                                            <polygon points="90,50 80,50"></polygon>
+                                            <polygon points="80,80 70,70"></polygon>
+                                        </svg>
+                                    </div>
+                                </div>
+                            </div>
+                            <img src="./images2/mobile_mainpage/Rectangle 2267 (1).png" alt="" class="p-3">
+                            <div class="m-1 ml-3 mb-2">
+                                <h1 class="font-extrabold text-[15px] ml-[-150px]">Guitar</h1>
+                                <p class="text-left font-extrabold text-[15px] ml-2">&#8377; 900<span class="text-[#A9A9A9]"> /Hour</span></p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="swiper-slide">
+                        <div class="relative bg-[#F5F5F5] rounded-xl w-64 mr-3 min-h-full">
+                <div class="absolute top-0 right-0 mt-2 mr-2 bg-white rounded-full w-10 h-10 justify-center items-center flex">
+                    <div class="heart-container" title="Like">
+                        <input type="checkbox" class="checkbox" id="Give-It-An-Id">
+                        <div class="svg-container">
+                            <svg viewBox="0 0 24 24" class="svg-outline" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M17.5,1.917a6.4,6.4,0,0,0-5.5,3.3,6.4,6.4,0,0,0-5.5-3.3A6.8,6.8,0,0,0,0,8.967c0,4.547,4.786,9.513,8.8,12.88a4.974,4.974,0,0,0,6.4,0C19.214,18.48,24,13.514,24,8.967A6.8,6.8,0,0,0,17.5,1.917Zm-3.585,18.4a2.973,2.973,0,0,1-3.83,0C4.947,16.006,2,11.87,2,8.967a4.8,4.8,0,0,1,4.5-5.05A4.8,4.8,0,0,1,11,8.967a1,1,0,0,0,2,0,4.8,4.8,0,0,1,4.5-5.05A4.8,4.8,0,0,1,22,8.967C22,11.87,19.053,16.006,13.915,20.313Z">
+                                </path>
+                            </svg>
+                            <svg viewBox="0 0 24 24" class="svg-filled" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M17.5,1.917a6.4,6.4,0,0,0-5.5,3.3,6.4,6.4,0,0,0-5.5-3.3A6.8,6.8,0,0,0,0,8.967c0,4.547,4.786,9.513,8.8,12.88a4.974,4.974,0,0,0,6.4,0C19.214,18.48,24,13.514,24,8.967A6.8,6.8,0,0,0,17.5,1.917Z">
+                                </path>
+                            </svg>
+                            <svg class="svg-celebrate" width="100" height="100" xmlns="http://www.w3.org/2000/svg">
+                                <polygon points="10,10 20,20"></polygon>
+                                <polygon points="10,50 20,50"></polygon>
+                                <polygon points="20,80 30,70"></polygon>
+                                <polygon points="90,10 80,20"></polygon>
+                                <polygon points="90,50 80,50"></polygon>
+                                <polygon points="80,80 70,70"></polygon>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+                <img src="./images2/mobile_mainpage/Rectangle 2267 (1).png" alt="" class="p-3">
+                <div class="m-1 ml-3 mb-2">
+                    <h1 class="font-extrabold text-[15px] ml-[-150px]">Guitar</h1>
+                    <p class="text-left font-extrabold text-[15px] ml-2">&#8377; 900<span class="text-[#A9A9A9]"> /Hour</span></p>
+                </div>
+            </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="relative bg-[#F5F5F5] rounded-xl w-64 mr-3 min-h-full">
+                            <div class="absolute top-0 right-0 mt-2 mr-2 bg-white rounded-full w-10 h-10 justify-center items-center flex">
+                                <div class="heart-container" title="Like">
+                                    <input type="checkbox" class="checkbox" id="Give-It-An-Id">
+                                    <div class="svg-container">
+                                        <svg viewBox="0 0 24 24" class="svg-outline" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M17.5,1.917a6.4,6.4,0,0,0-5.5,3.3,6.4,6.4,0,0,0-5.5-3.3A6.8,6.8,0,0,0,0,8.967c0,4.547,4.786,9.513,8.8,12.88a4.974,4.974,0,0,0,6.4,0C19.214,18.48,24,13.514,24,8.967A6.8,6.8,0,0,0,17.5,1.917Zm-3.585,18.4a2.973,2.973,0,0,1-3.83,0C4.947,16.006,2,11.87,2,8.967a4.8,4.8,0,0,1,4.5-5.05A4.8,4.8,0,0,1,11,8.967a1,1,0,0,0,2,0,4.8,4.8,0,0,1,4.5-5.05A4.8,4.8,0,0,1,22,8.967C22,11.87,19.053,16.006,13.915,20.313Z">
+                                            </path>
+                                        </svg>
+                                        <svg viewBox="0 0 24 24" class="svg-filled" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M17.5,1.917a6.4,6.4,0,0,0-5.5,3.3,6.4,6.4,0,0,0-5.5-3.3A6.8,6.8,0,0,0,0,8.967c0,4.547,4.786,9.513,8.8,12.88a4.974,4.974,0,0,0,6.4,0C19.214,18.48,24,13.514,24,8.967A6.8,6.8,0,0,0,17.5,1.917Z">
+                                            </path>
+                                        </svg>
+                                        <svg class="svg-celebrate" width="100" height="100" xmlns="http://www.w3.org/2000/svg">
+                                            <polygon points="10,10 20,20"></polygon>
+                                            <polygon points="10,50 20,50"></polygon>
+                                            <polygon points="20,80 30,70"></polygon>
+                                            <polygon points="90,10 80,20"></polygon>
+                                            <polygon points="90,50 80,50"></polygon>
+                                            <polygon points="80,80 70,70"></polygon>
+                                        </svg>
+                                    </div>
+                                </div>
+                            </div>
+                            <img src="./images2/mobile_mainpage/Rectangle 2267 (1).png" alt="" class="p-3">
+                            <div class="m-1 ml-3 mb-2">
+                                <h1 class="font-extrabold text-[15px] ml-[-150px]">Guitar</h1>
+                                <p class="text-left font-extrabold text-[15px] ml-2">&#8377; 900<span class="text-[#A9A9A9]"> /Hour</span></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="relative bg-[#F5F5F5] rounded-xl w-64 mr-3 min-h-full">
+                            <div class="absolute top-0 right-0 mt-2 mr-2 bg-white rounded-full w-10 h-10 justify-center items-center flex">
+                                <div class="heart-container" title="Like">
+                                    <input type="checkbox" class="checkbox" id="Give-It-An-Id">
+                                    <div class="svg-container">
+                                        <svg viewBox="0 0 24 24" class="svg-outline" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M17.5,1.917a6.4,6.4,0,0,0-5.5,3.3,6.4,6.4,0,0,0-5.5-3.3A6.8,6.8,0,0,0,0,8.967c0,4.547,4.786,9.513,8.8,12.88a4.974,4.974,0,0,0,6.4,0C19.214,18.48,24,13.514,24,8.967A6.8,6.8,0,0,0,17.5,1.917Zm-3.585,18.4a2.973,2.973,0,0,1-3.83,0C4.947,16.006,2,11.87,2,8.967a4.8,4.8,0,0,1,4.5-5.05A4.8,4.8,0,0,1,11,8.967a1,1,0,0,0,2,0,4.8,4.8,0,0,1,4.5-5.05A4.8,4.8,0,0,1,22,8.967C22,11.87,19.053,16.006,13.915,20.313Z">
+                                            </path>
+                                        </svg>
+                                        <svg viewBox="0 0 24 24" class="svg-filled" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M17.5,1.917a6.4,6.4,0,0,0-5.5,3.3,6.4,6.4,0,0,0-5.5-3.3A6.8,6.8,0,0,0,0,8.967c0,4.547,4.786,9.513,8.8,12.88a4.974,4.974,0,0,0,6.4,0C19.214,18.48,24,13.514,24,8.967A6.8,6.8,0,0,0,17.5,1.917Z">
+                                            </path>
+                                        </svg>
+                                        <svg class="svg-celebrate" width="100" height="100" xmlns="http://www.w3.org/2000/svg">
+                                            <polygon points="10,10 20,20"></polygon>
+                                            <polygon points="10,50 20,50"></polygon>
+                                            <polygon points="20,80 30,70"></polygon>
+                                            <polygon points="90,10 80,20"></polygon>
+                                            <polygon points="90,50 80,50"></polygon>
+                                            <polygon points="80,80 70,70"></polygon>
+                                        </svg>
+                                    </div>
+                                </div>
+                            </div>
+                            <img src="./images2/mobile_mainpage/Rectangle 2267 (1).png" alt="" class="p-3">
+                            <div class="m-1 ml-3 mb-2">
+                                <h1 class="font-extrabold text-[15px] ml-[-150px]">Guitar</h1>
+                                <p class="text-left font-extrabold text-[15px] ml-2">&#8377; 900<span class="text-[#A9A9A9]"> /Hour</span></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="relative bg-[#F5F5F5] rounded-xl w-64 mr-3 min-h-full">
+                            <div class="absolute top-0 right-0 mt-2 mr-2 bg-white rounded-full w-10 h-10 justify-center items-center flex">
+                                <div class="heart-container" title="Like">
+                                    <input type="checkbox" class="checkbox" id="Give-It-An-Id">
+                                    <div class="svg-container">
+                                        <svg viewBox="0 0 24 24" class="svg-outline" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M17.5,1.917a6.4,6.4,0,0,0-5.5,3.3,6.4,6.4,0,0,0-5.5-3.3A6.8,6.8,0,0,0,0,8.967c0,4.547,4.786,9.513,8.8,12.88a4.974,4.974,0,0,0,6.4,0C19.214,18.48,24,13.514,24,8.967A6.8,6.8,0,0,0,17.5,1.917Zm-3.585,18.4a2.973,2.973,0,0,1-3.83,0C4.947,16.006,2,11.87,2,8.967a4.8,4.8,0,0,1,4.5-5.05A4.8,4.8,0,0,1,11,8.967a1,1,0,0,0,2,0,4.8,4.8,0,0,1,4.5-5.05A4.8,4.8,0,0,1,22,8.967C22,11.87,19.053,16.006,13.915,20.313Z">
+                                            </path>
+                                        </svg>
+                                        <svg viewBox="0 0 24 24" class="svg-filled" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M17.5,1.917a6.4,6.4,0,0,0-5.5,3.3,6.4,6.4,0,0,0-5.5-3.3A6.8,6.8,0,0,0,0,8.967c0,4.547,4.786,9.513,8.8,12.88a4.974,4.974,0,0,0,6.4,0C19.214,18.48,24,13.514,24,8.967A6.8,6.8,0,0,0,17.5,1.917Z">
+                                            </path>
+                                        </svg>
+                                        <svg class="svg-celebrate" width="100" height="100" xmlns="http://www.w3.org/2000/svg">
+                                            <polygon points="10,10 20,20"></polygon>
+                                            <polygon points="10,50 20,50"></polygon>
+                                            <polygon points="20,80 30,70"></polygon>
+                                            <polygon points="90,10 80,20"></polygon>
+                                            <polygon points="90,50 80,50"></polygon>
+                                            <polygon points="80,80 70,70"></polygon>
+                                        </svg>
+                                    </div>
+                                </div>
+                            </div>
+                            <img src="./images2/mobile_mainpage/Rectangle 2267 (1).png" alt="" class="p-3">
+                            <div class="m-1 ml-3 mb-2">
+                                <h1 class="font-extrabold text-[15px] ml-[-150px]">Guitar</h1>
+                                <p class="text-left font-extrabold text-[15px] ml-2">&#8377; 900<span class="text-[#A9A9A9]"> /Hour</span></p>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            
+        </section>
+
+        <section class="mt-20">
+            <div class="containers gap-20 flex relative sm:p-5">
+                <div class="flex absolute left-[350px] text-2xl top-[15px]">
+                    <div>
+                    <p class="font-extrabold font-gotham-black text-[#094446]">SEE WHAT WE ARE BREWING :</p>
+                    <p class="font-extrabold font-gotham-black text-[#949494]">HAVE A TRACK ON WHAT'S NEW ON TNENNT.</p>
+                    </div>
+                    <div class="sm:p-5">
+                        <p class="text-[13px] mt-[-30px] leading-normal ml-[200px] font-extrabold font-gotham-black text-[#949494]">Stay ahead with<br> our latest updates,<br> elevating your<br> rental experience</p>
+                    </div>
+                </div>
+                <div class="">
+                    <img src="./images2/desktop_mainpage/update card.png" alt="" class="w-[420px]">
+                </div>
+                <div class="px-44 py-20 mt-28 bg-[#EDEDED] rounded-2xl"></div>
+                <div class="px-44 py-20 mt-28 bg-[#EDEDED] rounded-2xl"></div>
+            </div>
+        </section>
+
+   
+
+        <section class="mt-20">
+            <div class="flex gap-10 containers">
+                <h3 class="text-3xl ml-20 text-[#949494] font-semi-bold">
+                    Share your thoughts and reviews with us<br> so that we could improve
+                </h3>
+                <div class="ml-auto mr-10">
+                <p class="font-black text-xl font-gotham-black text-[#094446]">TRUSTED BY PEOPLE</p>
+                <div class="border mt-[10px] ml-10 border-[#094446] p-3 text-[#094446] font-extrabold rounded-3xl flex items-center justify-center h-10 w-40 cursor-pointer transition duration-300 ease-in-out hover:bg-[#094446] hover:text-white">
+                    Share Your Review
+                </div>
+                </div>
+            </div>
+        </section>
+
+
+        <section class="mt-20">
+            <div class="containers relative">
+                <div id="slide1" class=" top-0 left-0">
+                    <img src="./images2/desktop_mainpage/review card.png" alt="" class="w-[1200px] mx-auto">
+                    <div class="absolute top-0 border mt-[16px] ml-28 border-[#343434] p-3 text-[#343434] font-extrabold rounded-3xl flex items-center justify-center h-10 w-40 cursor-pointer transition duration-300 ease-in-out hover:bg-[#343434] hover:text-white">
+                        Customer Review
+                    </div>   
+                    <div class="flex absolute top-28 ml-36">
+                        <div class="">
+                            <p class="mr-[150px] text-md font-bold text-[#696969] leading-relaxed">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Laborum id neque repellat commodi. Aut qui reprehenderit tenetur rerum perspiciatis minus temporibus ullam at, quod, cupiditate iste quas, quibusdam ducimus. Excepturi est, molestiae animi sequi sunt dolorem omnis quae veniam accusamus dolores quos natus odit perferendis! Impedit molestias dolorum blanditiis sit?
+                            </p>
+                            <p class="mt-10 font-bold">
+                                Kunal Deb
+                            </p>
+                            <p class="mt-2 font-bold">
+                                Shyamaprasad Road, Karimganj, Assam 
+                            </p>
+                        </div>
+            
+                        <div class="bg-white px-20 p-3 rounded-2xl py-5 mt-[-90px] ml-auto mr-20">
+                            <img src="./images2/desktop_mainpage/kunal.png" alt="" class="w-[1150px] mt-[-50px]">
+                            <div class="absolute top-[-80px] border  ml-[-65px] bg-[#343434] p-3 text-white font-extrabold rounded-3xl flex items-center justify-center h-10 w-32 cursor-pointer transition duration-300 ease-in-out ">
+                                <i class="fa-light fa-regular fa-user"></i>
+                                <p class="ml-2">Kunal Deb</p>
+                            </div> 
+                        </div>
+                    </div>
+                </div>
+                <div id="slide2" class="hidden absolute top-0 left-14">
+                    <!-- Second slide content -->
+                    <img src="./images2/desktop_mainpage/review card.png" alt="" class="w-[1200px] mx-auto">
+                    <div class="absolute top-0 border mt-[16px] ml-14 border-[#343434] p-3 text-[#343434] font-extrabold rounded-3xl flex items-center justify-center h-10 w-40 cursor-pointer transition duration-300 ease-in-out hover:bg-[#343434] hover:text-white">
+                        Customer Review
+                    </div>   
+                    <div class="flex absolute top-28 ml-36">
+                        <div class="">
+                            <p class="mr-[150px] text-md font-bold text-[#696969] leading-relaxed">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Laborum id neque repellat commodi. Aut qui reprehenderit tenetur rerum perspiciatis minus temporibus ullam at, quod, cupiditate iste quas, quibusdam ducimus. Excepturi est, molestiae animi sequi sunt dolorem omnis quae veniam accusamus dolores quos natus odit perferendis! Impedit molestias dolorum blanditiis sit?
+                            </p>
+                            <p class="mt-10 font-bold">
+                                Barnik Deb
+                            </p>
+                            <p class="mt-2 font-bold">
+                                Shyamaprasad Road, Karimganj, Assam 
+                            </p>
+                        </div>
+            
+                        <div class="bg-white px-20 p-4 rounded-2xl py-5 mt-[-90px] ml-auto mr-20">
+                            <img src="./images2/desktop_mainpage/kunal.png" alt="" class="w-[1150px] mt-[-50px]">
+                            <div class="absolute top-[-80px] border  ml-[-65px] bg-[#343434] p-3 text-white font-extrabold rounded-3xl flex items-center justify-center h-10 w-32 cursor-pointer transition duration-300 ease-in-out ">
+                                <i class="fa-light fa-regular fa-user"></i>
+                                <p class="ml-2">Kunal Deb</p>
+                            </div> 
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+        </section>
+
+
+
+        <section class="mt-10">
+        <div class="flex containers mb-10 sm:p-5">
+            <div>
+                <p>©2024 Tnennt All rights reserved.</p>
+            </div>
+            <div class="ml-[450px]">
+                <img src="./images2/desktop icons/logo.png" alt="" class="w-6">
+            </div>
+        </div>
+        </section>
+
+
+
+    </section>
+
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+    <script>
+        const icons = document.querySelectorAll('.icon');
+
+icons.forEach(icon => {
+    icon.addEventListener('click', () => {
+        icons.forEach(icon => icon.classList.remove('bg-white'));
+        icon.classList.add('bg-white');
+    });
+});
+
+function toggleSlides() {
+    var slide1 = document.getElementById('slide1');
+    var slide2 = document.getElementById('slide2');
+
+    slide1.style.opacity = '1';
+    slide1.style.transition = 'opacity 2s';
+
+    setTimeout(function() {
+        slide1.style.opacity = '0';
+
+        setTimeout(function() {
+            slide2.classList.remove('hidden');
+            slide2.style.opacity = '1';
+            slide2.style.transition = 'opacity 2s';
+
+            setTimeout(function() {
+                slide2.style.opacity = '0';
+
+                setTimeout(function() {
+                    slide2.classList.add('hidden');
+
+                    slide2.style.opacity = '1';
+
+                    slide1.style.opacity = '1';
+                    slide1.style.transition = 'opacity 2s';
+
+                    setTimeout(function() {
+                        
+                        slide1.style.opacity = '0';
+                        toggleSlides();
+                    }, 500); 
+                }, 2000); 
+            }, 5000); 
+        }, 2000); 
+    }, 5000); 
+}
+
+setTimeout(toggleSlides, 500); 
+
+
+
+
+
+
+const buttons = document.querySelectorAll('.category-button');
+    const categorySection = document.getElementById('categorySection');
+
+    buttons.forEach(button => {
+    button.addEventListener('click', () => {
+        buttons.forEach(btn => {
+            btn.classList.remove('bg-[#343434]', 'text-white');
+            btn.classList.add('bg-white', 'text-[#737373]');
+        });
+        button.classList.remove('bg-white', 'text-[#737373]');
+        button.classList.add('bg-[#343434]', 'text-white');
+        const category = button.getAttribute('data-category');
+        showCategory(category);
+    });
+});
+
+        function getGreeting() {
+          var currentTime = new Date();
+          var currentHour = currentTime.getHours();
+          var greeting;
+    
+          if (currentHour < 12) {
+            greeting = 'Good morning';
+          } else if (currentHour < 18) {
+            greeting = 'Good afternoon';
+          } else {
+            greeting = 'Good evening';
+          }
+    
+          document.getElementById('greeting').textContent = greeting;
+        }
+    
+        window.onload = getGreeting;
+
+        document.addEventListener('DOMContentLoaded', function () {
+    const inputField = document.querySelector('.input-field');
+    const placeholderLabel = document.getElementById('placeholder-label');
+
+    function showPlaceholderText() {
+      placeholderLabel.style.visibility = 'visible';
+    }
+
+    function hidePlaceholderText() {
+      placeholderLabel.style.visibility = 'hidden';
+    }
+
+    if (inputField.value.trim() !== '') {
+      hidePlaceholderText();
+    }
+
+    inputField.addEventListener('focus', hidePlaceholderText);
+    inputField.addEventListener('click', hidePlaceholderText);
+
+    placeholderLabel.addEventListener('click', function () {
+      hidePlaceholderText();
+      inputField.focus();
+    });
+
+    document.addEventListener('click', function (event) {
+      if (!inputField.contains(event.target) && inputField.value.trim() === '') {
+        showPlaceholderText();
+      }
+    });
+
+    placeholderLabel.addEventListener('click', function (event) {
+      event.stopPropagation();
+    });
+  });
+
+  var swiper = new Swiper(".mySwiper", {
+      slidesPerView: 3,
+      spaceBetween: 10,
+    });
+    var swiper = new Swiper(".helloSwiper", {
+      slidesPerView: 4,
+      spaceBetween: 10,
+    });
+    var swiper = new Swiper(".hiSwiper", {
+      slidesPerView: 3,
+      spaceBetween: 30,
+    });
+
+    var swiper = new Swiper(".yourSwiper", {
+      slidesPerView: 5,
+      spaceBetween: 30,
+    });
+    var swiper = new Swiper(".othersSwiper", {
+      slidesPerView: 5,
+      spaceBetween: 20,
+    });
+
+    window.addEventListener('load', function() {
+    showCategory('vehicles');
+});
+
+    function showCategory(category) {
+            var categorySection = document.getElementById("categorySection");
+
+            categorySection.innerHTML = ""; 
+
+            if (category === 'vehicles') {
+                categorySection.innerHTML = `
+                <section class="lg:hidden">
+        <div class="mt-5 ml-5">
+            <h2 class="font-extrabold text-2xl font-gotham-black">Featured</h2>
+        </div>
+
+        <div class="bg-[#F5F5F5] m-4 rounded-xl min-h-full">
+
+            <div class="relative">
+                <div class="absolute mt-5 right-7 rounded-full bg-white w-11 h-11 justify-center items-center flex">
+                    <div class="heart-container" title="Like">
+                        <input type="checkbox" class="checkbox" id="Give-It-An-Id">
+                        <div class="svg-container">
+                            <svg viewBox="0 0 24 24" class="svg-outline" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M17.5,1.917a6.4,6.4,0,0,0-5.5,3.3,6.4,6.4,0,0,0-5.5-3.3A6.8,6.8,0,0,0,0,8.967c0,4.547,4.786,9.513,8.8,12.88a4.974,4.974,0,0,0,6.4,0C19.214,18.48,24,13.514,24,8.967A6.8,6.8,0,0,0,17.5,1.917Zm-3.585,18.4a2.973,2.973,0,0,1-3.83,0C4.947,16.006,2,11.87,2,8.967a4.8,4.8,0,0,1,4.5-5.05A4.8,4.8,0,0,1,11,8.967a1,1,0,0,0,2,0,4.8,4.8,0,0,1,4.5-5.05A4.8,4.8,0,0,1,22,8.967C22,11.87,19.053,16.006,13.915,20.313Z">
+                                </path>
+                            </svg>
+                            <svg viewBox="0 0 24 24" class="svg-filled" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M17.5,1.917a6.4,6.4,0,0,0-5.5,3.3,6.4,6.4,0,0,0-5.5-3.3A6.8,6.8,0,0,0,0,8.967c0,4.547,4.786,9.513,8.8,12.88a4.974,4.974,0,0,0,6.4,0C19.214,18.48,24,13.514,24,8.967A6.8,6.8,0,0,0,17.5,1.917Z">
+                                </path>
+                            </svg>
+                            <svg class="svg-celebrate" width="100" height="100" xmlns="http://www.w3.org/2000/svg">
+                                <polygon points="10,10 20,20"></polygon>
+                                <polygon points="10,50 20,50"></polygon>
+                                <polygon points="20,80 30,70"></polygon>
+                                <polygon points="90,10 80,20"></polygon>
+                                <polygon points="90,50 80,50"></polygon>
+                                <polygon points="80,80 70,70"></polygon>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+
+            <div class="">
+                <img src="./images2/mobile_mainpage/Rectangle 2235.png" alt="" class="p-3">   
+            </div> 
+
+            <div class="m-7 flex">
+                <div class="">
+                    <h4 class="font-extrabold text-xl">BMW M5 COMPETITION</h4>
+                    <p>Type -  <span>Sedan</span></p>
+                    <div class="flex mt-3">
+                        <div class="bg-gray-600 rounded-full w-5 h-5 mt-2 mb-8"></div>
+                        <p class="ml-2 mt-2 mb-8">Kunal Deb</p>
+                    </div>
+                </div>
+                <div class="text-xl ml-auto">
+                    <p class="font-gotham-black font-extrabold text-xl">&#8377; 600</p>
+                    <p>Hour</p>
+                </div>
+            </div>
+            </div>
+        </div>
+
+
+
+        <div class="bg-[#F5F5F5] m-4 rounded-xl min-h-full">
+
+            <div class="relative">
+                <div class="absolute mt-5 right-7 rounded-full bg-white w-11 h-11 justify-center items-center flex">
+                    <div class="heart-container" title="Like">
+                        <input type="checkbox" class="checkbox" id="Give-It-An-Id">
+                        <div class="svg-container">
+                            <svg viewBox="0 0 24 24" class="svg-outline" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M17.5,1.917a6.4,6.4,0,0,0-5.5,3.3,6.4,6.4,0,0,0-5.5-3.3A6.8,6.8,0,0,0,0,8.967c0,4.547,4.786,9.513,8.8,12.88a4.974,4.974,0,0,0,6.4,0C19.214,18.48,24,13.514,24,8.967A6.8,6.8,0,0,0,17.5,1.917Zm-3.585,18.4a2.973,2.973,0,0,1-3.83,0C4.947,16.006,2,11.87,2,8.967a4.8,4.8,0,0,1,4.5-5.05A4.8,4.8,0,0,1,11,8.967a1,1,0,0,0,2,0,4.8,4.8,0,0,1,4.5-5.05A4.8,4.8,0,0,1,22,8.967C22,11.87,19.053,16.006,13.915,20.313Z">
+                                </path>
+                            </svg>
+                            <svg viewBox="0 0 24 24" class="svg-filled" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M17.5,1.917a6.4,6.4,0,0,0-5.5,3.3,6.4,6.4,0,0,0-5.5-3.3A6.8,6.8,0,0,0,0,8.967c0,4.547,4.786,9.513,8.8,12.88a4.974,4.974,0,0,0,6.4,0C19.214,18.48,24,13.514,24,8.967A6.8,6.8,0,0,0,17.5,1.917Z">
+                                </path>
+                            </svg>
+                            <svg class="svg-celebrate" width="100" height="100" xmlns="http://www.w3.org/2000/svg">
+                                <polygon points="10,10 20,20"></polygon>
+                                <polygon points="10,50 20,50"></polygon>
+                                <polygon points="20,80 30,70"></polygon>
+                                <polygon points="90,10 80,20"></polygon>
+                                <polygon points="90,50 80,50"></polygon>
+                                <polygon points="80,80 70,70"></polygon>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+
+            <div class="">
+                <img src="./images2/mobile_mainpage/Rectangle 2235.png" alt="" class="p-3">   
+            </div> 
+
+            <div class="m-7 flex">
+                <div class="">
+                    <h4 class="font-extrabold text-xl">BMW M5 COMPETITION</h4>
+                    <p>Type -  <span>Sedan</span></p>
+                    <div class="flex mt-3">
+                        <div class="bg-gray-600 rounded-full w-5 h-5 mt-2 mb-8"></div>
+                        <p class="ml-2 mt-2 mb-8">Kunal Deb</p>
+                    </div>
+                </div>
+                <div class="text-xl ml-auto">
+                    <p class="font-gotham-black font-extrabold text-xl">&#8377; 600</p>
+                    <p>Hour</p>
+                </div>
+            </div>
+            </div>
+        </div>
+
+
+
+        <div class="bg-[#F5F5F5] m-4 rounded-xl min-h-full">
+
+            <div class="relative">
+                <div class="absolute mt-5 right-7 rounded-full bg-white w-11 h-11 justify-center items-center flex">
+                    <div class="heart-container" title="Like">
+                        <input type="checkbox" class="checkbox" id="Give-It-An-Id">
+                        <div class="svg-container">
+                            <svg viewBox="0 0 24 24" class="svg-outline" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M17.5,1.917a6.4,6.4,0,0,0-5.5,3.3,6.4,6.4,0,0,0-5.5-3.3A6.8,6.8,0,0,0,0,8.967c0,4.547,4.786,9.513,8.8,12.88a4.974,4.974,0,0,0,6.4,0C19.214,18.48,24,13.514,24,8.967A6.8,6.8,0,0,0,17.5,1.917Zm-3.585,18.4a2.973,2.973,0,0,1-3.83,0C4.947,16.006,2,11.87,2,8.967a4.8,4.8,0,0,1,4.5-5.05A4.8,4.8,0,0,1,11,8.967a1,1,0,0,0,2,0,4.8,4.8,0,0,1,4.5-5.05A4.8,4.8,0,0,1,22,8.967C22,11.87,19.053,16.006,13.915,20.313Z">
+                                </path>
+                            </svg>
+                            <svg viewBox="0 0 24 24" class="svg-filled" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M17.5,1.917a6.4,6.4,0,0,0-5.5,3.3,6.4,6.4,0,0,0-5.5-3.3A6.8,6.8,0,0,0,0,8.967c0,4.547,4.786,9.513,8.8,12.88a4.974,4.974,0,0,0,6.4,0C19.214,18.48,24,13.514,24,8.967A6.8,6.8,0,0,0,17.5,1.917Z">
+                                </path>
+                            </svg>
+                            <svg class="svg-celebrate" width="100" height="100" xmlns="http://www.w3.org/2000/svg">
+                                <polygon points="10,10 20,20"></polygon>
+                                <polygon points="10,50 20,50"></polygon>
+                                <polygon points="20,80 30,70"></polygon>
+                                <polygon points="90,10 80,20"></polygon>
+                                <polygon points="90,50 80,50"></polygon>
+                                <polygon points="80,80 70,70"></polygon>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+
+            <div class="">
+                <img src="./images2/mobile_mainpage/Rectangle 2235.png" alt="" class="p-3">   
+            </div> 
+
+            <div class="m-7 flex">
+                <div class="">
+                    <h4 class="font-extrabold text-xl">BMW M5 COMPETITION</h4>
+                    <p>Type -  <span>Sedan</span></p>
+                    <div class="flex mt-3">
+                        <div class="bg-gray-600 rounded-full w-5 h-5 mt-2 mb-8"></div>
+                        <p class="ml-2 mt-2 mb-8">Kunal Deb</p>
+                    </div>
+                </div>
+                <div class="text-xl ml-auto">
+                    <p class="font-gotham-black font-extrabold text-xl">&#8377; 600</p>
+                    <p>Hour</p>
+                </div>
+            </div>
+            </div>
+        </div>
+    </section>
+                `;
+            } else if (category === 'housing') {
+                categorySection.innerHTML = `
+                <section class="lg:hidden">
+        <div class="mt-5 ml-5">
+            <h2 class="font-extrabold text-2xl font-gotham-black">Featured</h2>
+        </div>
+
+            <div class="relative">
+                <div class="absolute mt-5 right-7 rounded-full bg-white w-11 h-11 justify-center items-center flex">
+                    <div class="heart-container" title="Like">
+                        <input type="checkbox" class="checkbox" id="Give-It-An-Id">
+                        <div class="svg-container">
+                            <svg viewBox="0 0 24 24" class="svg-outline" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M17.5,1.917a6.4,6.4,0,0,0-5.5,3.3,6.4,6.4,0,0,0-5.5-3.3A6.8,6.8,0,0,0,0,8.967c0,4.547,4.786,9.513,8.8,12.88a4.974,4.974,0,0,0,6.4,0C19.214,18.48,24,13.514,24,8.967A6.8,6.8,0,0,0,17.5,1.917Zm-3.585,18.4a2.973,2.973,0,0,1-3.83,0C4.947,16.006,2,11.87,2,8.967a4.8,4.8,0,0,1,4.5-5.05A4.8,4.8,0,0,1,11,8.967a1,1,0,0,0,2,0,4.8,4.8,0,0,1,4.5-5.05A4.8,4.8,0,0,1,22,8.967C22,11.87,19.053,16.006,13.915,20.313Z">
+                                </path>
+                            </svg>
+                            <svg viewBox="0 0 24 24" class="svg-filled" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M17.5,1.917a6.4,6.4,0,0,0-5.5,3.3,6.4,6.4,0,0,0-5.5-3.3A6.8,6.8,0,0,0,0,8.967c0,4.547,4.786,9.513,8.8,12.88a4.974,4.974,0,0,0,6.4,0C19.214,18.48,24,13.514,24,8.967A6.8,6.8,0,0,0,17.5,1.917Z">
+                                </path>
+                            </svg>
+                            <svg class="svg-celebrate" width="100" height="100" xmlns="http://www.w3.org/2000/svg">
+                                <polygon points="10,10 20,20"></polygon>
+                                <polygon points="10,50 20,50"></polygon>
+                                <polygon points="20,80 30,70"></polygon>
+                                <polygon points="90,10 80,20"></polygon>
+                                <polygon points="90,50 80,50"></polygon>
+                                <polygon points="80,80 70,70"></polygon>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="">
+                <img src="./images2/mobile_mainpage/Rectangle 2175.png" alt="" class="p-3">   
+            </div> 
+            <div class="box inset-0 absolute flex justify-center items-center">
+                <div class="mt-40 text-left flex">
+                    <div class="main-box p-10 px-4 py-4 bg-white rounded-xl flex justify-between items-center">
+                        <div class="ml-1">
+                            <p class="text-lg">Shyama Prasad Road</p>
+                            <div class="flex items-center">
+                                <div class="bg-gray-600 rounded-full w-5 h-5 mt-2"></div>
+                                <p class="ml-2 mt-1">Kunal Deb</p>
+                            </div>
+                        </div>
+                        <div class="text-xl ml-12">
+                            <p class="font-gotham-black font-extrabold text-xl">&#8377; 600</p>
+                            <p>Month</p>
+                        </div>
+                    </div>
+                </div>  
+            </div>
+        </div>
+
+
+
+
+
+
+
+
+        <div class="relative">
+            <div class="absolute mt-5 right-7 rounded-full bg-white w-11 h-11 justify-center items-center flex">
+                <div class="heart-container" title="Like">
+                    <input type="checkbox" class="checkbox" id="Give-It-An-Id">
+                    <div class="svg-container">
+                        <svg viewBox="0 0 24 24" class="svg-outline" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M17.5,1.917a6.4,6.4,0,0,0-5.5,3.3,6.4,6.4,0,0,0-5.5-3.3A6.8,6.8,0,0,0,0,8.967c0,4.547,4.786,9.513,8.8,12.88a4.974,4.974,0,0,0,6.4,0C19.214,18.48,24,13.514,24,8.967A6.8,6.8,0,0,0,17.5,1.917Zm-3.585,18.4a2.973,2.973,0,0,1-3.83,0C4.947,16.006,2,11.87,2,8.967a4.8,4.8,0,0,1,4.5-5.05A4.8,4.8,0,0,1,11,8.967a1,1,0,0,0,2,0,4.8,4.8,0,0,1,4.5-5.05A4.8,4.8,0,0,1,22,8.967C22,11.87,19.053,16.006,13.915,20.313Z">
+                            </path>
+                        </svg>
+                        <svg viewBox="0 0 24 24" class="svg-filled" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M17.5,1.917a6.4,6.4,0,0,0-5.5,3.3,6.4,6.4,0,0,0-5.5-3.3A6.8,6.8,0,0,0,0,8.967c0,4.547,4.786,9.513,8.8,12.88a4.974,4.974,0,0,0,6.4,0C19.214,18.48,24,13.514,24,8.967A6.8,6.8,0,0,0,17.5,1.917Z">
+                            </path>
+                        </svg>
+                        <svg class="svg-celebrate" width="100" height="100" xmlns="http://www.w3.org/2000/svg">
+                            <polygon points="10,10 20,20"></polygon>
+                            <polygon points="10,50 20,50"></polygon>
+                            <polygon points="20,80 30,70"></polygon>
+                            <polygon points="90,10 80,20"></polygon>
+                            <polygon points="90,50 80,50"></polygon>
+                            <polygon points="80,80 70,70"></polygon>
+                        </svg>
+                    </div>
+                </div>
+            </div>
+
+            <div class="">
+            <img src="./images2/mobile_mainpage/Rectangle 2175.png" alt="" class="p-3">   
+        </div> 
+        <div class="box inset-0 absolute flex justify-center items-center">
+            <div class="mt-40 text-left flex">
+                <div class="main-box p-10 px-4 py-4 bg-white rounded-xl flex justify-between items-center">
+                    <div class="ml-1">
+                        <p class="text-lg">Shyama Prasad Road</p>
+                        <div class="flex items-center">
+                            <div class="bg-gray-600 rounded-full w-5 h-5 mt-2"></div>
+                            <p class="ml-2 mt-1">Kunal Deb</p>
+                        </div>
+                    </div>
+                    <div class="text-xl ml-12">
+                        <p class="font-gotham-black font-extrabold text-xl">&#8377; 600</p>
+                        <p>Month</p>
+                    </div>
+                </div>
+            </div> 
+                
+        </div>
+    </div>
+
+
+
+
+
+
+
+    <div class="relative">
+        <div class="absolute mt-5 right-7 rounded-full bg-white w-11 h-11 justify-center items-center flex">
+            <div class="heart-container" title="Like">
+                <input type="checkbox" class="checkbox" id="Give-It-An-Id">
+                <div class="svg-container">
+                    <svg viewBox="0 0 24 24" class="svg-outline" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M17.5,1.917a6.4,6.4,0,0,0-5.5,3.3,6.4,6.4,0,0,0-5.5-3.3A6.8,6.8,0,0,0,0,8.967c0,4.547,4.786,9.513,8.8,12.88a4.974,4.974,0,0,0,6.4,0C19.214,18.48,24,13.514,24,8.967A6.8,6.8,0,0,0,17.5,1.917Zm-3.585,18.4a2.973,2.973,0,0,1-3.83,0C4.947,16.006,2,11.87,2,8.967a4.8,4.8,0,0,1,4.5-5.05A4.8,4.8,0,0,1,11,8.967a1,1,0,0,0,2,0,4.8,4.8,0,0,1,4.5-5.05A4.8,4.8,0,0,1,22,8.967C22,11.87,19.053,16.006,13.915,20.313Z">
+                        </path>
+                    </svg>
+                    <svg viewBox="0 0 24 24" class="svg-filled" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M17.5,1.917a6.4,6.4,0,0,0-5.5,3.3,6.4,6.4,0,0,0-5.5-3.3A6.8,6.8,0,0,0,0,8.967c0,4.547,4.786,9.513,8.8,12.88a4.974,4.974,0,0,0,6.4,0C19.214,18.48,24,13.514,24,8.967A6.8,6.8,0,0,0,17.5,1.917Z">
+                        </path>
+                    </svg>
+                    <svg class="svg-celebrate" width="100" height="100" xmlns="http://www.w3.org/2000/svg">
+                        <polygon points="10,10 20,20"></polygon>
+                        <polygon points="10,50 20,50"></polygon>
+                        <polygon points="20,80 30,70"></polygon>
+                        <polygon points="90,10 80,20"></polygon>
+                        <polygon points="90,50 80,50"></polygon>
+                        <polygon points="80,80 70,70"></polygon>
+                    </svg>
+                </div>
+            </div>
+        </div>
+
+        <div class="">
+        <img src="./images2/mobile_mainpage/Rectangle 2175.png" alt="" class="p-3">   
+    </div> 
+    <div class="box inset-0 absolute flex justify-center items-center">
+        <div class="mt-40 text-left flex">
+            <div class="main-box p-10 px-4 py-4 bg-white rounded-xl flex justify-between items-center">
+                <div class="ml-1">
+                    <p class="text-lg">Shyama Prasad Road</p>
+                    <div class="flex items-center">
+                        <div class="bg-gray-600 rounded-full w-5 h-5 mt-2"></div>
+                        <p class="ml-2 mt-1">Kunal Deb</p>
+                    </div>
+                </div>
+                <div class="text-xl ml-12">
+                    <p class="font-gotham-black font-extrabold text-xl">&#8377; 600</p>
+                    <p>Month</p>
+                </div>
+            </div>
+        </div> 
+            
+    </div>
+</div>
+    </section>
+                `;
+            } else if (category === 'electronics') {
+                categorySection.innerHTML = `
+                <section class="lg:hidden">
+        <div class="mt-5 ml-5 justify-center">
+            <h2 class="font-extrabold text-2xl font-gotham-black">Featured</h2>
+        </div>
+
+        <div class="flex flex-wrap justify-center mt-10 gap-4 mr-3">
+            <div class="relative bg-[#F5F5F5]  rounded-xl w-44  min-h-full">
+                <div class="absolute top-0 right-0 mt-2 mr-2 bg-white rounded-full w-10 h-10 justify-center items-center flex">
+                    <div class="heart-container" title="Like">
+                        <input type="checkbox" class="checkbox" id="Give-It-An-Id">
+                        <div class="svg-container">
+                            <svg viewBox="0 0 24 24" class="svg-outline" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M17.5,1.917a6.4,6.4,0,0,0-5.5,3.3,6.4,6.4,0,0,0-5.5-3.3A6.8,6.8,0,0,0,0,8.967c0,4.547,4.786,9.513,8.8,12.88a4.974,4.974,0,0,0,6.4,0C19.214,18.48,24,13.514,24,8.967A6.8,6.8,0,0,0,17.5,1.917Zm-3.585,18.4a2.973,2.973,0,0,1-3.83,0C4.947,16.006,2,11.87,2,8.967a4.8,4.8,0,0,1,4.5-5.05A4.8,4.8,0,0,1,11,8.967a1,1,0,0,0,2,0,4.8,4.8,0,0,1,4.5-5.05A4.8,4.8,0,0,1,22,8.967C22,11.87,19.053,16.006,13.915,20.313Z">
+                                </path>
+                            </svg>
+                            <svg viewBox="0 0 24 24" class="svg-filled" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M17.5,1.917a6.4,6.4,0,0,0-5.5,3.3,6.4,6.4,0,0,0-5.5-3.3A6.8,6.8,0,0,0,0,8.967c0,4.547,4.786,9.513,8.8,12.88a4.974,4.974,0,0,0,6.4,0C19.214,18.48,24,13.514,24,8.967A6.8,6.8,0,0,0,17.5,1.917Z">
+                                </path>
+                            </svg>
+                            <svg class="svg-celebrate" width="100" height="100" xmlns="http://www.w3.org/2000/svg">
+                                <polygon points="10,10 20,20"></polygon>
+                                <polygon points="10,50 20,50"></polygon>
+                                <polygon points="20,80 30,70"></polygon>
+                                <polygon points="90,10 80,20"></polygon>
+                                <polygon points="90,50 80,50"></polygon>
+                                <polygon points="80,80 70,70"></polygon>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+                <img src="./images2/mobile_mainpage/Rectangle 2267.png" alt="" class="p-3">
+                <div class="m-1 text-center mb-2">
+                    <h1 class="font-extrabold text-[15px]">Canon xyz Camera</h1>
+                    <p class="text-left font-extrabold text-[15px] ml-2">&#8377; 200<span class="text-[#A9A9A9]"> /Hour</span></p>
+                </div>
+            </div>
+    
+
+            <div class="relative bg-[#F5F5F5] rounded-xl w-44  min-h-full">
+                <div class="absolute top-0 right-0 mt-2 mr-2 bg-white rounded-full w-10 h-10 justify-center items-center flex">
+                    <div class="heart-container" title="Like">
+                        <input type="checkbox" class="checkbox" id="Give-It-An-Id">
+                        <div class="svg-container">
+                            <svg viewBox="0 0 24 24" class="svg-outline" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M17.5,1.917a6.4,6.4,0,0,0-5.5,3.3,6.4,6.4,0,0,0-5.5-3.3A6.8,6.8,0,0,0,0,8.967c0,4.547,4.786,9.513,8.8,12.88a4.974,4.974,0,0,0,6.4,0C19.214,18.48,24,13.514,24,8.967A6.8,6.8,0,0,0,17.5,1.917Zm-3.585,18.4a2.973,2.973,0,0,1-3.83,0C4.947,16.006,2,11.87,2,8.967a4.8,4.8,0,0,1,4.5-5.05A4.8,4.8,0,0,1,11,8.967a1,1,0,0,0,2,0,4.8,4.8,0,0,1,4.5-5.05A4.8,4.8,0,0,1,22,8.967C22,11.87,19.053,16.006,13.915,20.313Z">
+                                </path>
+                            </svg>
+                            <svg viewBox="0 0 24 24" class="svg-filled" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M17.5,1.917a6.4,6.4,0,0,0-5.5,3.3,6.4,6.4,0,0,0-5.5-3.3A6.8,6.8,0,0,0,0,8.967c0,4.547,4.786,9.513,8.8,12.88a4.974,4.974,0,0,0,6.4,0C19.214,18.48,24,13.514,24,8.967A6.8,6.8,0,0,0,17.5,1.917Z">
+                                </path>
+                            </svg>
+                            <svg class="svg-celebrate" width="100" height="100" xmlns="http://www.w3.org/2000/svg">
+                                <polygon points="10,10 20,20"></polygon>
+                                <polygon points="10,50 20,50"></polygon>
+                                <polygon points="20,80 30,70"></polygon>
+                                <polygon points="90,10 80,20"></polygon>
+                                <polygon points="90,50 80,50"></polygon>
+                                <polygon points="80,80 70,70"></polygon>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+                <img src="./images2/mobile_mainpage/Rectangle 2267.png" alt="" class="p-3">
+                <div class="m-1 text-center mb-2">
+                    <h1 class="font-extrabold text-[15px]">Canon xyz Camera</h1>
+                    <p class="text-left font-extrabold text-[15px] ml-2">&#8377; 200<span class="text-[#A9A9A9]"> /Hour</span></p>
+                </div>
+            </div>
+
+            <div class="relative bg-[#F5F5F5]  rounded-xl w-44 min-h-full">
+                <div class="absolute top-0 right-0 mt-2 mr-2 bg-white rounded-full w-10 h-10 justify-center items-center flex">
+                    <div class="heart-container" title="Like">
+                        <input type="checkbox" class="checkbox" id="Give-It-An-Id">
+                        <div class="svg-container">
+                            <svg viewBox="0 0 24 24" class="svg-outline" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M17.5,1.917a6.4,6.4,0,0,0-5.5,3.3,6.4,6.4,0,0,0-5.5-3.3A6.8,6.8,0,0,0,0,8.967c0,4.547,4.786,9.513,8.8,12.88a4.974,4.974,0,0,0,6.4,0C19.214,18.48,24,13.514,24,8.967A6.8,6.8,0,0,0,17.5,1.917Zm-3.585,18.4a2.973,2.973,0,0,1-3.83,0C4.947,16.006,2,11.87,2,8.967a4.8,4.8,0,0,1,4.5-5.05A4.8,4.8,0,0,1,11,8.967a1,1,0,0,0,2,0,4.8,4.8,0,0,1,4.5-5.05A4.8,4.8,0,0,1,22,8.967C22,11.87,19.053,16.006,13.915,20.313Z">
+                                </path>
+                            </svg>
+                            <svg viewBox="0 0 24 24" class="svg-filled" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M17.5,1.917a6.4,6.4,0,0,0-5.5,3.3,6.4,6.4,0,0,0-5.5-3.3A6.8,6.8,0,0,0,0,8.967c0,4.547,4.786,9.513,8.8,12.88a4.974,4.974,0,0,0,6.4,0C19.214,18.48,24,13.514,24,8.967A6.8,6.8,0,0,0,17.5,1.917Z">
+                                </path>
+                            </svg>
+                            <svg class="svg-celebrate" width="100" height="100" xmlns="http://www.w3.org/2000/svg">
+                                <polygon points="10,10 20,20"></polygon>
+                                <polygon points="10,50 20,50"></polygon>
+                                <polygon points="20,80 30,70"></polygon>
+                                <polygon points="90,10 80,20"></polygon>
+                                <polygon points="90,50 80,50"></polygon>
+                                <polygon points="80,80 70,70"></polygon>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+                <img src="./images2/mobile_mainpage/Rectangle 2267.png" alt="" class="p-3">
+                <div class="m-1 text-center mb-2">
+                    <h1 class="font-extrabold text-[15px]">Canon xyz Camera</h1>
+                    <p class="text-left font-extrabold text-[15px] ml-2">&#8377; 200<span class="text-[#A9A9A9]"> /Hour</span></p>
+                </div>
+            </div>
+
+            <div class="relative bg-[#F5F5F5] rounded-xl w-44 min-h-full">
+                <div class="absolute top-0 right-0 mt-2 mr-2 bg-white rounded-full w-10 h-10 justify-center items-center flex">
+                    <div class="heart-container" title="Like">
+                        <input type="checkbox" class="checkbox" id="Give-It-An-Id">
+                        <div class="svg-container">
+                            <svg viewBox="0 0 24 24" class="svg-outline" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M17.5,1.917a6.4,6.4,0,0,0-5.5,3.3,6.4,6.4,0,0,0-5.5-3.3A6.8,6.8,0,0,0,0,8.967c0,4.547,4.786,9.513,8.8,12.88a4.974,4.974,0,0,0,6.4,0C19.214,18.48,24,13.514,24,8.967A6.8,6.8,0,0,0,17.5,1.917Zm-3.585,18.4a2.973,2.973,0,0,1-3.83,0C4.947,16.006,2,11.87,2,8.967a4.8,4.8,0,0,1,4.5-5.05A4.8,4.8,0,0,1,11,8.967a1,1,0,0,0,2,0,4.8,4.8,0,0,1,4.5-5.05A4.8,4.8,0,0,1,22,8.967C22,11.87,19.053,16.006,13.915,20.313Z">
+                                </path>
+                            </svg>
+                            <svg viewBox="0 0 24 24" class="svg-filled" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M17.5,1.917a6.4,6.4,0,0,0-5.5,3.3,6.4,6.4,0,0,0-5.5-3.3A6.8,6.8,0,0,0,0,8.967c0,4.547,4.786,9.513,8.8,12.88a4.974,4.974,0,0,0,6.4,0C19.214,18.48,24,13.514,24,8.967A6.8,6.8,0,0,0,17.5,1.917Z">
+                                </path>
+                            </svg>
+                            <svg class="svg-celebrate" width="100" height="100" xmlns="http://www.w3.org/2000/svg">
+                                <polygon points="10,10 20,20"></polygon>
+                                <polygon points="10,50 20,50"></polygon>
+                                <polygon points="20,80 30,70"></polygon>
+                                <polygon points="90,10 80,20"></polygon>
+                                <polygon points="90,50 80,50"></polygon>
+                                <polygon points="80,80 70,70"></polygon>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+                <img src="./images2/mobile_mainpage/Rectangle 2267.png" alt="" class="p-3">
+                <div class="m-1 text-center mb-2">
+                    <h1 class="font-extrabold text-[15px]">Canon xyz Camera</h1>
+                    <p class="text-left font-extrabold text-[15px] ml-2">&#8377; 200<span class="text-[#A9A9A9]"> /Hour</span></p>
+                </div>
+            </div>
+        </div>
+        
+    </section>
+                `;
+            }
+
+            else if (category === 'others') {
+                categorySection.innerHTML = `
+                <section class="lg:hidden">
+        <div class="mt-5 ml-5 justify-center">
+            <h2 class="font-extrabold text-2xl font-gotham-black">Featured</h2>
+        </div>
+
+        <div class="flex flex-wrap justify-center mt-10 gap-4">
+            <div class="relative bg-[#F5F5F5] rounded-xl w-44 mr-3 min-h-full">
+                <div class="absolute top-0 right-0 mt-2 mr-2 bg-white rounded-full w-10 h-10 justify-center items-center flex">
+                    <div class="heart-container" title="Like">
+                        <input type="checkbox" class="checkbox" id="Give-It-An-Id">
+                        <div class="svg-container">
+                            <svg viewBox="0 0 24 24" class="svg-outline" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M17.5,1.917a6.4,6.4,0,0,0-5.5,3.3,6.4,6.4,0,0,0-5.5-3.3A6.8,6.8,0,0,0,0,8.967c0,4.547,4.786,9.513,8.8,12.88a4.974,4.974,0,0,0,6.4,0C19.214,18.48,24,13.514,24,8.967A6.8,6.8,0,0,0,17.5,1.917Zm-3.585,18.4a2.973,2.973,0,0,1-3.83,0C4.947,16.006,2,11.87,2,8.967a4.8,4.8,0,0,1,4.5-5.05A4.8,4.8,0,0,1,11,8.967a1,1,0,0,0,2,0,4.8,4.8,0,0,1,4.5-5.05A4.8,4.8,0,0,1,22,8.967C22,11.87,19.053,16.006,13.915,20.313Z">
+                                </path>
+                            </svg>
+                            <svg viewBox="0 0 24 24" class="svg-filled" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M17.5,1.917a6.4,6.4,0,0,0-5.5,3.3,6.4,6.4,0,0,0-5.5-3.3A6.8,6.8,0,0,0,0,8.967c0,4.547,4.786,9.513,8.8,12.88a4.974,4.974,0,0,0,6.4,0C19.214,18.48,24,13.514,24,8.967A6.8,6.8,0,0,0,17.5,1.917Z">
+                                </path>
+                            </svg>
+                            <svg class="svg-celebrate" width="100" height="100" xmlns="http://www.w3.org/2000/svg">
+                                <polygon points="10,10 20,20"></polygon>
+                                <polygon points="10,50 20,50"></polygon>
+                                <polygon points="20,80 30,70"></polygon>
+                                <polygon points="90,10 80,20"></polygon>
+                                <polygon points="90,50 80,50"></polygon>
+                                <polygon points="80,80 70,70"></polygon>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+                <img src="./images2/mobile_mainpage/Rectangle 2267 (1).png" alt="" class="p-3">
+                <div class="m-1 ml-3 mb-2">
+                    <h1 class="font-extrabold text-[15px] ml-2">Guitar</h1>
+                    <p class="text-left font-extrabold text-[15px] ml-2">&#8377; 900<span class="text-[#A9A9A9]"> /Hour</span></p>
+                </div>
+            </div>
+    
+
+            <div class="relative bg-[#F5F5F5] rounded-xl w-44 mr-3  min-h-full">
+                <div class="absolute top-0 right-0 mt-2 mr-2 bg-white rounded-full w-10 h-10 justify-center items-center flex">
+                    <div class="heart-container" title="Like">
+                        <input type="checkbox" class="checkbox" id="Give-It-An-Id">
+                        <div class="svg-container">
+                            <svg viewBox="0 0 24 24" class="svg-outline" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M17.5,1.917a6.4,6.4,0,0,0-5.5,3.3,6.4,6.4,0,0,0-5.5-3.3A6.8,6.8,0,0,0,0,8.967c0,4.547,4.786,9.513,8.8,12.88a4.974,4.974,0,0,0,6.4,0C19.214,18.48,24,13.514,24,8.967A6.8,6.8,0,0,0,17.5,1.917Zm-3.585,18.4a2.973,2.973,0,0,1-3.83,0C4.947,16.006,2,11.87,2,8.967a4.8,4.8,0,0,1,4.5-5.05A4.8,4.8,0,0,1,11,8.967a1,1,0,0,0,2,0,4.8,4.8,0,0,1,4.5-5.05A4.8,4.8,0,0,1,22,8.967C22,11.87,19.053,16.006,13.915,20.313Z">
+                                </path>
+                            </svg>
+                            <svg viewBox="0 0 24 24" class="svg-filled" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M17.5,1.917a6.4,6.4,0,0,0-5.5,3.3,6.4,6.4,0,0,0-5.5-3.3A6.8,6.8,0,0,0,0,8.967c0,4.547,4.786,9.513,8.8,12.88a4.974,4.974,0,0,0,6.4,0C19.214,18.48,24,13.514,24,8.967A6.8,6.8,0,0,0,17.5,1.917Z">
+                                </path>
+                            </svg>
+                            <svg class="svg-celebrate" width="100" height="100" xmlns="http://www.w3.org/2000/svg">
+                                <polygon points="10,10 20,20"></polygon>
+                                <polygon points="10,50 20,50"></polygon>
+                                <polygon points="20,80 30,70"></polygon>
+                                <polygon points="90,10 80,20"></polygon>
+                                <polygon points="90,50 80,50"></polygon>
+                                <polygon points="80,80 70,70"></polygon>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+                <img src="./images2/mobile_mainpage/Rectangle 2268.png" alt="" class="p-3">
+                <div class="m-1 ml-3 mb-2">
+                    <h1 class="font-extrabold text-[15px] ml-2">Dumbells</h1>
+                    <p class="text-left font-extrabold text-[15px] ml-2">&#8377; 990<span class="text-[#A9A9A9]"> /Hour</span></p>
+                </div>
+            </div>
+
+            <div class="relative bg-[#F5F5F5]  rounded-xl w-44 mr-3 min-h-full">
+                <div class="absolute top-0 right-0 mt-2 mr-2 bg-white rounded-full w-10 h-10 justify-center items-center flex">
+                    <div class="heart-container" title="Like">
+                        <input type="checkbox" class="checkbox" id="Give-It-An-Id">
+                        <div class="svg-container">
+                            <svg viewBox="0 0 24 24" class="svg-outline" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M17.5,1.917a6.4,6.4,0,0,0-5.5,3.3,6.4,6.4,0,0,0-5.5-3.3A6.8,6.8,0,0,0,0,8.967c0,4.547,4.786,9.513,8.8,12.88a4.974,4.974,0,0,0,6.4,0C19.214,18.48,24,13.514,24,8.967A6.8,6.8,0,0,0,17.5,1.917Zm-3.585,18.4a2.973,2.973,0,0,1-3.83,0C4.947,16.006,2,11.87,2,8.967a4.8,4.8,0,0,1,4.5-5.05A4.8,4.8,0,0,1,11,8.967a1,1,0,0,0,2,0,4.8,4.8,0,0,1,4.5-5.05A4.8,4.8,0,0,1,22,8.967C22,11.87,19.053,16.006,13.915,20.313Z">
+                                </path>
+                            </svg>
+                            <svg viewBox="0 0 24 24" class="svg-filled" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M17.5,1.917a6.4,6.4,0,0,0-5.5,3.3,6.4,6.4,0,0,0-5.5-3.3A6.8,6.8,0,0,0,0,8.967c0,4.547,4.786,9.513,8.8,12.88a4.974,4.974,0,0,0,6.4,0C19.214,18.48,24,13.514,24,8.967A6.8,6.8,0,0,0,17.5,1.917Z">
+                                </path>
+                            </svg>
+                            <svg class="svg-celebrate" width="100" height="100" xmlns="http://www.w3.org/2000/svg">
+                                <polygon points="10,10 20,20"></polygon>
+                                <polygon points="10,50 20,50"></polygon>
+                                <polygon points="20,80 30,70"></polygon>
+                                <polygon points="90,10 80,20"></polygon>
+                                <polygon points="90,50 80,50"></polygon>
+                                <polygon points="80,80 70,70"></polygon>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+                <img src="./images2/mobile_mainpage/Rectangle 2267 (1).png" alt="" class="p-3">
+                <div class="m-1 ml-3 mb-2">
+                    <h1 class="font-extrabold text-[15px] ml-2">Guitar</h1>
+                    <p class="text-left font-extrabold text-[15px] ml-2">&#8377; 900<span class="text-[#A9A9A9]"> /Hour</span></p>
+                </div>
+            </div>
+
+            <div class="relative bg-[#F5F5F5] rounded-xl w-44 mr-3 min-h-full">
+                <div class="absolute top-0 right-0 mt-2 mr-2 bg-white rounded-full w-10 h-10 justify-center items-center flex">
+                    <div class="heart-container" title="Like">
+                        <input type="checkbox" class="checkbox" id="Give-It-An-Id">
+                        <div class="svg-container">
+                            <svg viewBox="0 0 24 24" class="svg-outline" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M17.5,1.917a6.4,6.4,0,0,0-5.5,3.3,6.4,6.4,0,0,0-5.5-3.3A6.8,6.8,0,0,0,0,8.967c0,4.547,4.786,9.513,8.8,12.88a4.974,4.974,0,0,0,6.4,0C19.214,18.48,24,13.514,24,8.967A6.8,6.8,0,0,0,17.5,1.917Zm-3.585,18.4a2.973,2.973,0,0,1-3.83,0C4.947,16.006,2,11.87,2,8.967a4.8,4.8,0,0,1,4.5-5.05A4.8,4.8,0,0,1,11,8.967a1,1,0,0,0,2,0,4.8,4.8,0,0,1,4.5-5.05A4.8,4.8,0,0,1,22,8.967C22,11.87,19.053,16.006,13.915,20.313Z">
+                                </path>
+                            </svg>
+                            <svg viewBox="0 0 24 24" class="svg-filled" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M17.5,1.917a6.4,6.4,0,0,0-5.5,3.3,6.4,6.4,0,0,0-5.5-3.3A6.8,6.8,0,0,0,0,8.967c0,4.547,4.786,9.513,8.8,12.88a4.974,4.974,0,0,0,6.4,0C19.214,18.48,24,13.514,24,8.967A6.8,6.8,0,0,0,17.5,1.917Z">
+                                </path>
+                            </svg>
+                            <svg class="svg-celebrate" width="100" height="100" xmlns="http://www.w3.org/2000/svg">
+                                <polygon points="10,10 20,20"></polygon>
+                                <polygon points="10,50 20,50"></polygon>
+                                <polygon points="20,80 30,70"></polygon>
+                                <polygon points="90,10 80,20"></polygon>
+                                <polygon points="90,50 80,50"></polygon>
+                                <polygon points="80,80 70,70"></polygon>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+                <img src="./images2/mobile_mainpage/Rectangle 2268.png" alt="" class="p-3">
+                <div class="m-1 ml-3 mb-2">
+                    <h1 class="font-extrabold text-[15px] ml-2">Dumbells</h1>
+                    <p class="text-left font-extrabold text-[15px] ml-2">&#8377; 990<span class="text-[#A9A9A9]"> /Hour</span></p>
+                </div>
+            </div>
+        </div>
+        
+    </section>
+                `;
+            }
+
+            else if (category === 'our_services') {
+                categorySection.innerHTML = `
+                <section class="lg:hidden">
+        <div class="mt-7 m-2">
+            <a href="our_services.html">
+            <img src="./images2/mobile_mainpage/Frame 341.png" alt="" class="mb-10">
+            </a>
+        </div>
+    </section>
+                `;
+            }
+        }
+      </script>
+</body>
+</html>
