@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Sign In</title>
+</head>
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap');
+    body {
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            position: relative;
+            width: 100vw;
+            height: 100vh;
+        }
+
+        .slideshow-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+        }
+
+        .mySlides {
+            display: none;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .input {
+        max-width: 430px;
+        height: 50px;
+        background-color: #05060f0a;
+        border-radius: .5rem;
+        padding: 0 1rem;
+        border: 2px solid transparent;
+        font-size: 1rem;
+        transition: border-color .3s cubic-bezier(.25,.01,.25,1) 0s, color .3s cubic-bezier(.25,.01,.25,1) 0s,background .2s cubic-bezier(.25,.01,.25,1) 0s;
+        }
+
+        .label {
+        display: block;
+        margin-bottom: .3rem;
+        font-size: .9rem;
+        font-weight: bold;
+        color: #05060f99;
+        transition: color .3s cubic-bezier(.25,.01,.25,1) 0s;
+        }
+
+        .input:hover, .input:focus, .input-group:hover .input {
+        outline: none;
+        border-color: #05060f;
+        }
+
+        .input-group:hover .label, .input:focus {
+        color: #05060fc2;
+        }
+        
+
+        /* Fading animation */
+        .fade {
+            animation-name: fade;
+            animation-timing-function: ease-in-out;
+            animation-duration: 2s;
+        }
+
+        @keyframes fade {
+            from {
+                opacity: 0.4;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        @media (min-width: 1879px) {
+            .footer p{
+                margin-top: 160px;
+            }
+        }
+
+        .form-container {
+            z-index: 99;
+        }
+        .containers{
+            max-width: 1400px;
+    margin-inline: auto;
+        }
+        .containers1{
+    max-width: 1200px;
+    margin-inline: auto;
+  }
+</style>
+<body style="background-color: #e6e6e6;">
+    <nav class="sticky z-50">
+        <div class="mx-3 md:mx-10 flex">
+            <div class="mt-5">
+                <a href="index.html" class="flex items-center text-white">
+                    <img src="./Images/LOADING PAGE/WELCOME PAGE LOGO BLACK.png" alt="Your Logo" class="mt-5 w-[130px] md:w-[120px]">
+                </a>
+            </div>
+        </div>    
+    </nav>
+
+    <section class="lg:hidden">
+        <div class="pr-[85px] md:pr-10">
+            <div class="mx-8 mt-[150px] signIn">
+                <h1 class="font-black text-[28px] gotham tracking-tight">Sign in</h1>
+                <p class="text-[#636363] font-poppins text-[18px] pr-1 mt-[-5px]">Enter the following details</p>
+            </div>
+            <div class="container mx-6 md:mx-10 mt-10 flex flex-col space-y-4 relative">
+                <div class="relative">
+                    <label for="email" class="text-[#545454] text-[18px] font-gotham-black font-black transition-all transform absolute -top-[-15px] left-2 cursor-text" id="emailLabel" onclick="moveLabel('emailLabel')">Email</label>
+                    <input type="email" id="email" name="email" class="border w-full p-3 py-4 border-dotted bg-[#e3e3e3] border-[#848484] rounded-xl focus:outline-none border-spacing-x-1 border-spacing-y-4" onfocus="expandLabel('emailLabel')" onblur="collapseLabel('emailLabel')">
+                    <img src="./Images/AUTHENTICATION LOGOS AND ICONS/EMAIL.png" class="absolute right-3 top-[22px] h-3 w-4" alt="icon">
+                </div>
+                <div class="relative">
+                    <label for="password" class="text-[#545454] text-[18px] font-gotham-black font-black tracking-tight transition-all transform absolute -top-[-15px] left-2 cursor-text" id="passwordLabel" onclick="moveLabel('passwordLabel')">Password</label>
+                    <input type="password" id="password" name="password" class="border w-full p-2 py-4 border-dotted bg-[#e3e3e3] border-[#848484] rounded-xl focus:outline-none" onfocus="expandLabel('passwordLabel')" onblur="collapseLabel('passwordLabel')">
+                    <img src="./Images/AUTHENTICATION LOGOS AND ICONS/PASSWORD.png" class="absolute right-[15px] top-5 h-4 w-3" alt="icon">
+                </div>
+                <a href="reset_pass.html" class="text-xs text-[#636363] font-poppins font-medium tracking-wide">Forgot your password?</a>
+                <div class="flex items-center justify-center mt-4">
+                    <div class="w-12 h-12 bg-[#094446] rounded-full ml-auto">
+                        <a href="sign_up.html">
+                        <img src="./Images/AUTHENTICATION LOGOS AND ICONS/east.png" alt="" class="w-5 ml-3 mt-3">
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    
+        <div class="text-center mt-24">
+            <p class="mt-2 mr-3 text-[#636363]">Or</p>
+            <div class="ml-auto mt-3 md:mt-5 pr-3 sm:pr-2">
+                <button class="bg-[#094446] text-white font-bold py-2 md:py-2 px-7 rounded-[7px] cursor-pointer">
+                    <p class="font-poppins font-normal text-[15px]">Guest</p>
+                </button>
+            </div>
+        </div>
+    
+        <div class="text-center mt-24">
+            <p class="text-[#545454] mt-10 text-[18px]">New here? <a href="sign_up.html" class=" font-poppins text-[#545454] semi-bold">Sign up</a></p>
+        </div>
+    </section>
+
+
+    <!-- --------------------------DESKTOP DEVICE ONLY-------------------------------- -->
+    
+<section class="hidden lg:block">
+    <div class="slideshow-container">
+        <div class="mySlides fade">
+            <img src="./Images/LOADING PAGE/SLIDESHOW ONE.png" alt="Slide 1" class="mt-44 ml-[-120px] 2xl:ml-[-160px]">
+        </div>
+        <div class="mySlides fade">
+            <img src="./Images/LOADING PAGE/SLIDESHOW TWO.png" alt="Slide 2" class="mt-[-120px] 2xl:mt-[-140px]">
+        </div>
+        <div class="mySlides fade">
+            <img src="./Images/LOADING PAGE/SLIDESHOW THREE.png" alt="Slide 3" class="mt-[150px] ml-[-50px] 2xl:ml-[-60px]">
+        </div>
+        <!-- <div class="mySlides fade containers1">
+            <img src="./Images/LOADING PAGE/SLIDESHOW FOUR.png" alt="Slide 4" class="mt-[150px]">
+        </div> -->
+    </div>
+
+
+    <section class="">
+    <div class="form-container hidden md:block mx-auto max-w-[400px] 2xl:max-w-[500px] h-[500px] 2xl:h-[570px] mt-2 rounded-xl border border-gray-300 justify-center">
+        <div class="pr-[85px] md:pr-10 z-50">
+            <div class="mx-12 2xl:mx-12 mt-[50px] 2xl:mt-20 signIn">
+                <h1 class="font-black text-[28px] gotham tracking-tight">Sign in</h1>
+                <p class="text-[#636363] font-poppins text-[18px] pr-1 mt-[-5px]">Enter the following details</p>
+            </div>
+            <div class="container mx-6 md:mx-10 mt-10 2xl:mt-10 flex flex-col space-y-4 relative pr-10">
+                <div class="relative">
+                    <div class="input-group">
+                        <label class="label">Email address</label>
+                        <div class="input-container relative">
+                            <input autocomplete="off" name="Email" id="Email" type="text" required class="input border w-full px-14 py-3 border-dotted bg-[#e3e3e3] border-[#848484] rounded-xl focus:outline-none" type="email">
+                            <img src="./Images/AUTHENTICATION LOGOS AND ICONS/EMAIL.png" class="absolute right-3 top-5 h-3 w-4" alt="icon">
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="relative">
+                    <div class="input-group">
+                        <label class="label">Password</label>
+                        <div class="input-container relative">
+                            <input autocomplete="off" name="Password" id="Password" required class="input border w-full px-14 py-3 border-dotted bg-[#e3e3e3] border-[#848484] rounded-xl focus:outline-none" type="password">
+                            <img src="./Images/AUTHENTICATION LOGOS AND ICONS/PASSWORD.png" class="absolute right-3 top-3 h-5 w-4" alt="icon">
+                        </div>
+                    </div>
+                </div>
+                <a href="reset_pass.html" class="text-xs text-[#636363] font-poppins font-medium tracking-wide">Forgot your password?</a>
+            
+                <div class="flex items-center justify-center mt-4">
+                    <div class="w-9 h-9 bg-[#094446] rounded-full ml-auto">
+                        <a href="sign_up.html">
+                        <img src="./Images/AUTHENTICATION LOGOS AND ICONS/east.png" alt="" class="w-5 ml-[8px] mt-[8px]">
+                        </a>
+                    </div>
+                </div>
+
+                <div class="text-center 2xl:mt-6">
+                    <p class="mt-[-10px]  text-[#636363]">Or</p>
+                    <div class="mt-4 text-center">
+                        <a href="/dist/main/rent.html" class="bg-[#094446] text-white font-bold py-2 px-4 rounded-[7px] ">
+                            Guest
+                          </a>
+                          
+                    </div>
+                </div>
+        
+                <div class="text-center">
+                    <p class="text-[#545454] mt-10 text-[15px] 2xl:mt-20">New here? <a href="sign_up.html" class="form-container font-poppins text-[#545454] semi-bold">Sign up</a></p>
+                </div>
+        
+            </div>
+        </div>
+
+        
+    </div>
+    </section>
+
+
+    <div class="footer bottom-0 mt-10 left-0 right-0 md:relative md:flex ml-10 2xl:mt-28 text-[12px] form-container">
+        <p class="font-gotham-black font-medium text-[#272822]">© 2024 Tnennt All rights reserved.</p>
+    </div>
+    
+    </section>
+    <script>
+
+function handleFocus(labelId, inputId) {
+        const label = document.getElementById(labelId);
+        const input = document.getElementById(inputId);
+        if (label && input) {
+            label.classList.add('hidden');
+        }
+    }
+
+    function handleBlur(labelId, inputId) {
+        const label = document.getElementById(labelId);
+        const input = document.getElementById(inputId);
+        if (label && input && input.value === '') {
+            label.classList.remove('hidden');
+        }
+    }
+    
+        function expandLabel(labelId) {
+            const label = document.getElementById(labelId);
+            const input = document.getElementById(labelId.replace("Label", ""));
+            
+            if (input.value === "") {
+                label.classList.add("text-xs", "top-0", "text-[#636363]");
+            }
+        }
+    
+        function collapseLabel(labelId) {
+            const label = document.getElementById(labelId);
+            const input = document.getElementById(labelId.replace("Label", ""));
+    
+            if (input.value === "") {
+                label.classList.remove("text-xs", "top-0", "text-[#636363]");
+            }
+        }
+    
+        function moveLabel(labelId) {
+            const label = document.getElementById(labelId);
+            const input = document.getElementById(labelId.replace("Label", ""));
+    
+            if (input.value === "") {
+                label.classList.add("text-xs", "top-0");
+            } else {
+                label.classList.remove("text-xs", "top-0");
+            }
+        }
+        var slideIndex = 0;
+        showSlides();
+
+        function showSlides() {
+            var slides = document.getElementsByClassName("mySlides");
+            for (var i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+            slideIndex++;
+            if (slideIndex > slides.length) {
+                slideIndex = 1;
+            }
+            slides[slideIndex - 1].style.display = "block";
+            setTimeout(showSlides, 3000);
+        }
+    </script>
+    
+</body>
+</html>

@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Add Profile Picture</title>
+</head>
+
+<style>
+     @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap');
+    body {
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            position: relative;
+            width: 100vw;
+            height: 100vh;
+        }
+
+        .slideshow-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+        }
+
+        .mySlides {
+            display: none;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .input {
+        max-width: 430px;
+        height: 50px;
+        background-color: #05060f0a;
+        border-radius: .5rem;
+        padding: 0 1rem;
+        border: 2px solid transparent;
+        font-size: 1rem;
+        transition: border-color .3s cubic-bezier(.25,.01,.25,1) 0s, color .3s cubic-bezier(.25,.01,.25,1) 0s,background .2s cubic-bezier(.25,.01,.25,1) 0s;
+        }
+
+        .label {
+        display: block;
+        margin-bottom: .3rem;
+        font-size: .9rem;
+        font-weight: bold;
+        color: #05060f99;
+        transition: color .3s cubic-bezier(.25,.01,.25,1) 0s;
+        }
+
+        .input:hover, .input:focus, .input-group:hover .input {
+        outline: none;
+        border-color: #05060f;
+        }
+
+        .input-group:hover .label, .input:focus {
+        color: #05060fc2;
+        }
+        
+
+        /* Fading animation */
+        .fade {
+            animation-name: fade;
+            animation-timing-function: ease-in-out;
+            animation-duration: 2s;
+        }
+
+        @keyframes fade {
+            from {
+                opacity: 0.4;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        @media (min-width: 1879px) {
+            .footer p{
+                margin-top: 160px;
+            }
+        }
+
+        .form-container {
+            z-index: 99;
+        }
+        .containers{
+            max-width: 1400px;
+    margin-inline: auto;
+        }
+        .containers1{
+    max-width: 1200px;
+    margin-inline: auto;
+  }
+</style>
+<body style="background-color: #e6e6e6;">
+    <nav class="sticky z-50">
+        <div class="mx-3 md:mx-10 flex">
+            <div>
+                <a href="index.html" class="flex items-center text-white">
+                    <img src="./Images/LOADING PAGE/WELCOME PAGE LOGO BLACK.png" alt="Your Logo" class="mt-5 w-24 md:w-[120px]">
+                </a>
+            </div>
+            <div class="ml-auto mt-[18px] md:mt-5 pr-3 sm:pr-2">
+                <img src="./Images/AUTHENTICATION LOGOS AND ICONS/BACK OPTION.png" alt="" class="w-9">
+            </div>
+        </div>
+    </nav>
+
+    <section>
+
+        <div class="text-center mt-52">
+            <h2 class="text-2xl font-extrabold">Add profile picture</h2>
+            <p class="text-[#636363] m-2">Add a profile photo so that your friend know it's you</p>
+            <div class="max-w-sm mx-auto">
+                <input type="file" id="imageUpload" class="hidden">
+                <button onclick="openFileInput()" class="bg-[#094446] px-6 py-4 text-white mt-7 m-20 rounded-xl text-center text-xl font-bold">Add a Picture</button>
+            </div>
+            <a href="name.html" class="mt-[-60px] text-[#094446] font-extrabold">Skip</a>
+        </div>
+
+        <div class="footer bottom-0 mt-20 hidden lg:block left-0 right-0 md:relative md:flex ml-10 2xl:mt-44 text-[12px] form-container">
+            <p class="font-gotham-black font-medium text-[#272822]">© 2024 Tnennt All rights reserved.</p>
+        </div>
+    </section>
+
+    <script>
+        function openFileInput() {
+            document.getElementById('imageUpload').click();
+        }
+
+        var slideIndex = 0;
+        showSlides();
+
+        function showSlides() {
+            var slides = document.getElementsByClassName("mySlides");
+            for (var i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+            slideIndex++;
+            if (slideIndex > slides.length) {
+                slideIndex = 1;
+            }
+            slides[slideIndex - 1].style.display = "block";
+            setTimeout(showSlides, 3000);
+        }
+    </script>
+</body>
+</html>

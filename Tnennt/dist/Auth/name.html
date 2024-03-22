@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Tell us your name</title>
+</head>
+<style>
+    body {
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            position: relative;
+            width: 100vw;
+            height: 100vh;
+        }
+
+        .slideshow-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+        }
+
+        .mySlides {
+            display: none;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .input {
+        max-width: 430px;
+        height: 50px;
+        background-color: #05060f0a;
+        border-radius: .5rem;
+        padding: 0 1rem;
+        border: 2px solid transparent;
+        font-size: 1rem;
+        transition: border-color .3s cubic-bezier(.25,.01,.25,1) 0s, color .3s cubic-bezier(.25,.01,.25,1) 0s,background .2s cubic-bezier(.25,.01,.25,1) 0s;
+        }
+
+        .label {
+        display: block;
+        margin-bottom: .3rem;
+        font-size: .9rem;
+        font-weight: bold;
+        color: #05060f99;
+        transition: color .3s cubic-bezier(.25,.01,.25,1) 0s;
+        }
+
+        .input:hover, .input:focus, .input-group:hover .input {
+        outline: none;
+        border-color: #05060f;
+        }
+
+        .input-group:hover .label, .input:focus {
+        color: #05060fc2;
+        }
+        
+
+        /* Fading animation */
+        .fade {
+            animation-name: fade;
+            animation-timing-function: ease-in-out;
+            animation-duration: 2s;
+        }
+
+        @keyframes fade {
+            from {
+                opacity: 0.4;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        @media (min-width: 1879px) {
+            .footer p{
+                margin-top: 160px;
+            }
+        }
+
+        .form-container {
+            z-index: 99;
+        }
+        .containers{
+            max-width: 1400px;
+    margin-inline: auto;
+        }
+        .containers1{
+    max-width: 1200px;
+    margin-inline: auto;
+  }
+</style>
+<body style="background-color: #e6e6e6;">
+    <nav class="sticky z-50">
+        <div class="mx-3 md:mx-10 flex">
+            <div>
+                <a href="index.html" class="flex items-center text-white">
+                    <img src="./Images/LOADING PAGE/WELCOME PAGE LOGO BLACK.png" alt="Your Logo" class="mt-5 w-24 md:w-[120px]">
+                </a>
+            </div>
+            <div class="ml-auto mt-[18px] md:mt-5 pr-3 sm:pr-2">
+                <img src="./Images/AUTHENTICATION LOGOS AND ICONS/BACK OPTION.png" alt="" class="w-9">
+            </div>
+        </div>
+    </nav>
+
+    <section class="lg:hidden">
+        <div class="ml-10 mt-32">
+            <h2 class="text-2xl font-extrabold">What's your name?</h2>
+            <p class="text-[#636363]">Add your name and surname</p>
+        </div>
+
+        <div class="pr-20 md:pr-10">
+        <div class="container mx-10 md:mx-10 mt-10 flex flex-col space-y-4">
+            <div class="relative">
+                <label for="FirstName" class="text-[#545454] transition-all transform absolute -top-[-15px] left-2 cursor-text" id="FirstNameLabel" onclick="moveLabel('FirstNameLabel')">First Name</label>
+                <input type="FirstName" id="FirstName" name="FirstName" class="border w-full p-2 py-4 border-dotted border-[#848484] rounded-xl focus:outline-none" onfocus="expandLabel('FirstNameLabel')" onblur="collapseLabel('FirstNameLabel')">
+            </div>
+            <div class="relative">
+                <label for="LastName" class="text-[#545454] transition-all transform absolute -top-[-15px] left-2 cursor-text" id="LastNameLabel" onclick="moveLabel('LastNameLabel')">Last Name</label>
+                <input type="LastName" id="LastName" name="LastName" class="border w-full p-2 py-4 border-dotted border-[#ffffff] rounded-xl focus:outline-none" onfocus="expandLabel('LastNameLabel')" onblur="collapseLabel('LastNameLabel')">
+            </div>
+        </div>
+        </div>
+
+        <div class="justify-center flex">
+        <div class="flex justify-center mt-10 mb-3 mx-auto" id="button1">
+            <button class="bg-[#C7C7C7] px-6 py-3 text-white rounded-lg text-center text-xl font-bold"><p class="text-[#AAAAAA]">Continue</p></button>
+        </div>
+        
+        <div class="flex justify-center mt-10 mx-auto" id="button2" style="display: none;">
+            <a href="location.html">
+            <button class="bg-[#094446] px-6 py-3 text-white rounded-xl text-center text-xl font-bold">Continue</button>
+            </a>
+        </div>
+    </div>
+        
+        
+    </section>
+
+
+    <section class="hidden lg:block">
+
+        <div class="slideshow-container">
+            <div class="mySlides fade">
+                <img src="./Images/LOADING PAGE/SLIDESHOW ONE.png" alt="Slide 1" class="mt-44 ml-[-120px] 2xl:ml-[-160px]">
+            </div>
+            <div class="mySlides fade">
+                <img src="./Images/LOADING PAGE/SLIDESHOW TWO.png" alt="Slide 2" class="mt-[-120px] 2xl:mt-[-140px]">
+            </div>
+            <div class="mySlides fade">
+                <img src="./Images/LOADING PAGE/SLIDESHOW THREE.png" alt="Slide 3" class="mt-[150px] ml-[-50px] 2xl:ml-[-60px]">
+            </div>
+            <!-- <div class="mySlides fade containers1">
+                <img src="./Images/LOADING PAGE/SLIDESHOW FOUR.png" alt="Slide 4" class="mt-[150px]">
+            </div> -->
+        </div>
+
+
+        <section>
+        <div class="form-container hidden md:block mx-auto max-w-[400px] 2xl:max-w-[500px] h-[500px] 2xl:h-[570px] mt-2 rounded-xl border border-gray-300 justify-center">
+            <div class="pr-[85px] md:pr-10 z-50">
+                <div class="ml-10 mt-32 md:mt-24">
+                    <h2 class="text-2xl font-extrabold">What's your name?</h2>
+                    <p class="text-[#636363]">Add your name and surname</p>
+                </div>
+                <div class="container mx-6 md:mx-10 mt-10 2xl:mt-10 flex flex-col space-y-4 relative pr-10">
+
+                <div class="relative">
+                    <div class="input-group">
+                        <label class="label">First Name</label>
+                        <div class="input-container relative">
+                            <input autocomplete="off" type="text" required class="input border w-full px-14 py-3 border-dotted bg-[#e3e3e3] border-[#848484] rounded-xl focus:outline-none">  
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="relative">
+                    <div class="input-group">
+                        <label class="label">Last Name</label>
+                        <div class="input-container relative">
+                            <input autocomplete="off" required class="input border w-full px-14 py-3 border-dotted bg-[#e3e3e3] border-[#848484] rounded-xl focus:outline-none" >
+                            
+                        </div>
+                    </div>
+                </div>
+                </div>
+
+                <a href="location.html">
+                    <div class="flex justify-center mt-10 absolute ml-32 2xl:ml-44" id="button2">
+                        <button class="bg-[#094446] px-6 py-3 text-white mx-auto rounded-xl text-center text-xl font-bold">Continue</button>
+                    </div>
+                </a>
+            </div>
+        </div>
+
+        <div class="footer bottom-0 mt-10 left-0 right-0 md:relative md:flex ml-10 2xl:mt-28 text-[12px] form-container">
+            <p class="font-gotham-black font-medium text-[#272822]">© 2024 Tnennt All rights reserved.</p>
+        </div>
+    </section>
+</section>
+
+
+    <script>
+    function toggleButtons() {
+    const firstName = document.getElementById("FirstName").value;
+    const lastName = document.getElementById("LastName").value;
+    const button1 = document.getElementById("button1");
+    const button2 = document.getElementById("button2");
+
+    if (lastName.length >= 3) {
+        button2.style.display = "block";
+    } else {
+        button2.style.display = "none";
+    }
+
+    if (firstName === "" || lastName === "") {
+        button1.style.display = "block";
+    } else {
+        button1.style.display = "none";
+    }
+}
+
+function clearInputs() {
+    document.getElementById("FirstName").value = "";
+    document.getElementById("LastName").value = "";
+    toggleButtons();
+}
+
+function expandLabel(labelId) {
+    const label = document.getElementById(labelId);
+    const input = document.getElementById(labelId.replace("Label", ""));
+
+    if (input.value === "") {
+        label.classList.add("text-xs", "top-0", "text-[#636363]");
+    }
+    toggleButtons();
+}
+
+function collapseLabel(labelId) {
+    const label = document.getElementById(labelId);
+    const input = document.getElementById(labelId.replace("Label", ""));
+
+    if (input.value === "") {
+        label.classList.remove("text-xs", "top-0", "text-[#636363]");
+    }
+    toggleButtons();
+}
+
+function moveLabel(labelId) {
+    const label = document.getElementById(labelId);
+    const input = document.getElementById(labelId.replace("Label", ""));
+
+    if (input.value === "") {
+        label.classList.add("text-xs", "top-0");
+    } else {
+        label.classList.remove("text-xs", "top-0");
+    }
+    toggleButtons();
+}
+
+toggleButtons();
+
+document.getElementById("button2").addEventListener("click", clearInputs);
+
+
+        var slideIndex = 0;
+        showSlides();
+
+        function showSlides() {
+            var slides = document.getElementsByClassName("mySlides");
+            for (var i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+            slideIndex++;
+            if (slideIndex > slides.length) {
+                slideIndex = 1;
+            }
+            slides[slideIndex - 1].style.display = "block";
+            setTimeout(showSlides, 3000); 
+        }
+    </script>
+    
+</body>
+</html>
