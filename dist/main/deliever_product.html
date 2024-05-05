@@ -1,0 +1,705 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Deliever Product</title>
+  </head>
+
+  <style>
+    .containers{
+    max-width: 1300px;
+    margin-inline: auto;
+  }
+  .containers1{
+    max-width: 1500px;
+    margin-inline: auto;
+  }
+  </style>
+
+  <body>
+    <section class="sm:hidden">
+      <div
+        class="w-full h-64"
+        style="
+          background-image: url('./images2/mobile icons/big illustration.png');
+          background-size: cover;
+          padding: 20px;
+        "
+      >
+        <div class="flex">
+          <div class="mt-1">
+            <a href="index.html" class="flex items-center text-white">
+              <img
+                src="./images2/desktop icons/logo.png"
+                alt="Your Logo"
+                class="mt-5 w-10"
+              />
+            </a>
+          </div>
+
+          <div class="ml-auto mt-5 md:mt-5 pr-3 sm:pr-2">
+            <img
+              src="./images2/mobile icons/BACK OPTION.png"
+              alt=""
+              class="w-10"
+            />
+          </div>
+        </div>
+        <div class="mt-5">
+          <h1
+            class="text-3xl font-gotham-black font-bold mr-28"
+            style="color: black"
+          >
+            Enter Your Delivery Address & Parcel Details
+          </h1>
+        </div>
+      </div>
+
+      <div
+        class="ml-[-170px] h-72"
+        style="
+          background-image: url('./images2/mobile icons/small illustrtion.png');
+          background-size: cover;
+          background-position: left;
+        "
+      >
+        <div class="flex">
+          <div class="ml-3 mt-28">
+            <img
+              src="./images2/mobile icons/green bar mobile.png"
+              alt=""
+              class="w-[13px] h-[150px] ml-44 float-left"
+            />
+          </div>
+          <div class="flex-col">
+            <div class="p-8">
+              <h1 class="text-[17px] font-extrabold mb-3">Pickup Details</h1>
+              <div class="relative">
+                <div class="input-with-icon">
+                  <div
+                    class="absolute left-0 p-2 pointer-events-none font-extrabold text-black ml-1 text-[17px]"
+                  >
+                    Location
+                  </div>
+                  <img
+                    src="./images2/mobile icons/earth.png"
+                    alt=""
+                    class="absolute top-11 left-3 w-4 h-4"
+                  />
+                  <a href="pickup_details.html">
+                    <input
+                      type="text"
+                      id="Location"
+                      name="Location"
+                      class="border w-full pt-9 p-1 py-5 border-dotted border-[#848484] text-black rounded-xl px-20 pl-10 focus:outline-none"
+                      placeholder="Pickup item from..."
+                      onfocus="askForLocation()"
+                      onblur="collapseLabel('LocationLabel')"
+                    />
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <div class="p-8">
+              <h1 class="text-[17px] font-extrabold mb-3">Shipment Details</h1>
+              <div class="relative">
+                <div class="input-with-icon">
+                  <div
+                    class="absolute left-0 p-2 pointer-events-none font-extrabold text-black ml-1 text-[17px]"
+                  >
+                    Location
+                  </div>
+                  <img
+                    src="./images2/mobile icons/earth.png"
+                    alt=""
+                    class="absolute top-11 left-3 w-4 h-4"
+                  />
+                  <a href="shipment.html">
+                    <input
+                      type="text"
+                      id="Location"
+                      name="Location"
+                      class="border w-full pt-9 p-1 py-5 border-dotted border-[#848484] text-black rounded-xl px-20 pl-10 focus:outline-none"
+                      placeholder="Drop item to..."
+                      onfocus="askForLocation()"
+                      onblur="collapseLabel('LocationLabel')"
+                    />
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="mt-24 mb-20">
+        <h1 class="text-[17px] font-extrabold ml-10">Parcel Details</h1>
+
+        <div class="flex flex-wrap ml-11 mt-6 gap-5 pr-1">
+          <div
+            class="border border-dotted border-[#848484] rounded-xl p-4 py-2 cursor-pointer transition-colors duration-300 hover:bg-black"
+            onclick="selectBox(event)"
+          >
+            <p class="font-extrabold text-[#545454]">Small</p>
+            <p>Wt: 0 - 500gm</p>
+          </div>
+
+          <div
+            class="border border-dotted border-[#848484] rounded-xl p-4 py-2 cursor-pointer transition-colors duration-300 hover:bg-black"
+            onclick="selectBox(event)"
+          >
+            <p class="font-extrabold text-[#545454]">Medium</p>
+            <p>Wt: 0 - 500gm</p>
+          </div>
+
+          <div
+            class="border border-dotted border-[#848484] rounded-xl p-4 py-2 cursor-pointer transition-colors duration-300 hover:bg-black"
+            onclick="selectBox(event)"
+          >
+            <p class="font-extrabold text-[#545454]">Large</p>
+            <p>Wt: 0 - 500gm</p>
+          </div>
+
+          <div
+            class="border border-dotted border-[#848484] rounded-xl p-4 py-2 cursor-pointer transition-colors duration-300 hover:bg-black"
+            onclick="selectBox(event)"
+          >
+            <p class="font-extrabold text-[#545454]">Extra Large</p>
+            <p>Wt: 0 - 500gm</p>
+          </div>
+        </div>
+
+        <div class="mt-20 m-10">
+          <textarea
+            id=""
+            name=""
+            class="border text-xl w-full p-1 py-10 border-dotted border-[#848484] text-black rounded-xl px-20 pl-10 focus:outline-none resize-none"
+            placeholder="Custom Message"
+          ></textarea>
+        </div>
+
+        <div
+          class="fixed bottom-4 left-0 right-0 flex justify-center items-center"
+        >
+          <div
+            class="flex bg-[#2D332F] rounded-full text-xl p-4 w-72 md:hidden text-white justify-center items-center"
+          >
+            Next Process
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ------------------DESKTOP DEVICE----------------------- -->
+
+    <section class="hidden sm:block">
+      <div class="flex containers mt-5">
+        
+        <div class="mt-4 2xl:mt-5 relative cursor-pointer">
+          <img src="./images2/desktop icons/menu icon.png" alt="" class="w-36">
+          <p class="absolute top-2 left-7 text-white ">Menu</p>
+        </div>
+
+        <div class="bg-[#F5F5F5] p-1 px-5 rounded-full mt-3 ml-auto flex cursor-pointer
+        ">
+          <div class="ml-[-20px]">
+            <img src="./images2/mobile icons/BACK OPTION.png" alt="" class="w-14">
+          </div>
+
+          <div>
+            <p class="mt-[15px] ml-[-10px] text-xl">Back</p>
+          </div>
+        </div>
+
+      </div>
+
+
+      <div class="flex containers mt-5">
+        <div>
+          <div class="font-extrabold text-[35px] leading-tight">
+          Enter Your  Delivery <br> Address  & Parcel Details
+          
+          </div>
+
+          <button class="bg-[#2D332F] p-1 px-14 rounded-full py-4 mt-12 text-white text-xl">
+          Next Process
+          </button>
+        </div>
+
+
+        <div class="ml-14 text-2xl font-extrabold">
+          <h3>Pickup Details</h3>
+          <div class="relative mt-6">
+            <div class="input-with-icon">
+              <div
+                class="absolute left-0 p-2 pointer-events-none font-extrabold text-black ml-1 text-[17px]"
+              >
+                Location
+              </div>
+              <img
+                src="./images2/mobile icons/earth.png"
+                alt=""
+                class="absolute top-11 left-4 w-5 h-5"
+              />
+              <div>
+                <input
+                  type="text"
+                  id="Location"
+                  name="Location"
+                  class="border w-full pt-9 p-1 py-1 border-dotted border-[#848484] text-[15px] text-black rounded-xl px-10 pl-11 focus:outline-none"
+                  placeholder="Pickup item from..."
+                  onfocus="askForLocation()"
+                  onblur="collapseLabel('LocationLabel')"
+                />
+              </div>
+            </div>
+          </div>
+
+
+          <!-- ------------------------mdcjdbfhdbfhb-------------------- -->
+          <div>
+            <div class=" space-y-6 pr-5 mt-5 mb-28">
+              <div class="relative gap-10">
+                <div class="input-with-icon">
+                  <div
+                    class="absolute left-0 p-2 pointer-events-none font-semibold text-black ml-1 text-[17px]"
+                  >
+                    Name
+                  </div>
+                  <img
+                    src="./images2/mobile icons/user.png"
+                    alt=""
+                    class="absolute top-11 left-3 w-4 h-4"
+                  />
+                  <input
+                    type="text"
+                    id="Name"
+                    name="Name"
+                    class="border pt-9 p-1 py-1 border-dotted border-[#848484] text-[15px] text-black rounded-xl px-20 pl-10 focus:outline-none"
+                    placeholder="Enter your name"
+                    onfocus="askForLocation()"
+                    onblur="collapseLabel('LocationLabel')"
+                  />
+                </div>
+              </div>
+      
+              <div class="relative">
+                <div class="input-with-icon">
+                  <div
+                    class="absolute left-0 p-2 pointer-events-none font-semibold text-black ml-1 text-[17px]"
+                  >
+                    Mobile Number
+                  </div>
+                  <img
+                    src="./images2/mobile icons/call.png"
+                    alt=""
+                    class="absolute top-11 left-3 w-4 h-4"
+                  />
+                  <input
+                    type="text"
+                    id="Mobile"
+                    name="mobile"
+                    class="border pt-9 p-1 py-1 border-dotted border-[#848484] text-[15px] text-black rounded-xl px-20 pl-10 focus:outline-none"
+                    placeholder="Enter your mobile number"
+                    onfocus="askForLocation()"
+                    onblur="collapseLabel('LocationLabel')"
+                    oninput="this.value = this.value.replace(/[^0-9]/g, '').slice(0, 10)"
+                  />
+                </div>
+              </div>
+      
+              <div class="relative">
+                <div class="input-with-icon">
+                  <div
+                    class="absolute left-0 p-2 pointer-events-none font-semibold text-black ml-1 text-[17px]"
+                  >
+                    Flat/ Housing No./ Building/ Apartment
+                  </div>
+                  <img
+                    src="./images2/mobile icons/earth.png"
+                    alt=""
+                    class="absolute top-11 left-3 w-4 h-4"
+                  />
+                  <input
+                    type="text"
+                    id="Location"
+                    name="Location"
+                    class="border pt-9 p-1 py-1 border-dotted border-[#848484] text-[15px] text-black rounded-xl px-20 pl-10 focus:outline-none"
+                    placeholder="Enter the details"
+                    onfocus="askForLocation()"
+                    onblur="collapseLabel('LocationLabel')"
+                  />
+                </div>
+              </div>
+      
+              <div class="relative">
+                <div class="input-with-icon">
+                  <div
+                    class="absolute left-0 p-2 pointer-events-none font-semibold text-black ml-1 text-[17px]"
+                  >
+                    Area/ Street/ Sector
+                  </div>
+                  <img
+                    src="./images2/mobile icons/location.png"
+                    alt=""
+                    class="absolute top-11 left-3 w-4 h-4"
+                  />
+                  <input
+                    type="text"
+                    id="area"
+                    name="area"
+                    class="border pt-9 p-1 py-1 border-dotted border-[#848484] text-[15px] text-black rounded-xl px-20 pl-10 focus:outline-none"
+                    placeholder="Enter the details"
+                    onfocus="askForLocation()"
+                    onblur="collapseLabel('LocationLabel')"
+                  />
+                </div>
+              </div>
+      
+              <div class="relative">
+                <div class="input-with-icon">
+                  <div
+                    class="absolute left-0 p-2 pointer-events-none font-semibold text-black ml-1 text-[17px]"
+                  >
+                    Pincode
+                  </div>
+                  <input
+                    type="text"
+                    id="Pincode"
+                    name="Pincode"
+                    class="border pt-9 p-1 py-1 border-dotted border-[#848484] text-[15px] text-black rounded-xl px-20 pl-3 focus:outline-none text-left"
+                    placeholder="Enter your pincode"
+                    onfocus="askForLocation()"
+                    onblur="collapseLabel('LocationLabel')"
+                    oninput="this.value = this.value.replace(/[^0-9]/g, '').slice(0, 6)"
+                  />
+                </div>
+              </div>
+      
+              <div class="">
+                <div class="relative">
+                  <div class="input-with-icon">
+                    <div
+                      class="absolute left-0 p-2 pointer-events-none font-semibold text-black ml-1 text-[17px]"
+                    >
+                      City
+                    </div>
+      
+                    <input
+                      type="text"
+                      id="City"
+                      name="City"
+                      class="border pt-9 p-1 py-1 border-dotted border-[#848484] text-[15px] text-black rounded-xl px-20 pl-3 focus:outline-none"
+                      placeholder=""
+                      onfocus="askForLocation()"
+                      onblur="collapseLabel('LocationLabel')"
+                    />
+                  </div>
+                </div>
+      
+                <div class="relative mt-5">
+                  <div class="input-with-icon">
+                    <div
+                      class="absolute left-0 p-2 pointer-events-none font-semibold text-black ml-1 text-[17px]"
+                    >
+                      State
+                    </div>
+      
+                    <input
+                      type="text"
+                      id="State"
+                      name="State"
+                      class="border pt-9 p-1 py-1 border-dotted border-[#848484] text-[15px] text-black rounded-xl px-20 pl-3 focus:outline-none"
+                      placeholder=""
+                      onfocus="askForLocation()"
+                      onblur="collapseLabel('LocationLabel')"
+                    />
+                  </div>
+                </div>
+              </div>
+              <div
+                class="fixed bottom-4 left-0 right-0 flex justify-center items-center"
+              >
+                <a
+                  href="deliever_product.html"
+                  class="flex bg-[#2D332F] rounded-full text-xl p-4 w-72 md:hidden text-white justify-center items-center"
+                >
+                  Proceed
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+
+        <div class="ml-14 text-2xl font-extrabold">
+          <h3>Shipment Details</h3>
+          <div class="relative mt-6">
+            <div class="input-with-icon">
+              <div
+                class="absolute left-0 p-2 pointer-events-none font-extrabold text-black ml-1 text-[17px]"
+              >
+                Location
+              </div>
+              <img
+                src="./images2/mobile icons/earth.png"
+                alt=""
+                class="absolute top-11 left-4 w-5 h-5"
+              />
+              <div>
+                <input
+                  type="text"
+                  id="Location"
+                  name="Location"
+                  class="border w-full pt-9 p-1 py-1 border-dotted border-[#848484] text-[15px] text-black rounded-xl px-14 pl-14 focus:outline-none"
+                  placeholder="Drop item to..."
+                  onfocus="askForLocation()"
+                  onblur="collapseLabel('LocationLabel')"
+                />
+              </div>
+            </div>
+          </div>
+
+          <div>
+            <div class=" space-y-6 pr-5 mt-5 mb-28">
+              <div class="relative gap-10">
+                <div class="input-with-icon">
+                  <div
+                    class="absolute left-0 p-2 pointer-events-none font-semibold text-black ml-1 text-[17px]"
+                  >
+                    Name
+                  </div>
+                  <img
+                    src="./images2/mobile icons/user.png"
+                    alt=""
+                    class="absolute top-11 left-3 w-4 h-4"
+                  />
+                  <input
+                    type="text"
+                    id="Name"
+                    name="Name"
+                    class="border pt-9 p-1 py-1 border-dotted border-[#848484] text-[15px] text-black rounded-xl px-20 pl-10 focus:outline-none"
+                    placeholder="Enter your name"
+                    onfocus="askForLocation()"
+                    onblur="collapseLabel('LocationLabel')"
+                  />
+                </div>
+              </div>
+      
+              <div class="relative">
+                <div class="input-with-icon">
+                  <div
+                    class="absolute left-0 p-2 pointer-events-none font-semibold text-black ml-1 text-[17px]"
+                  >
+                    Mobile Number
+                  </div>
+                  <img
+                    src="./images2/mobile icons/call.png"
+                    alt=""
+                    class="absolute top-11 left-3 w-4 h-4"
+                  />
+                  <input
+                    type="text"
+                    id="Mobile"
+                    name="mobile"
+                    class="border pt-9 p-1 py-1 border-dotted border-[#848484] text-[15px] text-black rounded-xl px-20 pl-10 focus:outline-none"
+                    placeholder="Enter your mobile number"
+                    onfocus="askForLocation()"
+                    onblur="collapseLabel('LocationLabel')"
+                    oninput="this.value = this.value.replace(/[^0-9]/g, '').slice(0, 10)"
+                  />
+                </div>
+              </div>
+      
+              <div class="relative">
+                <div class="input-with-icon">
+                  <div
+                    class="absolute left-0 p-2 pointer-events-none font-semibold text-black ml-1 text-[17px]"
+                  >
+                    Flat/ Housing No./ Building/ Apartment
+                  </div>
+                  <img
+                    src="./images2/mobile icons/earth.png"
+                    alt=""
+                    class="absolute top-11 left-3 w-4 h-4"
+                  />
+                  <input
+                    type="text"
+                    id="Location"
+                    name="Location"
+                    class="border pt-9 p-1 py-1 border-dotted border-[#848484] text-[15px] text-black rounded-xl px-20 pl-10 focus:outline-none"
+                    placeholder="Enter the details"
+                    onfocus="askForLocation()"
+                    onblur="collapseLabel('LocationLabel')"
+                  />
+                </div>
+              </div>
+      
+              <div class="relative">
+                <div class="input-with-icon">
+                  <div
+                    class="absolute left-0 p-2 pointer-events-none font-semibold text-black ml-1 text-[17px]"
+                  >
+                    Area/ Street/ Sector
+                  </div>
+                  <img
+                    src="./images2/mobile icons/location.png"
+                    alt=""
+                    class="absolute top-11 left-3 w-4 h-4"
+                  />
+                  <input
+                    type="text"
+                    id="area"
+                    name="area"
+                    class="border pt-9 p-1 py-1 border-dotted border-[#848484] text-[15px] text-black rounded-xl px-20 pl-10 focus:outline-none"
+                    placeholder="Enter the details"
+                    onfocus="askForLocation()"
+                    onblur="collapseLabel('LocationLabel')"
+                  />
+                </div>
+              </div>
+      
+              <div class="relative">
+                <div class="input-with-icon">
+                  <div
+                    class="absolute left-0 p-2 pointer-events-none font-semibold text-black ml-1 text-[17px]"
+                  >
+                    Pincode
+                  </div>
+                  <input
+                    type="text"
+                    id="Pincode"
+                    name="Pincode"
+                    class="border pt-9 p-1 py-1 border-dotted border-[#848484] text-[15px] text-black rounded-xl px-20 pl-3 focus:outline-none text-left"
+                    placeholder="Enter your pincode"
+                    onfocus="askForLocation()"
+                    onblur="collapseLabel('LocationLabel')"
+                    oninput="this.value = this.value.replace(/[^0-9]/g, '').slice(0, 6)"
+                  />
+                </div>
+              </div>
+      
+              <div class="">
+                <div class="relative">
+                  <div class="input-with-icon">
+                    <div
+                      class="absolute left-0 p-2 pointer-events-none font-semibold text-black ml-1 text-[17px]"
+                    >
+                      City
+                    </div>
+      
+                    <input
+                      type="text"
+                      id="City"
+                      name="City"
+                      class="border pt-9 p-1 py-1 border-dotted border-[#848484] text-[15px] text-black rounded-xl px-20 pl-3 focus:outline-none"
+                      placeholder=""
+                      onfocus="askForLocation()"
+                      onblur="collapseLabel('LocationLabel')"
+                    />
+                  </div>
+                </div>
+      
+                <div class="relative mt-5">
+                  <div class="input-with-icon">
+                    <div
+                      class="absolute left-0 p-2 pointer-events-none font-semibold text-black ml-1 text-[17px]"
+                    >
+                      State
+                    </div>
+      
+                    <input
+                      type="text"
+                      id="State"
+                      name="State"
+                      class="border pt-9 p-1 py-1 border-dotted border-[#848484] text-[15px] text-black rounded-xl px-20 pl-3 focus:outline-none"
+                      placeholder=""
+                      onfocus="askForLocation()"
+                      onblur="collapseLabel('LocationLabel')"
+                    />
+                  </div>
+                </div>
+              </div>
+              <div
+                class="fixed bottom-4 left-0 right-0 flex justify-center items-center"
+              >
+                <a
+                  href="deliever_product.html"
+                  class="flex bg-[#2D332F] rounded-full text-xl p-4 w-72 md:hidden text-white justify-center items-center"
+                >
+                  Proceed
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+
+
+      <div class="flex justify-center ml-64">
+        <div class="mb-20 mt-[-50px]">
+          <h1 class="text-[17px] font-extrabold ml-12">Parcel Details</h1>
+      
+          <div class="flex mt-6 gap-14 pr-1 ml-11">
+            <div
+              class="border border-dotted border-[#848484] rounded-xl p-4 py-2 cursor-pointer transition-colors duration-300 hover:bg-black"
+              onclick="selectBox(event)"
+            >
+              <p class="font-extrabold text-[#545454]">Small</p>
+              <p>Wt: 0 - 500gm</p>
+            </div>
+      
+            <div
+              class="border border-dotted border-[#848484] rounded-xl p-4 py-2 cursor-pointer transition-colors duration-300 hover:bg-black"
+              onclick="selectBox(event)"
+            >
+              <p class="font-extrabold text-[#545454]">Medium</p>
+              <p>Wt: 0 - 500gm</p>
+            </div>
+      
+            <div
+              class="border border-dotted border-[#848484] rounded-xl p-4 py-2 cursor-pointer transition-colors duration-300 hover:bg-black"
+              onclick="selectBox(event)"
+            >
+              <p class="font-extrabold text-[#545454]">Large</p>
+              <p>Wt: 0 - 500gm</p>
+            </div>
+      
+            <div
+              class="border border-dotted border-[#848484] rounded-xl p-4 py-2 cursor-pointer transition-colors duration-300 hover:bg-black"
+              onclick="selectBox(event)"
+            >
+              <p class="font-extrabold text-[#545454]">Extra Large</p>
+              <p>Wt: 0 - 500gm</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+
+    </section>
+
+
+
+    <script>
+      function selectBox(event) {
+        const selectedBox = event.target.closest(".border");
+        if (!selectedBox) return;
+
+        document.querySelectorAll(".border").forEach((box) => {
+          box.classList.remove("bg-black", "text-white");
+        });
+
+        selectedBox.classList.add("bg-black", "text-white");
+      }
+    </script>
+  </body>
+</html>

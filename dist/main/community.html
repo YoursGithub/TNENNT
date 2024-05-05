@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Community page</title>
+</head>
+
+<style>
+    .containers{
+    max-width: 1300px;
+    margin-inline: auto;
+  }
+  .containers1{
+    max-width: 1500px;
+    margin-inline: auto;
+  }
+</style>
+
+<body>
+    <section class="hidden lg:block">
+        <div class="flex">
+            <div class="mt-4 ml-5 2xl:mt-5 relative cursor-pointer">
+                <img src="./images2/desktop icons/menu icon.png" alt="" class="w-32">
+                <p class="absolute top-2 left-6 text-white ">Menu</p>
+            </div>
+
+            <div class="ml-auto mt-5 font-bold mr-10 text-xl">
+                <h3>COMMUNITY</h3>
+            </div>
+        </div>
+
+        <div class="flex mt-10 containers">
+            <div class="flex">
+                <img src="./images2/mobile icons/Rectangle 2133.png" alt="" class="w-20 h-20 ml-8">
+                <div>
+                <h3 class="ml-5 mt-5 font-bold text-xl">Jain Brothers <span class="text-green-600">&bull;</span></h3>
+                <p class="text-[9px] ml-8 text-[#4F4F4F]">jainbrothers.tnennt.store</p>
+                </div>
+            </div>
+
+            <div class="w-10 h-10 bg-[#F3F3F3] rounded-full flex justify-center items-center mt-5 ml-auto mr-8">
+                <img src="./images2/mobile icons/movie_edit.png" alt="" class="w-5 h-5 ">
+            </div>
+        </div>
+
+
+        <div class="flex containers">
+            <img src="./images2/mobile icons/kate-trysh-Dnkr_lmdKi8-unsplash 1.png" alt="" class="mt-10 ml-20 w-[500px] h-80">
+
+            <div className="flex justify-center mt-[35%]">
+                <div className="w-[93vw] flex flex-col gap-3">
+                  <div className="flex justify-between">
+                    <div className="flex gap-2">
+                      <div className="w-[5vh] h-[5vh] rounded-full bg-[#343434]"></div>
+                      <h2 className="font-bold text-[5vw] mt-2">Kunal Deb</h2>
+                    </div>
+                    <h2 className="mt-4 text-[3.4vw] font-bold opacity-50">8 h ago</h2>
+                  </div>
+                  <div className="flex justify-center mt-4 px-2">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                  </div>
+                  <div className="flex justify-center">
+                    <div className="bg-slate-400 w-[99%] h-[62vw] rounded-sm mt-4 bg-cover bg-no-repeat bg-center"
+                      style={{ backgroundImage: url(${profileImage}) }}>
+                    </div>
+                  </div>
+                  <div className='flex justify-between mb-4'>
+                   <div className='flex gap-2'>
+                          <div className='flex gap-3 border-2 border-[#BEBEBE]  rounded-3xl px-4 py-1  ml-2 items-center'>
+                          <div className="con-like">
+                <input
+                    className="like w-2"
+                    type="checkbox"
+                    title="like"
+                    checked={liked}
+                    onChange={toggleLike}
+                />
+                <div className="checkmark">
+                  {liked ? (
+                    <svg xmlns="http://www.w3.org/2000/svg" className="filled" viewBox="0 0 24 24">
+                    <path fill="#FF0000" d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"></path>
+                  </svg>
+                  
+                  ):(
+                    <svg xmlns="http://www.w3.org/2000/svg" className="" viewBox="0 0 24 24">
+            <path fill="none" stroke="#FF0000" strokeWidth="2" d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"></path>
+          </svg>
+                  )}
+                 
+                </div>
+              </div>
+              <p className="font-bold opacity-70 text-[4vw]" >{likeCount}</p>
+                          </div>
+                          <div className="p-4 h-[4.4vh] border-2 border-[#BEBEBE] rounded-3xl flex justify-center items-center">
+                          <a href="https://uiverse.io/" target="_blank" rel="noopener noreferrer" className="text-[3.5vw] text-[#989797]">link: https://uiverse.io/</a>
+          
+          
+                         </div>
+                   
+                      </div>
+                      
+                      
+                  <img className='w-[4vw] mt-[-2%] mr-1' src={iosshare} alt="" />
+                      
+                  </div>
+                </div>
+               
+              </div>
+        </div>
+    </section>
+</body>
+</html>

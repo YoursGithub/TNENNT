@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Register</title>
+</head>
+
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap');
+    body {
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            position: relative;
+            width: 100vw;
+            height: 100vh;
+        }
+
+        .slideshow-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+        }
+
+        .mySlides {
+            display: none;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .input {
+        max-width: 430px;
+        height: 50px;
+        background-color: #05060f0a;
+        border-radius: .5rem;
+        padding: 0 1rem;
+        border: 2px solid transparent;
+        font-size: 1rem;
+        transition: border-color .3s cubic-bezier(.25,.01,.25,1) 0s, color .3s cubic-bezier(.25,.01,.25,1) 0s,background .2s cubic-bezier(.25,.01,.25,1) 0s;
+        }
+
+        .label {
+        display: block;
+        margin-bottom: .3rem;
+        font-size: .9rem;
+        font-weight: bold;
+        color: #05060f99;
+        transition: color .3s cubic-bezier(.25,.01,.25,1) 0s;
+        }
+
+        .input:hover, .input:focus, .input-group:hover .input {
+        outline: none;
+        border-color: #05060f;
+        }
+
+        .input-group:hover .label, .input:focus {
+        color: #05060fc2;
+        }
+        
+
+        /* Fading animation */
+        .fade {
+            animation-name: fade;
+            animation-timing-function: ease-in-out;
+            animation-duration: 2s;
+        }
+
+        @keyframes fade {
+            from {
+                opacity: 0.4;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        @media (min-width: 1879px) {
+            .footer p{
+                margin-top: 160px;
+            }
+        }
+
+        .form-container {
+            z-index: 99;
+        }
+        .containers{
+        max-width: 1400px;
+        margin-inline: auto;
+        }
+        .containers1{
+        max-width: 1200px;
+        margin-inline: auto;
+  }
+</style>
+<body style="background-color: #e6e6e6;">
+    <nav class="sticky z-50">
+        <div class="mx-3 md:mx-10 flex">
+            <div>
+                <a href="index.html" class="flex items-center text-white">
+                    <img src="./Images/LOADING PAGE/WELCOME PAGE LOGO BLACK.png" alt="Your Logo" class="mt-5 w-24 md:w-[120px]">
+                </a>
+            </div>
+            <div class="ml-auto mt-[18px] md:mt-5 pr-3 sm:pr-2">
+                <img src="./Images/AUTHENTICATION LOGOS AND ICONS/BACK OPTION.png" alt="" class="w-9">
+            </div>
+        </div>
+    </nav>
+
+    <section class="lg:hidden">
+        <div class="mx-10 mt-20">
+            <h1 class="text-4xl font-bold">Registration</h1>
+            <p class="text-[#636363] mt-3">We will send a code (via sms text message) to your phone number</p>
+        </div>
+        <div class="border border-[#848484] rounded-xl border-dotted h-48 mt-10 m-8 flex items-center justify-center">
+            <div class="flex items-center">
+                <img src="./Images/AUTHENTICATION LOGOS AND ICONS/flag.png" alt="" class="mr-2 w-10">
+                <p class="text-[#636363]">+91</p>
+                <div class="relative border-black">
+                    <input type="text" id="phone-input" class="w-48 ml-3 pl-10 border-b-2 border-[#636363] px-0.5 py-1 outline-none" maxlength="10" oninput="this.value=this.value.replace(/[^0-9]/g,'');">
+                  </div>
+            </div>
+        </div>
+        <a href="verification.html">
+        
+        <div class="w-10 h-10 bg-[#094446] rounded-full mt-3 mx-auto flex justify-center items-center">
+            <img src="./Images/AUTHENTICATION LOGOS AND ICONS/check.png" alt="" class="w-6">
+        </div>
+        </a>
+    </section>
+
+
+    <section class="hidden lg:block">
+        <div class="slideshow-container">
+            <div class="mySlides fade">
+                <img src="./Images/LOADING PAGE/SLIDESHOW ONE.png" alt="Slide 1" class="mt-44 ml-[-120px] 2xl:ml-[-160px]">
+            </div>
+            <div class="mySlides fade">
+                <img src="./Images/LOADING PAGE/SLIDESHOW TWO.png" alt="Slide 2" class="mt-[-120px] 2xl:mt-[-140px]">
+            </div>
+            <div class="mySlides fade">
+                <img src="./Images/LOADING PAGE/SLIDESHOW THREE.png" alt="Slide 3" class="mt-[150px] ml-[-50px] 2xl:ml-[-60px]">
+            </div>
+            <!-- <div class="mySlides fade containers1">
+                <img src="./Images/LOADING PAGE/SLIDESHOW FOUR.png" alt="Slide 4" class="mt-[150px]">
+            </div> -->
+        </div>
+
+
+        <section class="">
+            <div class="form-container hidden md:block mx-auto max-w-[400px] 2xl:max-w-[500px] h-[500px] 2xl:h-[570px] mt-2 rounded-xl border border-gray-300 bg-white justify-center z-50">
+
+                <div class="mx-10 mt-20">
+                    <h1 class="text-4xl font-bold">Registration</h1>
+                    <p class="text-[#636363] mt-3">We will send a code (via sms text message) to your phone number</p>
+                </div>
+                <div class="border border-[#848484] rounded-xl border-dotted h-48 mt-10 m-8 flex items-center justify-center">
+                    <div class="flex items-center">
+                        <img src="./Images/AUTHENTICATION LOGOS AND ICONS/flag.png" alt="" class="mr-2 w-10">
+                        <p class="text-[#636363]">+91</p>
+                        <div class="relative border-black">
+                            <input type="text" id="phone-input" class="w-48 ml-3 pl-10 border-b-2 border-[#636363] px-0.5 py-1 outline-none" maxlength="10" oninput="this.value=this.value.replace(/[^0-9]/g,'');">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- <div class="flex justify-center mt-10 mb-3 mx-auto" id="button1">
+                    <button class="w-10 h-10 bg-[#c7c7c7] rounded-full absolute  flex justify-center items-center z-50">
+                        <img src="./Images/AUTHENTICATION LOGOS AND ICONS/check.png" alt="" class="w-6">
+                    </button>
+                </div> -->
+                
+                <div class="w-10 h-10 bg-[#094446] ml-44 2xl:ml-56 rounded-full absolute flex justify-center items-center">
+                    <a href="verification.html" class="flex justify-center items-center w-full h-full">
+                        <img src="./Images/AUTHENTICATION LOGOS AND ICONS/check.png" alt="" class="w-6">
+                    </a>
+                </div>                
+            </div>
+        </section>
+
+        <div class="footer bottom-0 mt-10 left-0 right-0 md:relative md:flex ml-10 2xl:mt-28 text-[12px] form-container">
+            <p class="font-gotham-black font-medium text-[#272822]">© 2024 Tnennt All rights reserved.</p>
+        </div>
+    </section>
+
+    <script>
+    document.addEventListener("DOMContentLoaded", function() {
+    const inputField = document.getElementById("phone-input");
+    const button1 = document.getElementById("button1");
+    const button2 = document.querySelector(".bg-[#094446]");
+
+    inputField.addEventListener("input", function() {
+        if (inputField.value.length === 10) {
+            button1.style.display = "none";
+            button2.style.display = "block";
+        } else {
+            button1.style.display = "block";
+            button2.style.display = "none";
+        }
+    });
+});
+
+var slideIndex = 0;
+        showSlides();
+
+        function showSlides() {
+            var slides = document.getElementsByClassName("mySlides");
+            for (var i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+            slideIndex++;
+            if (slideIndex > slides.length) {
+                slideIndex = 1;
+            }
+            slides[slideIndex - 1].style.display = "block";
+            setTimeout(showSlides, 3000); 
+        }
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Tell us your Interests</title>
+</head>
+
+<style>
+     @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap');
+    body {
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            position: relative;
+            width: 100vw;
+            height: 100vh;
+        }
+
+        .slideshow-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+        }
+
+        .mySlides {
+            display: none;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .input {
+        max-width: 430px;
+        height: 50px;
+        background-color: #05060f0a;
+        border-radius: .5rem;
+        padding: 0 1rem;
+        border: 2px solid transparent;
+        font-size: 1rem;
+        transition: border-color .3s cubic-bezier(.25,.01,.25,1) 0s, color .3s cubic-bezier(.25,.01,.25,1) 0s,background .2s cubic-bezier(.25,.01,.25,1) 0s;
+        }
+
+        .label {
+        display: block;
+        margin-bottom: .3rem;
+        font-size: .9rem;
+        font-weight: bold;
+        color: #05060f99;
+        transition: color .3s cubic-bezier(.25,.01,.25,1) 0s;
+        }
+
+        .input:hover, .input:focus, .input-group:hover .input {
+        outline: none;
+        border-color: #05060f;
+        }
+
+        .input-group:hover .label, .input:focus {
+        color: #05060fc2;
+        }
+        
+
+        .fade {
+            animation-name: fade;
+            animation-timing-function: ease-in-out;
+            animation-duration: 2s;
+        }
+
+        @keyframes fade {
+            from {
+                opacity: 0.4;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        @media (min-width: 1879px) {
+            .footer p{
+                margin-top: 160px;
+            }
+        }
+
+        .form-container {
+            z-index: 99;
+        }
+        .containers{
+            max-width: 1400px;
+    margin-inline: auto;
+        }
+        .containers1{
+    max-width: 1200px;
+    margin-inline: auto;
+  }
+</style>
+<body>
+    <nav class="sticky z-50">
+        <div class="mx-3 md:mx-10 flex">
+            <div>
+                <a href="index.html" class="flex items-center text-white">
+                    <img src="./Images/LOADING PAGE/WELCOME PAGE LOGO BLACK.png" alt="Your Logo" class="mt-5 w-24 md:w-[120px]">
+                </a>
+            </div>
+            <div class="ml-auto mt-[18px] md:mt-5 pr-3 sm:pr-2">
+                <img src="./Images/AUTHENTICATION LOGOS AND ICONS/BACK OPTION.png" alt="" class="w-9">
+            </div>
+        </div>
+    </nav>
+
+    <section class="lg:hidden">
+        <div class="ml-6 mt-44 pr-10">
+            <h2 class="font-extrabold text-2xl">Your interests.</h2>
+            <p class="text-[#636363] mt-3">Pick up to 5 things you love. It'll help you get great deals related to these products</p>
+        </div>
+    
+        <div class="pr-20 relative ml-6 mt-5">
+            <input id="searchInput" type="text" placeholder="Enter Interests" class="w-full pl-10 pr-3 py-2 border border-dotted rounded-lg focus:outline-none border-[#848484] font-extrabold text-[#545454]">
+            <img src="./Images/AUTHENTICATION LOGOS AND ICONS/Vector.png" alt="Interests Image" class="absolute left-3 top-1/2 transform -translate-y-1/2 h-5 w-5">
+        </div>
+    
+        <div id="interestsContainer" class="ml-6 mt-5 pr-10">
+        </div>
+        
+        <div class="justify-center flex mb-10">
+            <div class="flex justify-center mt-10 mb-3 mx-auto" id="button1">
+                <button class="bg-[#C7C7C7] px-6 py-3 text-white rounded-lg text-center text-xl font-bold"><p class="text-[#AAAAAA]">Continue</p></button>
+            </div>
+            
+            <div class="flex justify-center mt-10 mx-auto" id="button2" style="display: none;">
+                <button class="bg-[#094446] px-6 py-3 text-white rounded-xl text-center text-xl font-bold">Continue</button>
+            </div>
+        </div>
+    </section>
+
+
+    <section class="hidden lg:block">
+        <div class="slideshow-container">
+            <div class="mySlides fade">
+                <img src="./Images/LOADING PAGE/SLIDESHOW ONE.png" alt="Slide 1" class="mt-44 ml-[-120px] 2xl:ml-[-160px]">
+            </div>
+            <div class="mySlides fade">
+                <img src="./Images/LOADING PAGE/SLIDESHOW TWO.png" alt="Slide 2" class="mt-[-120px] 2xl:mt-[-140px]">
+            </div>
+            <div class="mySlides fade">
+                <img src="./Images/LOADING PAGE/SLIDESHOW THREE.png" alt="Slide 3" class="mt-[150px] ml-[-50px] 2xl:ml-[-60px]">
+            </div>
+            <!-- <div class="mySlides fade containers1">
+                <img src="./Images/LOADING PAGE/SLIDESHOW FOUR.png" alt="Slide 4" class="mt-[150px]">
+            </div> -->
+        </div>
+            <section>
+                <div class="form-container hidden md:block mx-auto max-w-[400px] 2xl:max-w-[500px] h-[500px] 2xl:h-[570px] mt-2 rounded-xl border border-gray-300 justify-center">
+                    <div class="pr-[85px] md:pr-10 z-50 justify-center items-center">
+                        <div class="ml-6 mt-28 pr-10">
+                            <h2 class="font-extrabold text-2xl">Your interests.</h2>
+                            <p class="text-[#636363] mt-3">Pick up to 5 things you love. It'll help you get great deals related to these products</p>
+                        </div>
+                    
+                        <div class="pr-5 relative ml-6 mt-5">
+                            <input id="searchInput" type="text" placeholder="Enter Interests" class="w-full pl-10 py-2 border border-dotted rounded-lg focus:outline-none border-[#848484] font-extrabold text-[#545454]">
+                            <img src="./Images/AUTHENTICATION LOGOS AND ICONS/Vector.png" alt="Interests Image" class="absolute left-3 top-1/2 transform -translate-y-1/2 h-5 w-5">
+                        </div>
+                    
+                        <div id="interestscontainer" class="ml-6 mt-5 pr-10">
+                        </div>
+                        
+                        <div class="justify-center flex mb-10">
+                            <div class="flex justify-center mt-10 mb-3 mx-auto" id="button1">
+                                <button class="bg-[#C7C7C7] px-6 py-3 text-white rounded-lg text-center text-xl font-bold"><p class="text-[#AAAAAA]">Continue</p></button>
+                            </div>
+                            
+                            <div class="flex justify-center mt-10 mx-auto" id="button2" style="display: none;">
+                                <button class="bg-[#094446] px-6 py-3 text-white rounded-xl text-center text-xl font-bold">Continue</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+    </section>
+
+    <script>
+        const interestsContainer = document.getElementById('interestsContainer');
+        let boxCount = 0;
+    
+        document.getElementById('searchInput').addEventListener('keypress', function(event) {
+            if (event.key === 'Enter') {
+                const searchQuery = event.target.value.trim();
+                if (searchQuery !== '' && boxCount < 5) {
+                    createInterestBox(searchQuery);
+                    event.target.value = ''; 
+                    if (boxCount === 5) {
+                        event.target.disabled = true; 
+                    }
+                }
+            }
+        });
+    
+        function createInterestBox(query) {
+            const interestBox = document.createElement('div');
+            interestBox.classList.add('border', 'border-dotted', 'px-3', 'py-2', 'mt-3', 'border-[#848484]', 'rounded-lg', 'flex', 'items-center'); 
+
+            const interestImage = document.createElement('img');
+            interestImage.src = "./Images/AUTHENTICATION LOGOS AND ICONS/INTEREST TICK.png";
+            interestImage.alt = "Interest Icon";
+            interestImage.classList.add('w-6');
+    
+            const interestText = document.createElement('p');
+            interestText.textContent = query;
+            interestText.classList.add('ml-2', 'flex-grow'); 
+    
+            const removeButton = document.createElement('button');
+            const removeImage = document.createElement('img');
+            removeImage.src = "./Images/AUTHENTICATION LOGOS AND ICONS/DELETE.png";
+            removeImage.alt = "Remove Icon";
+            removeImage.classList.add('w-5');
+            removeButton.appendChild(removeImage);
+            
+            removeButton.classList.add('ml-2', 'text-red-500', 'font-bold', 'cursor-pointer');
+            removeButton.addEventListener('click', function() {
+                interestsContainer.removeChild(interestBox);
+                boxCount--;
+                toggleButtonVisibility();
+                document.getElementById('searchInput').disabled = false; 
+            });
+    
+            interestBox.appendChild(interestImage);
+            interestBox.appendChild(interestText);
+            interestBox.appendChild(removeButton);
+    
+            interestsContainer.appendChild(interestBox);
+    
+            boxCount++;
+            toggleButtonVisibility();
+        }
+    
+        function toggleButtonVisibility() {
+            if (boxCount >= 3) {
+                document.getElementById('button1').style.display = 'none';
+                document.getElementById('button2').style.display = 'flex';
+            } else {
+                document.getElementById('button1').style.display = 'flex';
+                document.getElementById('button2').style.display = 'none';
+            }
+        }
+
+
+
+        // ------------------xxxxxxxxxxxxxxxxxx-----------------------
+
+
+        const interestscontainer = document.getElementById('interestscontainer');
+let boxCount1 = 0;
+
+const searchInput = document.getElementById('searchInput');
+const button1 = document.getElementById('button1');
+const button2 = document.getElementById('button2');
+
+searchInput.addEventListener('keypress', function(event) {
+    if (event.key === 'Enter') {
+        const searchQuery = event.target.value.trim();
+        if (searchQuery !== '' && boxCount1 < 5) {
+            createInterestBox(searchQuery);
+            event.target.value = ''; 
+            if (boxCount1 === 5) {
+                event.target.disabled = true; 
+            }
+        }
+    }
+});
+
+function createInterestBox(query) {
+    const interestBox = document.createElement('div');
+    interestBox.classList.add('border', 'border-dotted', 'px-3', 'py-2', 'mt-3', 'border-[#848484]', 'rounded-lg', 'flex', 'items-center'); 
+
+    const interestImage = document.createElement('img');
+    interestImage.src = "./Images/AUTHENTICATION LOGOS AND ICONS/INTEREST TICK.png";
+    interestImage.alt = "Interest Icon";
+    interestImage.classList.add('w-6');
+
+    const interestText = document.createElement('p');
+    interestText.textContent = query;
+    interestText.classList.add('ml-2', 'flex-grow'); 
+
+    const removeButton = document.createElement('button');
+    const removeImage = document.createElement('img');
+    removeImage.src = "./Images/AUTHENTICATION LOGOS AND ICONS/DELETE.png";
+    removeImage.alt = "Remove Icon";
+    removeImage.classList.add('w-5');
+    removeButton.appendChild(removeImage);
+
+    removeButton.classList.add('ml-2', 'text-red-500', 'font-bold', 'cursor-pointer');
+    removeButton.addEventListener('click', function() {
+        interestsContainer.removeChild(interestBox);
+        boxCount1--;
+        toggleButtonVisibility();
+        searchInput.disabled = false; 
+    });
+
+    interestBox.appendChild(interestImage);
+    interestBox.appendChild(interestText);
+    interestBox.appendChild(removeButton);
+
+    interestsContainer.appendChild(interestBox);
+
+    boxCount1++;
+    toggleButtonVisibility();
+}
+
+function toggleButtonVisibility() {
+    button1.style.display = boxCount1 >= 3 ? 'none' : 'flex';
+    button2.style.display = boxCount1 >= 3 ? 'flex' : 'none';
+}
+
+
+        var slideIndex = 0;
+        showSlides();
+
+        function showSlides() {
+            var slides = document.getElementsByClassName("mySlides");
+            for (var i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+            slideIndex++;
+            if (slideIndex > slides.length) {
+                slideIndex = 1;
+            }
+            slides[slideIndex - 1].style.display = "block";
+            setTimeout(showSlides, 3000);
+        }
+    </script>
+    
+    
+    
+    
+</body>
+</html>

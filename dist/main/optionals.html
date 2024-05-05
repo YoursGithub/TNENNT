@@ -1,0 +1,618 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OPTIONALS</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body>
+    
+    <section class="lg:hidden">
+
+
+        <div class="w-full h-[12vh] flex p-[20px] justify-between">
+            <div class="flex justify-center items-center gap-2">
+                <h2 class="text-2xl font-black">OPTIONALS</h2>
+                <div class="bg-red-400 h-[1vh] w-[1vh] rounded-full"></div>
+            </div>
+            <div class="flex justify-center items-center gap-4">
+                <img class="w-12" src="/images/back.png" alt="">
+            </div>
+        </div>
+
+
+        <p class="mx-5 font-extrabold text-[4vw] pb-4">Add Option Type</p>
+
+
+
+        <div class="mx-5 flex gap-3 flex-wrap">
+          <button class="focus:outline-none visited:outline-none active:outline-none category-button border border-black bg-[#094446] text-white px-4 py-2 rounded-lg transition-colors duration-300 inline-flex items-center font-bold" style="-webkit-tap-highlight-color: rgba(0,0,0,0);" data-category="size">
+              Size
+          </button>
+          <button class="focus:outline-none visited:outline-none active:outline-none category-button border border-black bg-white text-[#737373] px-4 py-2 rounded-lg transition-colors duration-300 inline-flex items-center font-bold" style="-webkit-tap-highlight-color: rgba(0,0,0,0);" data-category="weight">
+              Weight
+          </button>  
+          <button class="focus:outline-none visited:outline-none active:outline-none category-button border border-black bg-white text-[#737373] px-4 py-2 rounded-lg transition-colors duration-300 inline-flex items-center font-bold" style="-webkit-tap-highlight-color: rgba(0,0,0,0);" data-category="volume">
+            Volume
+          </button>         
+          <button class="focus:outline-none visited:outline-none active:outline-none category-button border border-black bg-white text-[#737373] px-4 py-2 rounded-lg transition-colors duration-300 inline-flex items-center font-bold" style="-webkit-tap-highlight-color: rgba(0,0,0,0);" data-category="bakery">
+            Bakery
+          </button> 
+          <button class="focus:outline-none visited:outline-none active:outline-none category-button border border-black bg-white text-[#737373] px-4 py-2 rounded-lg transition-colors duration-300 inline-flex items-center font-bold" style="-webkit-tap-highlight-color: rgba(0,0,0,0);" data-category="storage">
+            Storage
+          </button> 
+        </div>
+
+        <div id="categorySection" class="">
+          
+
+
+          <div class="mx-5 mt-7 mb-7">
+            <div>
+              <button class="focus:outline-none visited:outline-none active:outline-none category-button-1 border border-black bg-[#343434] text-white px-4 py-2 rounded-lg transition-colors duration-300 inline-flex items-center font-bold" style="-webkit-tap-highlight-color: rgba(0,0,0,0);" data-category="tw">
+                Topwear
+              </button>
+              <button class="focus:outline-none visited:outline-none active:outline-none category-button-1 border border-black bg-white text-[#737373] px-4 py-2 rounded-lg transition-colors duration-300 inline-flex items-center font-bold" style="-webkit-tap-highlight-color: rgba(0,0,0,0);" data-category="bw">
+                Bottomwear
+              </button>  
+              <button class="focus:outline-none visited:outline-none active:outline-none category-button-1 border border-black bg-white text-[#737373] px-4 py-2 rounded-lg transition-colors duration-300 inline-flex items-center font-bold" style="-webkit-tap-highlight-color: rgba(0,0,0,0);" data-category="fw">
+                Footwear
+              </button>
+            </div>
+          </div>
+
+          <div class="flex justify-center items-center pt-3 pb-6">
+            <hr class="w-[95%]" style="border-top: 1.5px dashed #848484">
+          </div>
+          
+
+
+          <div class="" id="catsec">
+
+            <div class="flex justify-between pb-4 items-center">
+              <div>
+                <p class="mx-5 font-extrabold text-[4vw]">Options Selected</p>
+                <p class="mx-5 font-bold text-[#848484] text-[3vw]">This will be added to your optional list</p>
+              </div>
+              <div class="py-1 px-[5px] border border-black mx-5 rounded-lg border-[2px]">
+                <p class="text-[4vw] font-bold">09</p>
+              </div>
+            </div>
+
+            <div>
+              <div class="flex justify-between mx-5 my-5">
+                  <p class="text-[4vw] text-[#094446] font-bold">XXS</p>
+                  <div class="checkbox-wrapper-13">
+                      <input id="c1-13" type="checkbox" onclick="func11()">
+                  </div> 
+              </div>
+              <div class="flex justify-between mx-5 my-5">
+                  <p class="text-[4vw] text-[#094446] font-bold">XS</p>
+                  <div class="checkbox-wrapper-13">
+                      <input id="c1-13" type="checkbox" onclick="func11()">
+                  </div> 
+              </div>
+              <div class="flex justify-between mx-5 my-5">
+                  <p class="text-[4vw] text-[#094446] font-bold">S</p>
+                  <div class="checkbox-wrapper-13">
+                      <input id="c1-13" type="checkbox" onclick="func11()">
+                  </div> 
+              </div>
+              <div class="flex justify-between mx-5 my-5">
+                  <p class="text-[4vw] text-[#094446] font-bold">M</p>
+                  <div class="checkbox-wrapper-13">
+                      <input id="c1-13" type="checkbox" onclick="func11()">
+                  </div> 
+              </div>
+              <div class="flex justify-between mx-5 my-5">
+                  <p class="text-[4vw] text-[#094446] font-bold">M</p>
+                  <div class="checkbox-wrapper-13">
+                      <input id="c1-13" type="checkbox" onclick="func11()">
+                  </div> 
+              </div>
+              <div class="flex justify-between mx-5 my-5">
+                  <p class="text-[4vw] text-[#094446] font-bold">L</p>
+                  <div class="checkbox-wrapper-13">
+                      <input id="c1-13" type="checkbox" onclick="func11()">
+                  </div> 
+              </div>
+              <div class="flex justify-between mx-5 my-5">
+                  <p class="text-[4vw] text-[#094446] font-bold">XL</p>
+                  <div class="checkbox-wrapper-13">
+                      <input id="c1-13" type="checkbox" onclick="func11()">
+                  </div> 
+              </div>
+              <div class="flex justify-between mx-5 my-5">
+                  <p class="text-[4vw] text-[#094446] font-bold">XXL</p>
+                  <div class="checkbox-wrapper-13">
+                      <input id="c1-13" type="checkbox" onclick="func11()">
+                  </div> 
+              </div>
+              <div class="flex justify-between mx-5 my-5">
+                  <p class="text-[4vw] text-[#094446] font-bold">XXXL</p>
+                  <div class="checkbox-wrapper-13">
+                      <input id="c1-13" type="checkbox" onclick="func11()">
+                  </div> 
+              </div>
+              <div class="flex justify-between mx-5 my-5">
+                <p class="text-[4vw] text-[#094446] font-bold">28"</p>
+                <div class="checkbox-wrapper-13">
+                    <input id="c1-13" type="checkbox" onclick="func11()">
+                </div> 
+              </div>
+              <div class="flex justify-between mx-5 my-5">
+                <p class="text-[4vw] text-[#094446] font-bold">30"</p>
+                <div class="checkbox-wrapper-13">
+                    <input id="c1-13" type="checkbox" onclick="func11()">
+                </div> 
+              </div>
+              <div class="flex justify-between mx-5 my-5">
+                <p class="text-[4vw] text-[#094446] font-bold">32"</p>
+                <div class="checkbox-wrapper-13">
+                    <input id="c1-13" type="checkbox" onclick="func11()">
+                </div> 
+              </div>
+              <div class="flex justify-between mx-5 my-5">
+                <p class="text-[4vw] text-[#094446] font-bold">34"</p>
+                <div class="checkbox-wrapper-13">
+                    <input id="c1-13" type="checkbox" onclick="func11()">
+                </div> 
+              </div>
+              <div class="flex justify-between mx-5 my-5">
+                <p class="text-[4vw] text-[#094446] font-bold">36"</p>
+                <div class="checkbox-wrapper-13">
+                    <input id="c1-13" type="checkbox" onclick="func11()">
+                </div> 
+              </div>
+              <div class="flex justify-between mx-5 my-5">
+                <p class="text-[4vw] text-[#094446] font-bold">38"</p>
+                <div class="checkbox-wrapper-13">
+                    <input id="c1-13" type="checkbox" onclick="func11()">
+                </div> 
+              </div>
+              <div class="flex justify-between mx-5 my-5">
+                <p class="text-[4vw] text-[#094446] font-bold">39"</p>
+                <div class="checkbox-wrapper-13">
+                    <input id="c1-13" type="checkbox" onclick="func11()">
+                </div> 
+              </div>
+              <div class="flex justify-between mx-5 my-5">
+                <p class="text-[4vw] text-[#094446] font-bold">40"</p>
+                <div class="checkbox-wrapper-13">
+                    <input id="c1-13" type="checkbox" onclick="func11()">
+                </div> 
+              </div>
+              <div class="flex justify-between mx-5 my-5">
+                <p class="text-[4vw] text-[#094446] font-bold">42"</p>
+                <div class="checkbox-wrapper-13">
+                    <input id="c1-13" type="checkbox" onclick="func11()">
+                </div> 
+              </div>
+              <div class="flex justify-between mx-5 my-5">
+                <p class="text-[4vw] text-[#094446] font-bold">44"</p>
+                <div class="checkbox-wrapper-13">
+                    <input id="c1-13" type="checkbox" onclick="func11()">
+                </div> 
+              </div>
+              <div class="flex justify-between mx-5 my-5">
+                <p class="text-[4vw] text-[#094446] font-bold">46"</p>
+                <div class="checkbox-wrapper-13">
+                    <input id="c1-13" type="checkbox" onclick="func11()">
+                </div> 
+              </div>
+              <div class="flex justify-between mx-5 my-5">
+                <p class="text-[4vw] text-[#094446] font-bold">48"</p>
+                <div class="checkbox-wrapper-13">
+                    <input id="c1-13" type="checkbox" onclick="func11()">
+                </div> 
+              </div>
+              
+            
+            
+          </div>
+
+
+          </div>
+
+
+
+        </div>
+
+        
+
+
+
+
+        
+    </section>
+
+
+
+
+
+
+
+
+    
+
+    <script>
+        const buttons = document.querySelectorAll('.category-button');
+        const categorySection = document.getElementById('categorySection');
+
+        buttons.forEach(button => {
+          button.addEventListener('click', () => {
+            buttons.forEach(btn => {
+                btn.classList.remove('bg-[#094446]', 'text-white');
+                btn.classList.add('bg-white', 'text-[#737373]');
+            });
+            button.classList.remove('bg-white', 'text-[#737373]');
+            button.classList.add('bg-[#094446]', 'text-white');
+            const category = button.getAttribute('data-category');
+            showCategory(category);
+        });
+      });
+
+      const buttons1 = document.querySelectorAll('.category-button-1');
+        const categorySection1 = document.getElementById('categorySection');
+
+        buttons1.forEach(button => {
+          button.addEventListener('click', () => {
+            buttons1.forEach(btn => {
+                btn.classList.remove('bg-[#343434]', 'text-white');
+                btn.classList.add('bg-white', 'text-[#737373]');
+            });
+            button.classList.remove('bg-white', 'text-[#737373]');
+            button.classList.add('bg-[#343434]', 'text-white');
+            const category = button.getAttribute('data-category');
+            showCategory(category);
+        });
+      });
+
+    </script>
+      
+
+    <script>
+      function showCategory(category) {
+        var categorySection = document.getElementById("categorySection");
+
+        categorySection.innerHTML = ""; // Clear previous content
+
+        if (category === 'size') {
+            categorySection.innerHTML = `
+          
+            
+            <div id="categorySection" class="">
+          
+
+
+          <div class="mx-5 mt-7 mb-7">
+            <div>
+              <button class="focus:outline-none visited:outline-none active:outline-none category-button-1 border border-black bg-[#343434] text-white px-4 py-2 rounded-lg transition-colors duration-300 inline-flex items-center font-bold" style="-webkit-tap-highlight-color: rgba(0,0,0,0);" data-category="tw">
+                Topwear
+              </button>
+              <button class="focus:outline-none visited:outline-none active:outline-none category-button-1 border border-black bg-white text-[#737373] px-4 py-2 rounded-lg transition-colors duration-300 inline-flex items-center font-bold" style="-webkit-tap-highlight-color: rgba(0,0,0,0);" data-category="bw">
+                Bottomwear
+              </button>  
+              <button class="focus:outline-none visited:outline-none active:outline-none category-button-1 border border-black bg-white text-[#737373] px-4 py-2 rounded-lg transition-colors duration-300 inline-flex items-center font-bold" style="-webkit-tap-highlight-color: rgba(0,0,0,0);" data-category="fw">
+                Footwear
+              </button>
+            </div>
+          </div>
+
+          <div class="flex justify-center items-center pt-3 pb-6">
+            <hr class="w-[95%]" style="border-top: 1.5px dashed #848484">
+          </div>
+          
+
+
+          <div class="" id="catsec">
+
+            <div class="flex justify-between pb-4 items-center">
+              <div>
+                <p class="mx-5 font-extrabold text-[4vw]">Options Selected</p>
+                <p class="mx-5 font-bold text-[#848484] text-[3vw]">This will be added to your optional list</p>
+              </div>
+              <div class="py-1 px-[5px] border border-black mx-5 rounded-lg border-[2px]">
+                <p class="text-[4vw] font-bold">09</p>
+              </div>
+            </div>
+
+            <div>
+              <div class="flex justify-between mx-5 my-5">
+                  <p class="text-[4vw] text-[#094446] font-bold">XXS</p>
+                  <div class="checkbox-wrapper-13">
+                      <input id="c1-13" type="checkbox" onclick="func11()">
+                  </div> 
+              </div>
+              <div class="flex justify-between mx-5 my-5">
+                  <p class="text-[4vw] text-[#094446] font-bold">XS</p>
+                  <div class="checkbox-wrapper-13">
+                      <input id="c1-13" type="checkbox" onclick="func11()">
+                  </div> 
+              </div>
+              <div class="flex justify-between mx-5 my-5">
+                  <p class="text-[4vw] text-[#094446] font-bold">S</p>
+                  <div class="checkbox-wrapper-13">
+                      <input id="c1-13" type="checkbox" onclick="func11()">
+                  </div> 
+              </div>
+              <div class="flex justify-between mx-5 my-5">
+                  <p class="text-[4vw] text-[#094446] font-bold">M</p>
+                  <div class="checkbox-wrapper-13">
+                      <input id="c1-13" type="checkbox" onclick="func11()">
+                  </div> 
+              </div>
+              <div class="flex justify-between mx-5 my-5">
+                  <p class="text-[4vw] text-[#094446] font-bold">M</p>
+                  <div class="checkbox-wrapper-13">
+                      <input id="c1-13" type="checkbox" onclick="func11()">
+                  </div> 
+              </div>
+              <div class="flex justify-between mx-5 my-5">
+                  <p class="text-[4vw] text-[#094446] font-bold">L</p>
+                  <div class="checkbox-wrapper-13">
+                      <input id="c1-13" type="checkbox" onclick="func11()">
+                  </div> 
+              </div>
+              <div class="flex justify-between mx-5 my-5">
+                  <p class="text-[4vw] text-[#094446] font-bold">XL</p>
+                  <div class="checkbox-wrapper-13">
+                      <input id="c1-13" type="checkbox" onclick="func11()">
+                  </div> 
+              </div>
+              <div class="flex justify-between mx-5 my-5">
+                  <p class="text-[4vw] text-[#094446] font-bold">XXL</p>
+                  <div class="checkbox-wrapper-13">
+                      <input id="c1-13" type="checkbox" onclick="func11()">
+                  </div> 
+              </div>
+              <div class="flex justify-between mx-5 my-5">
+                  <p class="text-[4vw] text-[#094446] font-bold">XXXL</p>
+                  <div class="checkbox-wrapper-13">
+                      <input id="c1-13" type="checkbox" onclick="func11()">
+                  </div> 
+              </div>
+              <div class="flex justify-between mx-5 my-5">
+                <p class="text-[4vw] text-[#094446] font-bold">28"</p>
+                <div class="checkbox-wrapper-13">
+                    <input id="c1-13" type="checkbox" onclick="func11()">
+                </div> 
+              </div>
+              <div class="flex justify-between mx-5 my-5">
+                <p class="text-[4vw] text-[#094446] font-bold">30"</p>
+                <div class="checkbox-wrapper-13">
+                    <input id="c1-13" type="checkbox" onclick="func11()">
+                </div> 
+              </div>
+              <div class="flex justify-between mx-5 my-5">
+                <p class="text-[4vw] text-[#094446] font-bold">32"</p>
+                <div class="checkbox-wrapper-13">
+                    <input id="c1-13" type="checkbox" onclick="func11()">
+                </div> 
+              </div>
+              <div class="flex justify-between mx-5 my-5">
+                <p class="text-[4vw] text-[#094446] font-bold">34"</p>
+                <div class="checkbox-wrapper-13">
+                    <input id="c1-13" type="checkbox" onclick="func11()">
+                </div> 
+              </div>
+              <div class="flex justify-between mx-5 my-5">
+                <p class="text-[4vw] text-[#094446] font-bold">36"</p>
+                <div class="checkbox-wrapper-13">
+                    <input id="c1-13" type="checkbox" onclick="func11()">
+                </div> 
+              </div>
+              <div class="flex justify-between mx-5 my-5">
+                <p class="text-[4vw] text-[#094446] font-bold">38"</p>
+                <div class="checkbox-wrapper-13">
+                    <input id="c1-13" type="checkbox" onclick="func11()">
+                </div> 
+              </div>
+              <div class="flex justify-between mx-5 my-5">
+                <p class="text-[4vw] text-[#094446] font-bold">39"</p>
+                <div class="checkbox-wrapper-13">
+                    <input id="c1-13" type="checkbox" onclick="func11()">
+                </div> 
+              </div>
+              <div class="flex justify-between mx-5 my-5">
+                <p class="text-[4vw] text-[#094446] font-bold">40"</p>
+                <div class="checkbox-wrapper-13">
+                    <input id="c1-13" type="checkbox" onclick="func11()">
+                </div> 
+              </div>
+              <div class="flex justify-between mx-5 my-5">
+                <p class="text-[4vw] text-[#094446] font-bold">42"</p>
+                <div class="checkbox-wrapper-13">
+                    <input id="c1-13" type="checkbox" onclick="func11()">
+                </div> 
+              </div>
+              <div class="flex justify-between mx-5 my-5">
+                <p class="text-[4vw] text-[#094446] font-bold">44"</p>
+                <div class="checkbox-wrapper-13">
+                    <input id="c1-13" type="checkbox" onclick="func11()">
+                </div> 
+              </div>
+              <div class="flex justify-between mx-5 my-5">
+                <p class="text-[4vw] text-[#094446] font-bold">46"</p>
+                <div class="checkbox-wrapper-13">
+                    <input id="c1-13" type="checkbox" onclick="func11()">
+                </div> 
+              </div>
+              <div class="flex justify-between mx-5 my-5">
+                <p class="text-[4vw] text-[#094446] font-bold">48"</p>
+                <div class="checkbox-wrapper-13">
+                    <input id="c1-13" type="checkbox" onclick="func11()">
+                </div> 
+              </div>
+              
+            
+            
+          </div>
+
+
+          </div>
+
+
+
+        </div>
+
+            `;
+        }
+
+        else if (category === 'weight') {
+            categorySection.innerHTML = `
+            
+
+
+
+            `;
+        }
+
+        else if (category === 'volume') {
+            categorySection.innerHTML = `
+            
+                  
+
+
+            `;
+        }
+
+
+        else if (category === 'bakery') {
+            categorySection.innerHTML = `
+            
+                  
+
+
+            `;
+        }
+
+        else if (category === 'storage') {
+            categorySection.innerHTML = `
+            
+                  
+
+
+            `;
+        }
+
+
+      
+
+        }
+    </script>
+
+
+
+
+
+
+
+
+
+
+
+
+    <style>
+        @supports (-webkit-appearance: none) or (-moz-appearance: none) {
+          .checkbox-wrapper-13 input[type=checkbox] {
+            --active: #094446;
+            --active-inner: #fff;
+            --focus: 2px rgba(255, 255, 255, 0.3);
+            --border: #000000;
+            --border-hover: #094446;
+            --background: #fff;
+            --disabled: #F6F8FF;
+            --disabled-inner: #E1E6F9;
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            height: 21px;
+            outline: none;
+            display: inline-block;
+            vertical-align: top;
+            position: relative;
+            margin: 0;
+            cursor: pointer;
+            border: 1px solid var(--bc, var(--border));
+            background: var(--b, var(--background));
+            transition: background 0.3s, border-color 0.3s, box-shadow 0.2s;
+          }
+          .checkbox-wrapper-13 input[type=checkbox]:after {
+            content: "";
+            display: block;
+            left: 0;
+            top: 0;
+            position: absolute;
+            transition: transform var(--d-t, 0.3s) var(--d-t-e, ease), opacity var(--d-o, 0.2s);
+          }
+          .checkbox-wrapper-13 input[type=checkbox]:checked {
+            --b: var(--active);
+            --bc: var(--active);
+            --d-o: .3s;
+            --d-t: .6s;
+            --d-t-e: cubic-bezier(.2, .85, .32, 1.2);
+          }
+          .checkbox-wrapper-13 input[type=checkbox]:disabled {
+            --b: var(--disabled);
+            cursor: not-allowed;
+            opacity: 0.9;
+          }
+          .checkbox-wrapper-13 input[type=checkbox]:disabled:checked {
+            --b: var(--disabled-inner);
+            --bc: var(--border);
+          }
+          .checkbox-wrapper-13 input[type=checkbox]:disabled + label {
+            cursor: not-allowed;
+          }
+          .checkbox-wrapper-13 input[type=checkbox]:hover:not(:checked):not(:disabled) {
+            --bc: var(--border-hover);
+          }
+          .checkbox-wrapper-13 input[type=checkbox]:focus {
+            box-shadow: 0 0 0 var(--focus);
+          }
+          .checkbox-wrapper-13 input[type=checkbox]:not(.switch) {
+            width: 21px;
+          }
+          .checkbox-wrapper-13 input[type=checkbox]:not(.switch):after {
+            opacity: var(--o, 0);
+          }
+          .checkbox-wrapper-13 input[type=checkbox]:not(.switch):checked {
+            --o: 1;
+          }
+          .checkbox-wrapper-13 input[type=checkbox] + label {
+            display: inline-block;
+            vertical-align: middle;
+            cursor: pointer;
+            margin-left: 4px;
+          }
+      
+          .checkbox-wrapper-13 input[type=checkbox]:not(.switch) {
+            border-radius: 7px;
+          }
+          .checkbox-wrapper-13 input[type=checkbox]:not(.switch):after {
+            width: 5px;
+            height: 9px;
+            border: 2px solid var(--active-inner);
+            border-top: 0;
+            border-left: 0;
+            left: 7px;
+            top: 4px;
+            transform: rotate(var(--r, 20deg));
+          }
+          .checkbox-wrapper-13 input[type=checkbox]:not(.switch):checked {
+            --r: 43deg;
+          }
+        }
+      
+        .checkbox-wrapper-13 * {
+          box-sizing: inherit;
+        }
+        .checkbox-wrapper-13 *:before,
+        .checkbox-wrapper-13 *:after {
+          box-sizing: inherit;
+        }
+    </style>
+</body>
+</html>
